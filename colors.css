@@ -1,0 +1,24 @@
+/* Defining the main colors of the web */
+:root{
+	--main-color:#51c4d3;
+    --main-color-dark:#126e82;
+    --main-color-darker:#132c33;
+    --main-color-darkest:#0e2025;
+    --main-color-light:#85d6e0;
+    --main-color-lighter:#ade3eb;
+    --main-color-lightest:#d6f1f5;
+    --accent-color-1:#ccff33;
+    --accent-color-1-dark:#ace600;
+    --accent-color-1-darker:#86b300;
+    --accent-color-1-darkest:#608000;
+    --accent-color-1-light:#d9ff66;
+    --accent-color-1-lighter:#e6ff99;
+    --accent-color-1-lightest:#f2ffcc;
+    --accent-color-2:#ff3333;
+    --accent-color-2-dark:#e60000;
+    --accent-color-2-darker:#b30000;
+    --accent-color-2-darkest:#800000;
+    --accent-color-2-light:#ff6666;
+    --accent-color-2-lighter:#ff9999;
+    --accent-color-2-lightest:#ffcccc;
+}
