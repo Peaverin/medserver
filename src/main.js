@@ -9,6 +9,7 @@ import router from './router'
 */
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles/colors.css'
+import './styles/sizes.css'
 
 Vue.config.productionTip = false
 

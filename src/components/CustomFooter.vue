@@ -1,7 +1,7 @@
 <template>
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">MedServer cutre footer de prova</span>
+        <span>MedServer cutre footer de prova</span>
       </div>
     </footer>
 </template>
@@ -13,7 +13,8 @@
   width: 100%;
   height: 60px; /* Set the fixed height of the footer here */
   line-height: 60px; /* Vertically center the text there */
-  background-color: rgb(124, 230, 124);
+  background-color: var(--main-color);
+  color: var(--main-color-darkest);
 }
 </style>
 
