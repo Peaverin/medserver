@@ -8,7 +8,7 @@ import router from './router'
 //Vue.use(IconsPlugin)
 */
 import 'bootstrap/dist/css/bootstrap.css'
-
+import './styles/colors.css'
 
 Vue.config.productionTip = false
 
