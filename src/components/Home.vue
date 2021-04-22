@@ -7,12 +7,12 @@
     <centered-button>Consulta amb un farmacèutic</centered-button>
     <div class="row">
       <div class="col-4 offset-4 lowerbtn">
-        <med-button>Iniciar Sessió</med-button>
+        <med-button link="login">Iniciar Sessió</med-button>
       </div>
     </div>
     <div class="row">
       <div class="col-4 offset-4 lowerbtn">
-        <med-button>Registrar-se</med-button>
+        <med-button link="register">Registrar-se</med-button>
       </div>
     </div>
     

@@ -1,12 +1,18 @@
 <template>
     <div>
-       <button class='ctrbtn'> <slot/> </button>
+       <button class='ctrbtn' @click="$router.push(link)"> <slot/> </button>
     </div>  
 </template>
 
 <script>
 export default {
-  name: 'MedButton'
+    name: 'MedButton',
+    props: {
+        link: {
+            type: String,
+            required: true,
+        },
+    },
 }
 </script>
 
@@ -28,7 +34,7 @@ export default {
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
-    width: 100%;
+    
   }
 
   .ctrbtn:hover {

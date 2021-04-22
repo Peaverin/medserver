@@ -1,10 +1,10 @@
 <template>
     <div class="navbar fixed-bottom footer text-center">
-        MedServer cutre footer de prova
+        MedServer cutre footer de prova (for some reason not centered)
     </div>
 </template>
 
-<style>
+<style scoped>
 .footer {
   height: 60px; /* Set the fixed height of the footer here */
   line-height: 60px; /* Vertically center the text there */
