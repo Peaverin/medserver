@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img style="width:40%" alt="Vue logo" src="./assets/logo.jpeg">
     <router-view/>
     <custom-footer/>
   </div>
