@@ -2,7 +2,7 @@
     <header>
         <div class="container-fluid p-0">
             <div class="row">
-                <img class="col-sm-2" alt="Vue logo" src="../assets/logo.jpeg">
+                <!--<img class="col-sm-2" alt="Vue logo" src="../assets/logo.jpeg">-->
                 <span class="title col-sm-2">MedServer</span>
                 <div class="options col-sm">
                     <span class="option">EL MEU COMPTE</span>
@@ -25,7 +25,7 @@ header {
 
 .title {
     font-size: 3rem;
-    padding: 40px;
+    padding: 10px;
     align-self: center;
 }
 
@@ -33,16 +33,16 @@ header {
     align-self: center;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-around;
-    margin: 30px;
+    margin: 10px;
 }
 .option {
-    margin: 10px;
+    margin: 5px;
     border-radius: 5px;
     transition: all 0.5s ease;
-    padding: 1rem 1rem;
-    font-size: 1.5rem;
+    padding: 0.5rem 0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
 }
 .option:hover {
     background-color: white;
