@@ -15,7 +15,7 @@
 
 <style>
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   height: auto; /* Set the fixed height of the footer here */
