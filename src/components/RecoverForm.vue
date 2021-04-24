@@ -1,7 +1,7 @@
 <template>
       <div class="vertical-center">
         <div class="inner-block">
-    <div class="vue-tempalte">
+    <div>
         <form>
             <h3>Has oblidat la contrassenya?</h3>
             <p>
