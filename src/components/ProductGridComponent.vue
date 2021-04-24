@@ -165,7 +165,7 @@
                             </svg>
                             <span>Cart</span>
                         </a>
-                        <div class="num_items_cart" v-if="added_product">
+                        <div class="num_items_cart" v-if="added_product" v-on:incr-num-items="onIncrNumItems">
                             <span> {{ num_items }} </span>
                         </div>
                     </div>
@@ -182,7 +182,7 @@
             </div>
         </div>
         <div class="row row--grid">
-            <product-card-component v-for="product in products" :key="product" link=product></product-card-component>
+            <product-card-component v-for="product in products" :key="product" v-bind:imageName="product"></product-card-component>
         </div>
     </div>
     </section>
@@ -195,15 +195,15 @@ export default {
   components: { ProductCardComponent },
   data () {
     return {
-      num_items: 0,
-      added_product: false,
-      products: [
-          "enantyum.png",
-          "gel.jpeg",
-          "mascaras.jpeg",
-          "test.jpeg",
-          "vitaminas.png"
-      ]
+        num_items: 0,
+        added_product: false,
+        products: [
+            "enantyum.png",
+            "gel.jpeg",
+            "mascaras.jpeg",
+            "test.jpeg",
+            "vitaminas.png"
+        ]
     }
   },
   methods: {
@@ -212,6 +212,9 @@ export default {
             this.added_product = true
         }
         this.num_items += 1
+    },
+    onIncrNumItems: function () {
+        this.addItem()
     }
   }
 }

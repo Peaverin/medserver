@@ -102,10 +102,10 @@
 <template>
     <div class="col-12 col-sm-6 col-lg-4">
         <div class="product">
-        <div class="product__img"><img src="../assets/enantyum.png" alt=""></div>
+        <div class="product__img"><img :src="require('../assets/' + imageName + '')" alt=""></div>
             <h3 class="product__title">-20% For All Accessories</h3>
             <span class="product__price">$20.00</span> 
-            <button type="button" class="product__add" @click="addItem">
+            <button type="button" class="product__add" v-on:click="$emit('incr-num-items')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
                     <path d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z" style="fill: none; stroke-miterlimit: 10; stroke-width: 32px;"></path>
                     <line x1="256" y1="176" x2="256" y2="336" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"></line>
@@ -120,7 +120,7 @@
 export default {
     name: 'ProductCardComponent',
     props: {
-        link: {
+        imageName: {
             type: String,
             required: true,
         },
