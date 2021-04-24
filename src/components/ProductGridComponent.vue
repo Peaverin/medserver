@@ -14,6 +14,11 @@
         color: #373737;
         margin-left: auto;
     }
+    .header__cart:hover {
+        background-color: var(--main-color);
+        transform: scale(1.1);
+        transition: all 0.8s ease;
+    }
     .num_items_cart {
         position: relative;
         display: flex;
@@ -146,7 +151,7 @@
         font-weight: 500;
     }
     .grid-view {
-        margin-top: 20%;
+        margin-top: 22%;
         margin-bottom: 10%;
     }
 </style>

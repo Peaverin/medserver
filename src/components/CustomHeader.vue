@@ -11,7 +11,7 @@ header {
   top: 0;
   width: 100%;
   height: auto; /* Set the fixed height of the footer here */
-  background-color: #51c4d3;
+  background-color: var(--main-color);
   z-index: 5;
 }
 
@@ -20,6 +20,7 @@ header {
     margin-top: 0.5rem;
     align-self: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: var(--main-color-darker);
 }
 
 .options {
@@ -33,7 +34,7 @@ header {
     margin: 1rem;
     padding:0.5rem;
     font-size: 2vw;
-
+    color: var(--main-color-darker);
 }
 .option:hover {
     background-color: white;

@@ -12,6 +12,10 @@
         box-shadow: 15px 15px 30px 0px rgba(0,0,0,0.07), -15px -15px 30px 0px rgba(255,255,255,0.8);
         padding: 30px;
     }
+    .product:hover {
+        transform: scale(1.1);
+        transition: all 0.8s ease;
+    }
     .product__img {
         position: relative;
         display: flex;
@@ -58,13 +62,16 @@
         transition: 0.6s;
     }
     .product__add svg {
-        stroke: #0f4c81;
+        stroke: var(--main-color-darker);
         width: 28px;
         height: auto;
         position: relative;
         z-index: 2;
         transition: 0.6s;
         transform: rotate(0deg);
+    }
+    .product__add:hover {
+        background-color: var(--main-color);
     }
     button {
         appearance: auto;
@@ -96,6 +103,7 @@
     }
     .product__add:hover svg {
         transform: rotate(180deg);
+        stroke: white;
     }
 </style>
 
