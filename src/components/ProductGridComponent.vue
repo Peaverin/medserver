@@ -182,7 +182,12 @@
             </div>
         </div>
         <div class="row row--grid">
-            <product-card-component v-for="product in products" :key="product" v-bind:imageName="product"></product-card-component>
+            <product-card-component 
+                v-for="product in products" :key="product" 
+                v-bind:link="product.link" 
+                v-bind:name="product.name"
+                v-bind:price="product.price">
+            </product-card-component>
         </div>
     </div>
     </section>
@@ -198,11 +203,11 @@ export default {
         num_items: 0,
         added_product: false,
         products: [
-            "enantyum.png",
-            "gel.jpeg",
-            "mascaras.jpeg",
-            "test.jpeg",
-            "vitaminas.png"
+            { link: "enantyum.png", name: "Enantyum 25mg", price: "5,99€" },
+            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3,85€" },
+            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4,90€" },
+            { link: "test.jpeg", name: "Kit de test covid", price: "25€" },
+            { link: "vitaminas.png", name: "Vitamines", price: "15€" },
         ]
     }
   },
