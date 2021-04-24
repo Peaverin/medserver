@@ -2,7 +2,6 @@
     <header>
         <div class="container-fluid p-0">
             <div class="row">
-                <!--<img class="col-sm-2" alt="Vue logo" src="../assets/logo.jpeg">-->
                 <span class="title col-sm-4">MedServer</span>
                 <div class="options col-sm">
                     <span class="option">EL MEU COMPTE</span>
@@ -12,6 +11,12 @@
         </div>
     </header>
 </template>
+
+<script>
+export default {
+  name: 'CustomHeader'
+}
+</script>
 
 <style>
 header {

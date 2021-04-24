@@ -7,10 +7,9 @@
 
 <script>
 import CustomFooter from './components/CustomFooter.vue'
-import CustomHeader from './components/CustomHeader.vue'
 
 export default {
-  components: { CustomFooter, CustomHeader },
+  components: { CustomFooter},
   name: 'App'
 }
 </script>
