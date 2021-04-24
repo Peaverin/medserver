@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img style="width:40%" alt="Vue logo" src="./assets/logo.jpeg">
     <router-view/>
     <custom-footer/>
   </div>
@@ -8,9 +7,10 @@
 
 <script>
 import CustomFooter from './components/CustomFooter.vue'
+import CustomHeader from './components/CustomHeader.vue'
 
 export default {
-  components: { CustomFooter },
+  components: { CustomFooter, CustomHeader },
   name: 'App'
 }
 </script>
