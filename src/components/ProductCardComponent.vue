@@ -12,7 +12,7 @@
         box-shadow: 15px 15px 30px 0px rgba(0,0,0,0.07), -15px -15px 30px 0px rgba(255,255,255,0.8);
         padding: 30px;
     }
-    .product__img{
+    .product__img {
         position: relative;
         display: flex;
         flex-direction: row;
@@ -102,7 +102,7 @@
 <template>
     <div class="col-12 col-sm-6 col-lg-4">
         <div class="product">
-        <div class="product__img"><img src= {{ link }} alt=""></div>
+        <div class="product__img"><img src="../assets/enantyum.png" alt=""></div>
             <h3 class="product__title">-20% For All Accessories</h3>
             <span class="product__price">$20.00</span> 
             <button type="button" class="product__add" @click="addItem">

@@ -152,7 +152,7 @@
 </style>
 
 <template>
-<div class="grid-view">
+    <div class="grid-view">
     <header class="header">
         <div class="container">
             <div class="row">
@@ -188,7 +188,6 @@
     </section>
 </div>
 </template>
-
 
 <script>
 import ProductCardComponent from './ProductCardComponent.vue'
