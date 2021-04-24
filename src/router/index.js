@@ -4,7 +4,7 @@ import Home from '@/components/Home'
 import LoginForm from '@/components/LoginForm'
 import RegisterForm from '@/components/RegisterForm'
 import RecoverForm from '@/components/RecoverForm'
-import MainComponent from '@/components/MainComponent'
+import ProductGridComponent from '@/components/ProductGridComponent'
 Vue.use(Router)
 
 export default new Router({
@@ -32,7 +32,10 @@ export default new Router({
     {
       path: '/main',
       name: 'main',
-      component: MainComponent
+      component: ProductGridComponent,
+      meta: {
+        header: true
+      }
     }
   ]
 })
