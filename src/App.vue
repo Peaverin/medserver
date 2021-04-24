@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <custom-header/>
     <router-view/>
     <custom-footer/>
   </div>

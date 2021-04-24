@@ -8,7 +8,9 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
 import 'bootstrap/dist/css/bootstrap.css'
+import './styles/general.css'
 import './styles/colors.css'
+import './styles/sizes.css'
 
 Vue.config.productionTip = false
 
