@@ -31,7 +31,7 @@
         height: 26px;
         width: 26px;
         border-radius: 15px;
-        background-color: #ffcccc;
+        background-color: var(--accent-color-2-lightest);
         box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.06), -4px -4px 10px 0px #fff;
         transition: 0.6s;
         color: #373737;
@@ -59,10 +59,6 @@
     }
     .section__title {
         font-size: 32px;
-    }
-    html {
-        -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
     }
     ::selection {
         background: #fff;
@@ -135,27 +131,15 @@
     .row--grid .col-12 {
         transition: 0.6s;
     }
-    h3 {
-        display: block;
-        font-size: 1.17em;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
-        font-weight: bold;
-    }
-    .product__price {
-        position: relative;
-        z-index: 2;
-        color: rgba(55,55,55,0.8);
-        line-height: 100%;
-        font-size: 14px;
-        font-family: 'Spartan', sans-serif;
-        font-weight: 500;
-    }
     .grid-view {
         margin-top: 150px;
         margin-bottom: 100px;
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0;
     }
 </style>
 
@@ -222,6 +206,13 @@ export default {
             { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4,90€" },
             { link: "test.jpeg", name: "Kit de test covid", price: "25€" },
             { link: "vitaminas.png", name: "Vitamines", price: "15€" },
+            { link: "asacol.jpeg", name: "Asacol", price: "20€"},
+            { link: "couldina.jpeg", name: "Couldina", price: "10€"},
+            { link: "aspirina.jpeg", name: "Aspirina", price: "6€"},
+            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5,5€"},
+            { link: "talquistina.jpeg", name: "Talquistina", price: "6€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "floradix.jpeg", name: "Floradix", price: "25,55€"}
         ]
     }
   },
