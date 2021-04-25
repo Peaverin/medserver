@@ -140,6 +140,25 @@
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0;
     }
+    .comanda {
+        position: fixed;
+        bottom: 150px;
+        background-color: var(--accent-color-1-dark);
+        border-radius: 8px;
+        width: 220px;
+        height: 60px;
+        z-index: 6;
+        font-size: 1rem;
+    }
+    .comanda:hover {
+        transform: scale(1.1);
+        transition: all 0.8s ease;
+        background-color: var(--accent-color-1-darkest);
+        color: white;
+    }
+    .boto-comanda {
+        justify-content: center;
+    }
 </style>
 
 <template>
@@ -176,6 +195,9 @@
                             <button type="button" :class="categories['bebes']" v-on:click="changeCategory('bebes')">Bebès</button> 
                             <button type="button" :class="categories['complements']" v-on:click="changeCategory('complements')">Complements alimentaris</button></div>
                     </div>
+                </div>
+                <div class="row boto-comanda">
+                    <button type="button" class="comanda">REALITZAR COMANDA</button>
                 </div>
                 <div class="row row--grid" v-if="categories['tots']==='active'">
                     <product-card-component 
@@ -247,7 +269,14 @@ export default {
             { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5,5€"},
             { link: "talquistina.jpeg", name: "Talquistina", price: "6€"},
             { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
-            { link: "floradix.jpeg", name: "Floradix", price: "25,55€"}
+            { link: "floradix.jpeg", name: "Floradix", price: "25,55€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"}
         ],
         prod_medicaments: [
             { link: "enantyum.png", name: "Enantyum 25mg", price: "5,99€" },
@@ -265,6 +294,13 @@ export default {
         ],
         prod_bebes: [
             { link: "talquistina.jpeg", name: "Talquistina", price: "6€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
             { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"}
         ],
         prod_compl: [
