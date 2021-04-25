@@ -1,8 +1,5 @@
 <style scoped>
 .footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
   height: auto; /* Set the fixed height of the footer here */
   line-height: 60px; /* Vertically center the text there */
   background-color: var(--main-color);
@@ -13,7 +10,7 @@
 </style>
 
 <template>
-    <div class="footer">
+    <div class="navbar fixed-bottom footer">
         <p>MedServer cutre footer de prova</p>
     </div>
 </template>
