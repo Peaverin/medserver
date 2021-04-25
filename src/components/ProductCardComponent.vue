@@ -101,6 +101,9 @@
         background-color: transparent;
         transition: 0.6s;
         cursor: pointer;
+        border-style: solid;
+        border-width: thin;
+        border-color: var(--main-color-darkest);
     }
     .product__add:hover svg {
         transform: rotate(180deg);
@@ -114,7 +117,7 @@
         <div class="product__img"><img :src="require('../assets/' + link + '')" alt=""></div>
             <h3 class="product__title">{{ name }}</h3>
             <span class="product__price">{{ price }}</span> 
-            <button type="button" class="product__add" v-on:click="$emit('incr-num-items')">
+            <button type="button" class="product__add" v-on:click="incrNumItems">
                 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
                     <path d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z" style="fill: none; stroke-miterlimit: 10; stroke-width: 32px;"></path>
                     <line x1="256" y1="176" x2="256" y2="336" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"></line>
@@ -142,5 +145,10 @@ export default {
             required: true
         }
     },
+    methods: {
+        incrNumItems() {
+            this.$emit('incr-num-items');
+        }
+    }
 }
 </script>

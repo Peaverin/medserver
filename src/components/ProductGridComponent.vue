@@ -8,11 +8,14 @@
         height: 52px;
         width: 52px;
         border-radius: 30px;
-        background-color: #f0f0f0;
+        background-color: white;
         box-shadow: 8px 8px 20px 0px rgba(0,0,0,0.06), -8px -8px 20px 0px #fff;
         transition: 0.6s;
         color: #373737;
         margin-left: auto;
+        border-style: solid;
+        border-width: thin;
+        border-color: var(--main-color-darkest);
     }
     .header__cart:hover {
         background-color: var(--main-color);
@@ -84,6 +87,7 @@
         font-size: 16px;
         color: #373737;
         border-bottom: 3px dotted transparent;
+        color: var(--main-color-darkest);
     }
     button {
         appearance: auto;
@@ -118,9 +122,8 @@
         font-size: 1.5em;
         margin-block-start: 0.83em;
         margin-block-end: 0.83em;
-        margin-inline-start: 0px;
-        margin-inline-end: 0px;
         font-weight: bold;
+        color: var(--main-color-darkest);
     }
     .header__content {
         display: flex;
@@ -170,7 +173,7 @@
                             </svg>
                             <span>Cart</span>
                         </a>
-                        <div class="num_items_cart" v-if="added_product" v-on:incr-num-items="onIncrNumItems">
+                        <div class="num_items_cart" v-if="added_product">
                             <span> {{ num_items }} </span>
                         </div>
                     </div>
@@ -196,7 +199,8 @@
                 v-for="product in products" :key="product" 
                 v-bind:link="product.link" 
                 v-bind:name="product.name"
-                v-bind:price="product.price">
+                v-bind:price="product.price"
+                v-on:incr-num-items="addItem">
             </product-card-component>
         </div>
     </div>
