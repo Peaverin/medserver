@@ -131,7 +131,7 @@
         transition: 0.6s;
     }
     .grid-view {
-        margin-top: 140px;
+        margin-top: 160px;
         margin-bottom: 200px;
         padding-block-end: 200px;
     }
