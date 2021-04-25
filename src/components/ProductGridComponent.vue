@@ -131,8 +131,9 @@
         transition: 0.6s;
     }
     .grid-view {
-        margin-top: 150px;
-        margin-bottom: 100px;
+        margin-top: 140px;
+        margin-bottom: 200px;
+        padding-block-end: 200px;
     }
     .fade-enter-active, .fade-leave-active {
         transition: opacity .5s;
@@ -157,6 +158,7 @@
         font-size: 1rem;
         display: none;
         border-style: solid;
+        border-width: 1px;
     }
     .comanda:hover {
         transform: scale(1);

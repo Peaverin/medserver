@@ -33,9 +33,10 @@ header {
     transition: all 0.5s ease;
     margin: 1rem;
     padding:0.5rem;
-    font-size: 1.3rem;
+    font-size: 0.99rem;
     color: var(--main-color-darker);
     cursor: pointer;
+    font-weight: bold;
 }
 .option:hover {
     background-color: white;
