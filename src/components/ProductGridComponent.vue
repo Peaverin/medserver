@@ -177,7 +177,12 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="header__content">
-                            <autocomplete :search="search"></autocomplete>
+                            <autocomplete 
+                                :search="search"
+                                placeholder="Buscar un producte"
+                                aria-label="Buscar un producte"
+                                @submit="handleSubmit"
+                            ></autocomplete>
                             <a href="#" class="header__cart">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                                     <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
@@ -208,7 +213,16 @@
                 <div class="row boto-comanda">
                     <button type="button" class="comanda" v-bind:style="{display: comanda_activated}">REALITZAR COMANDA</button>
                 </div>
-                <div class="row row--grid" v-if="categories['tots']==='active'">
+                <div class="row row--grid" v-if="active_cat==='search'">
+                    <product-card-component 
+                        v-for="product in prod_search" :key="product" 
+                        v-bind:link="product.link" 
+                        v-bind:name="product.name"
+                        v-bind:price="product.price"
+                        v-on:incr-num-items="addItem">
+                    </product-card-component>
+                </div>
+                <div class="row row--grid" v-if="active_cat==='tots'">
                     <product-card-component 
                         v-for="product in products" :key="product" 
                         v-bind:link="product.link" 
@@ -217,7 +231,7 @@
                         v-on:incr-num-items="addItem">
                     </product-card-component>
                 </div>
-                <div class="row row--grid" v-if="categories['medicaments']==='active'">
+                <div class="row row--grid" v-if="active_cat==='medicaments'">
                     <product-card-component 
                         v-for="prod_medicament in prod_medicaments" :key="prod_medicament" 
                         v-bind:link="prod_medicament.link" 
@@ -226,7 +240,7 @@
                         v-on:incr-num-items="addItem">
                     </product-card-component>
                 </div>
-                <div class="row row--grid" v-if="categories['parafarmacia']==='active'">
+                <div class="row row--grid" v-if="active_cat==='parafarmacia'">
                     <product-card-component 
                         v-for="product in prod_parafarmacia" :key="product" 
                         v-bind:link="product.link" 
@@ -235,7 +249,7 @@
                         v-on:incr-num-items="addItem">
                     </product-card-component>
                 </div>
-                <div class="row row--grid" v-if="categories['bebes']==='active'">
+                <div class="row row--grid" v-if="active_cat==='bebes'">
                     <product-card-component 
                         v-for="product in prod_bebes" :key="product" 
                         v-bind:link="product.link" 
@@ -244,7 +258,7 @@
                         v-on:incr-num-items="addItem">
                     </product-card-component>
                 </div>
-                <div class="row row--grid" v-if="categories['complements']==='active'">
+                <div class="row row--grid" v-if="active_cat==='complements'">
                     <product-card-component 
                         v-for="product in prod_compl" :key="product" 
                         v-bind:link="product.link" 
@@ -316,6 +330,7 @@ export default {
             { link: "vitaminas.png", name: "Vitamines", price: "15€" },
             { link: "floradix.jpeg", name: "Floradix", price: "25,55€"}
         ],
+        prod_search: [],
         categories: {
             "tots": "active",
             "medicaments": "",
@@ -324,7 +339,7 @@ export default {
             "complements": ""
         },
         active_cat: "tots",
-        comanda_activated: ""
+        comanda_activated: "",
     }
   },
   methods: {
@@ -342,6 +357,23 @@ export default {
         this.categories[this.active_cat] = "";
         this.categories[cat] = "active";
         this.active_cat = cat;
+    },
+    search(input) {
+        if (input.length < 1) { return [] }
+        var product_names = this.products.map(function(product) {
+            return product["name"]
+        })
+        return product_names.filter(product => {
+            return product.toLowerCase().startsWith(input.toLowerCase())
+        })
+    },
+    handleSubmit(result) {
+        if (result.length < 1) { return }
+        this.prod_search = this.products.filter(product => {
+            return product["name"].toLowerCase().startsWith(result.toLowerCase())
+        })
+        this.categories[this.active_cat] = "";
+        this.active_cat = "search"
     }
   }
 }
