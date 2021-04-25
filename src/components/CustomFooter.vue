@@ -1,7 +1,7 @@
 <style scoped>
 .footer {
-  height: auto; /* Set the fixed height of the footer here */
-  line-height: 60px; /* Vertically center the text there */
+  height: auto;
+  line-height: 60px;
   background-color: var(--main-color);
   color: var(--main-color-darkest);
   display: block;
@@ -10,9 +10,9 @@
 </style>
 
 <template>
-    <div class="navbar fixed-bottom footer">
+    <footer class ="navbar fixed-bottom footer">
         <p>MedServer cutre footer de prova</p>
-    </div>
+    </footer>
 </template>
 
 <script>
