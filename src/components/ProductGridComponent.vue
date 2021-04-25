@@ -151,8 +151,8 @@
         font-weight: 500;
     }
     .grid-view {
-        margin-top: 22%;
-        margin-bottom: 10%;
+        margin-top: 150px;
+        margin-bottom: 100px;
     }
 </style>
 
@@ -183,7 +183,12 @@
         <div class="row">
             <div class="col-12">
                 <h2 class="section__title">Catàleg</h2>
-                <div class="section__sort"><button type="button" class="active">All</button> <button type="button" class="">Beauty</button> <button type="button" class="">Food</button> <button type="button" class="">Shopping</button> <button type="button" class="">Travel</button></div>
+                <div class="section__sort">
+                    <button type="button" class="active">Tots els productes</button> 
+                    <button type="button" class="">Medicaments</button> 
+                    <button type="button" class="">Parafarmàcia</button> 
+                    <button type="button" class="">Bebès</button> 
+                    <button type="button" class="">Complements alimentaris</button></div>
             </div>
         </div>
         <div class="row row--grid">

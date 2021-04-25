@@ -16,7 +16,7 @@ header {
 }
 
 .title {
-    font-size: 4vw;
+    font-size: 3rem;
     margin-top: 0.5rem;
     align-self: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -33,8 +33,9 @@ header {
     transition: all 0.5s ease;
     margin: 1rem;
     padding:0.5rem;
-    font-size: 2vw;
+    font-size: 1.3rem;
     color: var(--main-color-darker);
+    cursor: pointer;
 }
 .option:hover {
     background-color: white;
@@ -49,8 +50,8 @@ header {
             <div class="row">
                 <span class="title col-sm-4">MedServer</span>
                 <div class="options col-sm">
-                    <span class="option">EL MEU COMPTE</span>
-                    <span class="option">LES MEVES COMANDES</span>
+                    <span class="option">El meu compte</span>
+                    <span class="option">Les meves comandes</span>
                 </div>
             </div>
         </div>

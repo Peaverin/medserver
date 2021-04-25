@@ -7,10 +7,11 @@
         align-items: flex-start;
         height: 300px;
         margin-top: 30px;
-        border-radius: 30px;
-        background-color: #f0f0f0;
-        box-shadow: 15px 15px 30px 0px rgba(0,0,0,0.07), -15px -15px 30px 0px rgba(255,255,255,0.8);
+        border-radius: 8px;
+        background-color: var(--main-color-lightest);
+        box-shadow: 15px 15px 30px 0px rgba(0,0,0,0.15), -15px -15px 30px 0px rgba(255,255,255,0.8);
         padding: 30px;
+        cursor: pointer;
     }
     .product:hover {
         transform: scale(1.1);
@@ -25,7 +26,7 @@
         width: 100%;
         height: auto;
         background-color: transparent;
-        border-radius: 10px;
+        border-radius: 5px;
         margin-bottom: auto;
         overflow: hidden;
     }
@@ -57,8 +58,8 @@
         height: 52px;
         line-height: 52px;
         border-radius: 50%;
-        box-shadow: 8px 8px 20px 0px rgba(0,0,0,0.1), -8px -8px 20px 0px rgba(255,255,255,0.9);
-        background-color: #f0f0f0;
+        box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.1), -4px -4px 10px 0px rgba(255,255,255,0.9);
+        background-color: white;
         transition: 0.6s;
     }
     .product__add svg {
