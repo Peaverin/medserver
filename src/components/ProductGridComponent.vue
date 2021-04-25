@@ -140,19 +140,26 @@
     .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
         opacity: 0;
     }
+    @keyframes button-appear {
+        from {background-color: white;}
+        to {background-color: var(--accent-color-1-dark);}
+    }
     .comanda {
+        animation-name: button-appear;
+        animation-duration: 1s;
         position: fixed;
-        bottom: 150px;
+        bottom: 110px;
         background-color: var(--accent-color-1-dark);
         border-radius: 8px;
         width: 220px;
         height: 60px;
         z-index: 6;
         font-size: 1rem;
+        display: none;
+        border-style: solid;
     }
     .comanda:hover {
-        transform: scale(1.1);
-        transition: all 0.8s ease;
+        transform: scale(1);
         background-color: var(--accent-color-1-darkest);
         color: white;
     }
@@ -197,7 +204,7 @@
                     </div>
                 </div>
                 <div class="row boto-comanda">
-                    <button type="button" class="comanda">REALITZAR COMANDA</button>
+                    <button type="button" class="comanda" v-bind:style="{display: comanda_activated}">REALITZAR COMANDA</button>
                 </div>
                 <div class="row row--grid" v-if="categories['tots']==='active'">
                     <product-card-component 
@@ -314,13 +321,15 @@ export default {
             "bebes": "",
             "complements": ""
         },
-        active_cat: "tots"
+        active_cat: "tots",
+        comanda_activated: ""
     }
   },
   methods: {
     addItem () {
         if (this.num_items == 0) {
             this.added_product = true
+            this.comanda_activated = "block"
         }
         this.num_items += 1
     },
