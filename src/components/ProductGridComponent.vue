@@ -11,11 +11,10 @@
         background-color: white;
         box-shadow: 8px 8px 20px 0px rgba(0,0,0,0.06), -8px -8px 20px 0px #fff;
         transition: 0.6s;
-        color: #373737;
         margin-left: auto;
         border-style: solid;
-        border-width: thin;
-        border-color: var(--main-color-darkest);
+        border-width: 3px;
+        border-color: var(--main-color-dark);
     }
     .header__cart:hover {
         background-color: var(--main-color);
@@ -39,7 +38,7 @@
         left: -10px;
     }
     .header__cart svg {
-        stroke: #373737;
+        stroke: var(--main-color-dark);
         width: 24px;
         height: auto;
         transition: 0.6s;
@@ -145,51 +144,87 @@
 
 <template>
     <div class="grid-view">
-    <header class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="header__content">
-                        <autocomplete :search="search"></autocomplete>
-                        <a href="#" class="header__cart">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                                <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                            </svg>
-                            <span>Cart</span>
-                        </a>
-                        <div class="num_items_cart" v-if="added_product">
-                            <span> {{ num_items }} </span>
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="header__content">
+                            <autocomplete :search="search"></autocomplete>
+                            <a href="#" class="header__cart">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                                <span>Cart</span>
+                            </a>
+                            <div class="num_items_cart" v-if="added_product">
+                                <span> {{ num_items }} </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <section id="catalog" class="section">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="section__title">Catàleg</h2>
-                <div class="section__sort">
-                    <button type="button" class="active">Tots els productes</button> 
-                    <button type="button" class="">Medicaments</button> 
-                    <button type="button" class="">Parafarmàcia</button> 
-                    <button type="button" class="">Bebès</button> 
-                    <button type="button" class="">Complements alimentaris</button></div>
+        </header>
+        <section id="catalog" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="section__title">Catàleg</h2>
+                        <div class="section__sort">
+                            <button type="button" :class="categories['tots']" v-on:click="changeCategory('tots')">Tots els productes</button> 
+                            <button type="button" :class="categories['medicaments']" v-on:click="changeCategory('medicaments')">Medicaments</button> 
+                            <button type="button" :class="categories['parafarmacia']" v-on:click="changeCategory('parafarmacia')">Parafarmàcia</button> 
+                            <button type="button" :class="categories['bebes']" v-on:click="changeCategory('bebes')">Bebès</button> 
+                            <button type="button" :class="categories['complements']" v-on:click="changeCategory('complements')">Complements alimentaris</button></div>
+                    </div>
+                </div>
+                <div class="row row--grid" v-if="categories['tots']==='active'">
+                    <product-card-component 
+                        v-for="product in products" :key="product" 
+                        v-bind:link="product.link" 
+                        v-bind:name="product.name"
+                        v-bind:price="product.price"
+                        v-on:incr-num-items="addItem">
+                    </product-card-component>
+                </div>
+                <div class="row row--grid" v-if="categories['medicaments']==='active'">
+                    <product-card-component 
+                        v-for="prod_medicament in prod_medicaments" :key="prod_medicament" 
+                        v-bind:link="prod_medicament.link" 
+                        v-bind:name="prod_medicament.name"
+                        v-bind:price="prod_medicament.price"
+                        v-on:incr-num-items="addItem">
+                    </product-card-component>
+                </div>
+                <div class="row row--grid" v-if="categories['parafarmacia']==='active'">
+                    <product-card-component 
+                        v-for="product in prod_parafarmacia" :key="product" 
+                        v-bind:link="product.link" 
+                        v-bind:name="product.name"
+                        v-bind:price="product.price"
+                        v-on:incr-num-items="addItem">
+                    </product-card-component>
+                </div>
+                <div class="row row--grid" v-if="categories['bebes']==='active'">
+                    <product-card-component 
+                        v-for="product in prod_bebes" :key="product" 
+                        v-bind:link="product.link" 
+                        v-bind:name="product.name"
+                        v-bind:price="product.price"
+                        v-on:incr-num-items="addItem">
+                    </product-card-component>
+                </div>
+                <div class="row row--grid" v-if="categories['complements']==='active'">
+                    <product-card-component 
+                        v-for="product in prod_compl" :key="product" 
+                        v-bind:link="product.link" 
+                        v-bind:name="product.name"
+                        v-bind:price="product.price"
+                        v-on:incr-num-items="addItem">
+                    </product-card-component>
+                </div>
             </div>
-        </div>
-        <div class="row row--grid">
-            <product-card-component 
-                v-for="product in products" :key="product" 
-                v-bind:link="product.link" 
-                v-bind:name="product.name"
-                v-bind:price="product.price"
-                v-on:incr-num-items="addItem">
-            </product-card-component>
-        </div>
+        </section>
     </div>
-    </section>
-</div>
 </template>
 
 <script>
@@ -213,7 +248,37 @@ export default {
             { link: "talquistina.jpeg", name: "Talquistina", price: "6€"},
             { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
             { link: "floradix.jpeg", name: "Floradix", price: "25,55€"}
-        ]
+        ],
+        prod_medicaments: [
+            { link: "enantyum.png", name: "Enantyum 25mg", price: "5,99€" },
+            { link: "asacol.jpeg", name: "Asacol", price: "20€"},
+            { link: "couldina.jpeg", name: "Couldina", price: "10€"},
+            { link: "aspirina.jpeg", name: "Aspirina", price: "6€"},
+            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5,5€"}
+        ],
+        prod_parafarmacia: [
+            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3,85€" },
+            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4,90€" },
+            { link: "test.jpeg", name: "Kit de test covid", price: "25€" },
+            { link: "talquistina.jpeg", name: "Talquistina", price: "6€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"}
+        ],
+        prod_bebes: [
+            { link: "talquistina.jpeg", name: "Talquistina", price: "6€"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"}
+        ],
+        prod_compl: [
+            { link: "vitaminas.png", name: "Vitamines", price: "15€" },
+            { link: "floradix.jpeg", name: "Floradix", price: "25,55€"}
+        ],
+        categories: {
+            "tots": "active",
+            "medicaments": "",
+            "parafarmacia": "",
+            "bebes": "",
+            "complements": ""
+        },
+        active_cat: "tots"
     }
   },
   methods: {
@@ -225,6 +290,11 @@ export default {
     },
     onIncrNumItems: function () {
         this.addItem()
+    },
+    changeCategory: function (cat) {
+        this.categories[this.active_cat] = "";
+        this.categories[cat] = "active";
+        this.active_cat = cat;
     }
   }
 }

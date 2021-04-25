@@ -65,7 +65,7 @@
     }
     .product__add svg {
         stroke: var(--main-color-darker);
-        width: 28px;
+        width: 120px;
         height: auto;
         position: relative;
         z-index: 2;
@@ -102,9 +102,6 @@
         background-color: transparent;
         transition: 0.6s;
         cursor: pointer;
-        border-style: solid;
-        border-width: thin;
-        border-color: var(--main-color-darkest);
     }
     .product__add:hover svg {
         transform: rotate(180deg);
