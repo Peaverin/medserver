@@ -3,7 +3,7 @@
     <img src='./../assets/logo.jpeg' style="width:15%; min-width:100px"/>
     <h1>Medserver</h1>
     <h2>Medicaments a domicili</h2>
-    <centered-button>Nova Comanda</centered-button>
+    <centered-button link="products">Nova Comanda</centered-button>
     <centered-button>Consulta amb un farmacèutic</centered-button>
     <div class="row">
       <div class="col-4 offset-4 lowerbtn">

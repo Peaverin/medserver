@@ -51,7 +51,7 @@ header {
             <div class="row">
                 <span class="title col-sm-4">MedServer</span>
                 <div class="options col-sm">
-                    <span class="option">El meu compte</span>
+                    <span class="option" @click="$router.push('userinfo')">El meu compte</span>
                     <span class="option">Les meves comandes</span>
                 </div>
             </div>

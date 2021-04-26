@@ -1,41 +1,18 @@
 <template>
       <div class="vertical-center">
-        <div class="inner-block">
-          <div class="vue-tempalte">
-        <form>
-            <h3>Iniciar Sessió</h3>
-
-            <div class="form-group">
-                <label>Correu electrònic</label>
-                <input type="email" class="form-control form-control-lg" />
+            <h1>El meu compte</h1>
+            <div class="col-4 offset-4 lowerbtn">
+                <centered-button>Registrar-se</centered-button>
             </div>
-
-            <div class="form-group">
-                <label>Contrasenya</label> 
-                <input type="password" class="form-control form-control-lg" />
-                <router-link to="/recover">Has oblidat la contrasenya?</router-link>
-            </div>
-            
-            <div class="center">
-                <med-button link="/products">Iniciar Sessió</med-button>
-            </div>
-
-            <p>
-                Si encara no tens compte, <router-link to="/register">Registra't</router-link>
-            </p>
-        </form>
-    </div>
-        </div>
       </div>
-    
 </template>
 
 <script>
-import MedButton from './MedButton.vue'
+import CenteredButton from './CenteredButton.vue'
 export default {
-  name: 'Home',
+  name: 'UserInfoPage',
   components: {
-    MedButton
+    CenteredButton
   }
 }
 </script>
@@ -46,7 +23,7 @@ export default {
 }
 
 .center{
-    margin-left:65px;
+    margin-left:70px;
 }
 
 .vertical-center{
@@ -90,5 +67,6 @@ export default {
     font-size:20px;
     font-weight: 500;
   }
+  
 
 </style>

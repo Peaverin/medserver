@@ -21,7 +21,7 @@
             </div>
 
             <div class="center">
-                <med-button link="/main">Registrar-se</med-button>
+                <med-button link="/products">Registrar-se</med-button>
             </div>
             
             <p>
