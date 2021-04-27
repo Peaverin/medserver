@@ -20,12 +20,12 @@
         <vue-timepicker :minute-interval="15"></vue-timepicker>
       </b-col>
     </b-row>
-    <b-row align-v="end" align-h="around">
+    <b-row align-h="center">
       <b-col>
-        <med-button>Seguir comprant</med-button>
+        <med-button>SEGUIR COMPRANT</med-button>
       </b-col>
       <b-col>
-        <med-button>Continuar</med-button>
+        <med-button>CONTINUAR</med-button>
       </b-col>
     </b-row>
   </b-container>

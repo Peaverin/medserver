@@ -4,13 +4,15 @@ import Home from '@/components/Home'
 import LoginForm from '@/components/LoginForm'
 import RegisterForm from '@/components/RegisterForm'
 import RecoverForm from '@/components/RecoverForm'
+import ChooseDateTime from '@/components/ChooseDateTime'
+import ChooseDestination from '@/components/ChooseDestination'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
+      name: 'home',
       component: Home
     },
     {
@@ -27,6 +29,16 @@ export default new Router({
       path: '/recover',
       name: 'recover',
       component: RecoverForm
+    },
+    {
+      path: '/chooseDateTime',
+      name: 'chooseDateTime',
+      component: ChooseDateTime
+    },
+    {
+      path: '/chooseDestination',
+      name: 'chooseDestination',
+      component: ChooseDestination
     }
   ]
 })
