@@ -1,7 +1,7 @@
 <template>
   <b-container class="choose-date-time">
     <h1 class="m-5">QUAN?</h1>
-    <b-row class="justify-content-md-center mb-5">
+    <b-row class="row justify-content-center mb-5">
       <p> Tria quan vols que enviem la comanda</p>
     </b-row>
     <b-row class="mb-5" align-h="around">
