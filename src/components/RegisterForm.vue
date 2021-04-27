@@ -7,12 +7,13 @@
 
             <div class="form-group">
                 <label>Correu electrònic</label>
-                <input type="email" class="form-control form-control-lg"/>
+                <input type="email" class="form-control form-control-lg" placeholder="Introduïu el correu electrònic"/>
+                <small id="emailHelp" class="form-text text-muted">Mai compartirem el vostre correu electrònic amb ningú.</small>
             </div>
 
             <div class="form-group">
                 <label>Contrasenya</label>
-                <input type="password" class="form-control form-control-lg" />
+                <input type="password" class="form-control form-control-lg" placeholder="Contrasenya"/>
             </div>
 
             <div class="form-group">
@@ -23,7 +24,7 @@
             <div class="center">
                 <med-button>Registrar-se</med-button>
             </div>
-            
+
             <p>
                 Si ja tens compte, <router-link to="/login">Inicia sessió</router-link>
             </p>
@@ -31,7 +32,7 @@
     </div>
         </div>
       </div>
-    
+
 </template>
 
 <script>
@@ -60,14 +61,14 @@ export default {
     background-color: #ffffff;
     box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   }
-  
+
 .vertical-center {
     display: flex;
     text-align: left;
     justify-content: center;
-    flex-direction: column;    
+    flex-direction: column;
   }
-  
+
 .inner-block {
     width: 450px;
     margin: auto;
@@ -77,23 +78,23 @@ export default {
     border-radius: 15px;
     transition: all .3s;
   }
-  
+
 .vertical-center .form-control:focus {
     border-color: #2554FF;
     box-shadow: none;
   }
-  
+
   .vertical-center h3 {
     text-align: center;
     margin: 0;
     line-height: 1;
     padding-bottom: 20px;
   }
-  
+
   label {
     font-size:20px;
     font-weight: 500;
   }
-  
+
 
 </style>
