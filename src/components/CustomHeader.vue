@@ -1,5 +1,7 @@
 <script>
+import UserInfoPage from './UserInfoPage.vue'
 export default {
+  components: { UserInfoPage },
   name: 'CustomHeader'
 }
 </script>
@@ -51,7 +53,12 @@ header {
             <div class="row">
                 <span class="title col-sm-4">MedServer</span>
                 <div class="options col-sm">
-                    <span class="option" @click="$router.push('userinfo')">El meu compte</span>
+                    <b-dropdown size="sm"  variant="transparent" toggle-class="text-decoration-none" boundary="scrollParent" no-caret>
+                        <template #button-content>
+                        <span class="option" id="compte">El meu compte</span>
+                        </template>
+                        <user-info-page/>
+                    </b-dropdown>
                     <span class="option">Les meves comandes</span>
                 </div>
             </div>
