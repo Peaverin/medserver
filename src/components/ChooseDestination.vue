@@ -41,7 +41,7 @@
 import MedButton from './MedButton.vue'
 export default {
   name: "ChooseDestination",
-  comments: {
+  components: {
     MedButton
   }
 }
