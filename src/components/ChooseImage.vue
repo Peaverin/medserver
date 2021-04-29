@@ -38,9 +38,6 @@ export default {
       image: ""
     }
   },
-  mounted() {
-
-  },
   methods:{
     onFileChange (e) {
       var files = e.target.files || e.dataTransfer.files
