@@ -11,7 +11,7 @@
 
 <template>
     <footer class ="navbar fixed-bottom footer">
-        <p>Custom footer</p>
+        <p>Wizard footer step {{$route.meta.wizardStep}}</p>
     </footer>
 </template>
 

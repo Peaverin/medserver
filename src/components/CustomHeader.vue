@@ -23,6 +23,7 @@ header {
     align-self: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--main-color-darker);
+    cursor: pointer;
 }
 
 .options {

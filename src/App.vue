@@ -3,17 +3,20 @@
     <transition name="fade">
      <custom-header v-if="$route.meta.header === true"></custom-header>
     </transition>
-    <router-view/>
-    <custom-footer/>
+
+      <router-view/>
+
+    <wizard-footer v-if="$route.meta.wizard === true"/>
+    <custom-footer v-else/>
   </div>
 </template>
 
 <script>
 import CustomFooter from './components/CustomFooter.vue'
 import CustomHeader from './components/CustomHeader.vue'
-
+import WizardFooter from './components/WizardFooter.vue'
 export default {
-  components: { CustomFooter, CustomHeader},
+  components: { CustomFooter, CustomHeader, WizardFooter},
   name: 'App'
 }
 </script>
@@ -28,10 +31,10 @@ export default {
   margin-top: 60px;
   height: 100vh;
 }
-.fade-enter-active, .fade-leave-active {
+.fade-enter-active, .fade-leave-active, .routrans-enter-active, .routrans-leave-active {
   transition: opacity .5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to, .routrans-enter, .routrans-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
 </style>
