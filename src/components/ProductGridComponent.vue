@@ -151,7 +151,8 @@
         position: fixed;
         bottom: 110px;
         background-color: var(--accent-color-1-dark);
-        border-radius: 8px;
+        border-color: var(--accent-color-1-lighter);
+        border-radius: 20px;
         width: 220px;
         height: 60px;
         z-index: 6;
@@ -159,6 +160,8 @@
         display: none;
         border-style: solid;
         border-width: 1px;
+        color: black;
+        font-weight: 600;
     }
     .comanda:hover {
         transform: scale(1);
@@ -211,7 +214,7 @@
                     </div>
                 </div>
                 <div class="row boto-comanda">
-                    <button type="button" class="comanda" v-bind:style="{display: comanda_activated}">REALITZAR COMANDA</button>
+                    <button type="button" class="comanda" v-bind:style="{display: comanda_activated}" @click="$router.push('/chooseDateTime')" >REALITZAR COMANDA</button>
                 </div>
                 <div class="row row--grid" v-if="active_cat==='search'">
                     <product-card-component 

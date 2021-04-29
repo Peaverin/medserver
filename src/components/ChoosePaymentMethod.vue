@@ -13,10 +13,10 @@
     </div>
     <div class="row justify-content-center" id="end_buttons">
       <div class="col-4">
-        <med-button>ENRERE</med-button>
+        <med-button link='/chooseDestination'>ENRERE</med-button>
       </div>
       <div class="col-4">
-        <med-button>REALITZAR PAGAMENT</med-button>
+        <med-button link='/orderSummary'>REALITZAR PAGAMENT</med-button>
       </div>
     </div>
   </div>

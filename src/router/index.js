@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from '@/components/Home'
+import Home from '@/components/Home'
 import LoginForm from '@/components/LoginForm'
 import RegisterForm from '@/components/RegisterForm'
 import RecoverForm from '@/components/RecoverForm' 
@@ -11,6 +11,8 @@ import RequestPicsPrescription from '@/components/RequestPicsPrescription'
 import CreditCardPaymentInfo from '@/components/CreditCardPaymentInfo'
 import ProductGridComponent from '@/components/ProductGridComponent'
 import Chat from '@/components/Chat'
+import OrderSummary from '@/components/OrderSummary'
+import OrderFinished from '@/components/OrderFinished'
 
 Vue.use(Router)
 
@@ -100,6 +102,22 @@ export default new Router({
       path: '/chat',
       name: 'chat',
       component: Chat,
+      meta: {
+        header: true
+      }
+    },
+    {
+      path: '/orderSummary',
+      name: 'OrderSummary',
+      component: OrderSummary,
+      meta: {
+        header: true
+      }
+    },
+    {
+      path: '/orderFinished',
+      name: 'OrderFinished',
+      component: OrderFinished,
       meta: {
         header: true
       }

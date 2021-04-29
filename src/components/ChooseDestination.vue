@@ -28,10 +28,10 @@
     </div>
     <div class="row justify-content-center" id="end_buttons">
       <div class="col-4">
-        <med-button>ENRERE</med-button>
+        <med-button link='/chooseDateTime'>ENRERE</med-button>
       </div>
       <div class="col-4">
-        <med-button>CONTINUAR</med-button>
+        <med-button link='/choosePaymentMethod'>CONTINUAR</med-button>
       </div>
     </div>
   </div>
