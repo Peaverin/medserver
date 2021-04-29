@@ -7,14 +7,14 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-9">
           <li class="label">Nom</li>
           <li class="info">Pepet</li>
           <li class="label">Correu</li>
           <li class="info">ppp@gmail.com</li> 
         </div>
-        <div class="col-sm-3">
-          <li class="editbutton">Edita</li>
+        <div class="col-3" style="text-align:center;">
+          <button class="editbutton" @click="changeName">Edita</button>
         </div>
       </div>
     </div>
@@ -23,12 +23,12 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-9">
           <li class="label">Contrassenya</li>
           <li class="info">**********</li>
         </div>
-        <div class="col-sm-3">
-          <li class="editbutton">Edita</li>
+        <div class="col-3" style="text-align:center;">
+          <button class="editbutton" @click="changePassword">Edita</button>
         </div>
       </div>
     </div>
@@ -37,20 +37,20 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-sm-9">
+        <div class="col-9">
           <li class="label">Adreça</li>
           <li class="info">C/ Abat Bassa 132, 2n 3a, 08017, Barcelona</li>
         </div>
-        <div class="col-sm-3">
-          <li class="editbutton">Edita</li>
+        <div class="col-3" style="text-align:center;">
+          <button class="editbutton" @click="changeAdress">Edita</button>
         </div>
       </div>
     </div>
 
     <div class="dropdown-divider"></div>
-
-    <b-dropdown-item href="#">Tanca la sessió</b-dropdown-item>
-
+    <div class="col" style="text-align:center;">
+      <button class="logout" @click="logout">Tanca la sessió</button>
+    </div>
   </div>
 </template>
 
@@ -58,6 +58,20 @@
 export default {
   name: 'UserInfoPage',
   components: {
+  },
+  methods: {
+    changeName () {
+      alert("Dialog emulating change name and email");
+    },
+    changePassword () {
+      alert("Dialog emulating change password");
+    },
+    changeAdress () {
+      alert("Dialog emulating change adress");
+    },
+    logout () {
+      alert("Dialog emulating logging out");
+    },    
   }
 }
 </script>
@@ -74,40 +88,6 @@ h3 {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.align-center{
-  align-content: center;
-}
-
-.center{
-  margin-left:70px;
-}
-
-.vertical-center{
-  margin-top:8em;
-}
-  
-.vertical-center {
-  display: flex;
-  text-align: left;
-  justify-content: center;
-  flex-direction: column;    
-}
-  
-.inner-block {
-  width: 450px;
-  margin: auto;
-  background: #ffffff;
-  box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
-  padding: 40px 55px 45px 55px;
-  border-radius: 15px;
-  transition: all .3s;
-}
-  
-.vertical-center .form-control:focus {
-  border-color: #2554FF;
-  box-shadow: none;
-}
-
 li {
   list-style: none;
   align-items: baseline;
@@ -117,11 +97,36 @@ li {
 .label {
     font-size:14px;
     font-weight: 600;
+    color: var(--main-color-darkest);
 }
 
 .info {
-    font-size:14px;
-    font-weight: 300;
+  font-size:14px;
+  font-weight: 300;
+  color: black;
+}
+
+.editbutton {
+  font-size:14px;
+  font-weight: 600;
+  color: var(--accent-color-1-darkest);
+  background-color: var(--accent-color-1-lighter);
+  border-radius: 5px;
+  border-color: var(--accent-color-1-lightest);
+  padding: 0px 5px 0px 5px;
+}
+
+.logout {
+  justify-content: center;
+  text-align: center;
+  font-size:14px;
+  font-weight: 600;
+  color: var(--accent-color-2-darkest);
+  background-color: var(--accent-color-2-lighter);
+  border-color: var(--accent-color-2-lightest);
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+  margin: 5px 50px 5px 50px;
 }
   
 </style>

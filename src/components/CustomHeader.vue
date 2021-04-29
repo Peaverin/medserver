@@ -51,7 +51,7 @@ header {
     <header>
         <div class="container-fluid p-0">
             <div class="row">
-                <span class="title col-sm-4">MedServer</span>
+                <span class="title col-sm-4" @click="$router.push('/')">MedServer</span>
                 <div class="options col-sm">
                     <b-dropdown size="sm"  variant="transparent" toggle-class="text-decoration-none" boundary="scrollParent" no-caret>
                         <template #button-content>

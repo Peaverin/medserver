@@ -5,7 +5,7 @@ import LoginForm from '@/components/LoginForm'
 import RegisterForm from '@/components/RegisterForm'
 import RecoverForm from '@/components/RecoverForm'
 import ProductGridComponent from '@/components/ProductGridComponent'
-import UserInfoPage from '@/components/UserInfoPage'
+import Chat from '@/components/Chat'
 Vue.use(Router)
 
 export default new Router({
@@ -39,13 +39,12 @@ export default new Router({
       }
     },
     {
-      path: '/userinfo',
-      name: 'userinfo',
-      component: UserInfoPage,
+      path: '/chat',
+      name: 'chat',
+      component: Chat,
       meta: {
         header: true
       }
-    }
-
+    },
   ]
 })
