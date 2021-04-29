@@ -1,7 +1,7 @@
 <template>
     <div>
        <button class='ctrbtn' @click="$router.push(link)"> <slot/> </button>
-    </div>  
+    </div>
 </template>
 
 <script>
@@ -34,7 +34,7 @@ export default {
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
-    
+
   }
 
   .ctrbtn:hover {
