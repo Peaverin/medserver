@@ -17,7 +17,7 @@
             </div>
 
             <div class="center">
-                <med-button link="/main">Iniciar Sessió</med-button>
+                <med-button link="/products">Iniciar Sessió</med-button>
             </div>
 
             <p>

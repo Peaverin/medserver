@@ -10,7 +10,8 @@ import ChoosePaymentMethod from '@/components/ChoosePaymentMethod'
 import RequestPicsPrescription from '@/components/RequestPicsPrescription'
 import CreditCardPaymentInfo from '@/components/CreditCardPaymentInfo'
 import ProductGridComponent from '@/components/ProductGridComponent'
- 
+import Chat from '@/components/Chat'
+
 Vue.use(Router)
 
 export default new Router({
@@ -88,12 +89,20 @@ export default new Router({
       }
     },
     {
-      path: '/main',
-      name: 'main',
+      path: '/products',
+      name: 'products',
       component: ProductGridComponent,
       meta: {
         header: true
       }
-    }
+    },
+    {
+      path: '/chat',
+      name: 'chat',
+      component: Chat,
+      meta: {
+        header: true
+      }
+    },
   ]
 })
