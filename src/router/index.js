@@ -13,6 +13,7 @@ import ProductGridComponent from '@/components/ProductGridComponent'
 import Chat from '@/components/Chat'
 import OrderSummary from '@/components/OrderSummary'
 import OrderFinished from '@/components/OrderFinished'
+import CartComponent from '@/components/CartComponent'
 
 Vue.use(Router)
 
@@ -122,5 +123,13 @@ export default new Router({
         header: true
       }
     },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: CartComponent,
+      meta: {
+        header: true
+      }
+    }
   ]
 })
