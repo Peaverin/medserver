@@ -17,7 +17,7 @@
             </div>
 
             <div class="center">
-                <med-button link="/products">Iniciar Sessió</med-button>
+              <button class='ctrbtn' @click="login"> Iniciar Sessió </button>
             </div>
 
             <p>
@@ -31,12 +31,25 @@
 </template>
 
 <script>
-import MedButton from './MedButton.vue'
+import {globalStore} from '../main.js'
 export default {
   name: 'Home',
   components: {
-    MedButton
+  },
+  methods:{
+    login : function () {
+      globalStore.loggedIn = true
+      console.log(this.loggedIn)
+      this.$router.push('/') 
+    }
+  },
+  computed: {
+    loggedIn: function () {
+      // `this` points to the vm instance
+      return globalStore.loggedIn
+    }
   }
+
 }
 </script>
 

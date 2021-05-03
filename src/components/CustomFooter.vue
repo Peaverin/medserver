@@ -11,12 +11,21 @@
 
 <template>
     <footer class ="navbar fixed-bottom footer">
-        <p>Custom footer</p>
+        <div v-if="$route.meta.wizard === true">
+          <wizard/>
+            
+        </div>
+        <div v-else>
+          <p>Preguntes freqüents | Contacte | Qui Som? | Termes i condicions</p>
+        </div>
+        
     </footer>
 </template>
 
 <script>
-export default {
-  name: 'WizardFooter'
+import Wizard from './Wizard.vue'
+export default{
+  components: {Wizard},
+  name: 'CustomFooter'
 }
 </script>

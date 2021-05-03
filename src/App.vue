@@ -1,22 +1,19 @@
 <template>
+
   <div id="app">
     <transition name="fade">
      <custom-header v-if="$route.meta.header === true"></custom-header>
     </transition>
-
       <router-view/>
-
-    <wizard-footer v-if="$route.meta.wizard === true"/>
-    <custom-footer v-else/>
+    <custom-footer/>
   </div>
 </template>
 
 <script>
 import CustomFooter from './components/CustomFooter.vue'
 import CustomHeader from './components/CustomHeader.vue'
-import WizardFooter from './components/WizardFooter.vue'
 export default {
-  components: { CustomFooter, CustomHeader, WizardFooter},
+  components: { CustomFooter, CustomHeader},
   name: 'App'
 }
 </script>
