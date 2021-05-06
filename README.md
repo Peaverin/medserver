@@ -44,6 +44,8 @@ npm run build
 ```
 
 ### Vue docs
+https://vuejs.org/v2/guide/
+
 Components: https://vuejs.org/v2/guide/components.html
 ### Vue-router docs
 https://router.vuejs.org/guide/

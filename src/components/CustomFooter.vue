@@ -11,12 +11,16 @@
 
 <template>
     <footer class ="navbar fixed-bottom footer">
-        <p>MedServer cutre footer de prova</p>
+        <div>
+          <p>Preguntes freqüents | Contacte | Qui Som? | Termes i condicions</p>
+        </div>
+        
     </footer>
 </template>
 
 <script>
-export default {
+export default{
+  components: {},
   name: 'CustomFooter'
 }
 </script>

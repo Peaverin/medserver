@@ -16,7 +16,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
   .ctrbtn {
     display: inline-block;
     margin: 0.5em 0;
