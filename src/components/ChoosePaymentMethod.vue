@@ -1,17 +1,76 @@
 <template>
-  <div class="container-sm px-5">
-    <h1 class="m-5">COM?</h1>
+  <div class="container pt-5">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <h1 class="">COM?</h1>
     <p class="m-5">Tria com vols pagar la comanda</p>
-    <div class="radio col-sm-10 mb-3">
-      <label><input type="radio" name="optradio" checked> Pagar a contra reemborsament</label>
+    <div class="accordion" role="tablist">
+      <div class="card">
+        <b-card no-body class="mb-1">
+          <b-card-header header-tag="header" class="p-1 card-header" role="tab">
+            <b-button block v-b-toggle.accordion-1 variant="info" class="btn-light"><div class="d-flex align-items-center justify-content-between"> <span>Paypal</span> <img src="https://i.imgur.com/7kQEsHU.png" width="30">
+            </div></b-button>
+          </b-card-header>
+          <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel">
+            <b-card-body>
+              <input type="text" class="form-control" placeholder="Paypal email">
+            </b-card-body>
+          </b-collapse>
+        </b-card>
+
+        <b-card no-body class="mb-1">
+          <b-card-header header-tag="header" class="p-1 card-header" role="tab">
+            <b-button block v-b-toggle.accordion-2 variant="info" class="btn-light"><div class="d-flex align-items-center justify-content-between"> <span>Targeta de crèdit</span>
+              <div class="icons"> <img src="https://i.imgur.com/2ISgYja.png" width="30"> <img src="https://i.imgur.com/W1vtnOV.png" width="30"> <img src="https://i.imgur.com/35tC99g.png" width="30"> <img src="https://i.imgur.com/2ISgYja.png" width="30"> </div>
+            </div></b-button>
+          </b-card-header>
+          <b-collapse id="accordion-2" visible accordion="my-accordion" role="tabpanel">
+            <b-card-body class="payment-card-body">
+              <span class="font-weight-normal card-text d-flex align-items-center justify-content-between">Número de targeta</span>
+              <b-input-group>
+                <b-input-group-prepend>
+                  <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
+                </b-input-group-prepend>
+                <b-form-input type="text" class="LoginInput form-control" size="lg" placeholder="0000 0000 0000 0000">
+                </b-form-input>
+              </b-input-group>
+              <div class="row mt-3 mb-3">
+                <div class="col-md-6"> <span class="font-weight-normal card-text d-flex align-items-center justify-content-between">Data de caducitat</span>
+                  <b-input-group>
+                    <b-input-group-prepend>
+                      <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                    </b-input-group-prepend>
+                    <b-form-input type="text" class="LoginInput form-control" size="lg" placeholder="MM/AA">
+                    </b-form-input>
+                  </b-input-group>
+                </div>
+                <div class="col-md-6"> <span class="font-weight-normal card-text d-flex align-items-center justify-content-between">CVC/CVV</span>
+                  <b-input-group>
+                    <b-input-group-prepend>
+                      <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                    </b-input-group-prepend>
+                    <b-form-input type="text" class="LoginInput form-control" size="lg" placeholder="000">
+                    </b-form-input>
+                  </b-input-group>
+                </div>
+              </div>
+            </b-card-body>
+          </b-collapse>
+        </b-card>
+
+        <b-card no-body class="text-left mb-1">
+          <b-card-header header-tag="header" class="p-1 card-header" role="tab">
+            <b-button block v-b-toggle.accordion-3 variant="info" class="btn-light"><div class="d-flex align-items-center justify-content-between"> <span>Contra reemborsament</span><img src="https://bedzzle.tips/wp-content/uploads/2017/04/Metodo-di-conferma-prenotazione-Pagamento-in-loco-Hotel.png" width="30"></div></b-button>
+          </b-card-header>
+          <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
+            <b-card-body>
+              <b-card-text><strong>Contra reemborsament (cobrament al lliurament):<br>També acceptem targetes de Crèdit / Dèbit en el moment del lliurament, segons la disponibilitat
+                del dispositiu de pagament.<br>Consulteu amb l’agent de lliurament.</strong></b-card-text>
+            </b-card-body>
+          </b-collapse>
+        </b-card>
+      </div>
     </div>
-    <div class="radio col-sm-10 mb-4">
-      <label><input type="radio" name="optradio"> Pagar amb targeta de crèdit</label>
-    </div>
-    <div class="radio col-sm-10 mb-4">
-      <label><input type="radio" name="optradio"> Pagar amb PayPal</label>
-    </div>
-    <div class="row justify-content-center" id="end_buttons">
+    <div class="row justify-content-center pt-5" id="end_buttons">
       <div class="col-4">
         <med-button link='/chooseDestination'>ENRERE</med-button>
       </div>
@@ -33,15 +92,88 @@ export default {
 </script>
 
 <style scoped>
-.radio{
-  margin-left: auto;
-  text-align: start;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+body {
+  background-color: #f5eee7;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300
 }
-.col-form-label{
-  text-align: start;
-  margin-left: auto;
+
+.mb-1 .input-group-text {
+  width: 48px;
+  border-right: none;
+  background-color: #ffffff;
 }
-#end_buttons{
-  margin-top: 70px;
+
+.mb-1 [class^="fa-"], [class*=" fa-"] {
+  display: inline-block;
+  width: 100%;
+}
+
+.container {
+  height: 100vh
+}
+
+.card {
+  border: none
+}
+
+.card-header {
+  padding: .5rem 1rem;
+  margin-bottom: 0;
+  background-color: rgba(0, 0, 0, .03);
+  border-bottom: none
+}
+
+.btn-light:focus {
+  color: #212529;
+  background-color: #e2e6ea;
+  border-color: #dae0e5;
+  box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, .5)
+}
+
+.form-control {
+  height: 50px;
+  border: 2px solid #eee;
+  border-radius: 6px;
+  font-size: 14px
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #039be5;
+  outline: 0;
+  box-shadow: none
+}
+
+.input {
+  position: relative
+}
+
+.input i {
+  position: absolute;
+  top: 16px;
+  left: 11px;
+  color: #989898
+}
+
+.input input {
+  text-indent: 25px
+}
+
+.card-text {
+  margin: 10px;
+  margin-left: 6px
+}
+
+.certificate-text {
+  font-size: 12px
+}
+
+.payment-card-body {
+  flex: 1 1 auto;
+  padding: 24px 1rem !important
 }
 </style>

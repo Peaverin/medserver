@@ -9,7 +9,7 @@
         <div class="icon">
           <i class="fas fa-cloud-upload-alt"></i></div>
         <div class="text">
-          No file chosen, yet!</div>
+          Encara no s'ha escollit cap fitxer!</div>
       </div>
       <div id="cancel-btn" @click="removeImage">
         <i class="fas fa-times"></i>
