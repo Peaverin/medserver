@@ -6,13 +6,14 @@
         <div class="col-12">
             <div class="cart">
                 <div class="table-responsive">
-                    <div class="cart__table">
+                    <table class="cart__table">
                         <thead>
                             <tr>
                                 <th>Producte</th>
                                 <th>Nom</th>
                                 <th>Quantitat</th>
                                 <th>Preu</th>
+                                <th>Total</th>
                             </tr>
                         </thead>
                         <tbody v-if="products.length > 0">
@@ -33,23 +34,23 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="cart__price">{{ product.price * product.quantity }}</span>
+                                    <span class="cart__price">{{ product.price }}€</span>
                                 </td>
                                 <td>
-                                    <button class="cart__delete">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-                                            <line x1="368" y1="368" x2="144" y2="144" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"></line>
-                                            <line x1="368" y1="144" x2="144" y2="368" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 32px;"></line>
-                                        </svg>
+                                    <span class="cart__price">{{ product.price * product.quantity }}€</span>
+                                </td>
+                                <td>
+                                    <button class="btn cart-btn del-btn" v-on:click="deleteProduct(show)">
+                                        Eliminar producte
                                     </button>
                                 </td>
                             </tr>
                         </tbody>
-                    </div>
+                    </table>
                 </div>
                 <div class="cart__info">
                     <div class="cart__total">
-                        <p>Total:</p>
+                        <p>Total a pagar:</p>
                         <span>{{ total }}</span>
                     </div>
                 </div>
@@ -107,14 +108,11 @@ h2 {
     border-radius: 30px;
     background-color: var(--main-color-lightest);
     box-shadow: 15px 15px 30px 0px rgba(0,0,0,0.07), -15px -15px 30px 0px rgba(255,255,255,0.8);
-    padding: 30px;
+    padding: 0px;
     min-height: 404px;
     width: auto;
 }
 .table-responsive {
-    display: block;
-    width: 100%;
-    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
 }
@@ -130,21 +128,20 @@ h2 {
 .cart__table {
     width: 100%;
     min-width: 500px;
-    margin-bottom: 15px;
     justify-content: center;
-    width: auto;
 }
 
 .cart__table th {
-    font-size: 16px;
+    font-size: 26px;
     font-weight: 600;
     color: rgba(55,55,55,0.7);
     line-height: 100%;
-    padding: 0 25px 15px 0;
+    padding: 10px 90px 30px 20px;
     display: table-cell;
     vertical-align: inherit;
     font-weight: bold;
     text-align: -internal-center;
+    padding: 3.5%;
 }
 
 thead {
@@ -155,6 +152,7 @@ thead {
 tbody {
     display: table-row-group;
     vertical-align: middle;
+    padding: 5%;
 }
 
 .cart__total {
@@ -167,11 +165,7 @@ tbody {
 tr {
     display: table-row;
     vertical-align: inherit;
-}
-
-td {
-    display: table-cell;
-    vertical-align: inherit;
+    padding: 5%;
 }
 
 .cart__img {
@@ -196,7 +190,7 @@ td {
     font-size: 16px;
     font-weight: 400;
     color: #373737;
-    padding: 15px 25px 15px 0;
+    padding: 3.5%;
 }
 
 .cart__quantity {
@@ -239,22 +233,35 @@ td {
     font-size: 14px;
 }
 
-.cart__delete {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 24px;
-    border: none;
-    background-color: var(--main-color-lightest);
+.cart-btn {
+  background-color: #009879;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5em;
+  height: 60px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.cart__delete svg {
-    stroke: rgba(55,55,55,0.6);
-    width: 54px;
-    height: auto;
-    transition: 0.6s;
+.cart-btn:hover {
+  transform: scale(1.1);
+  transition: all 0.5s ease;
+  background-color: #186058;
+  color: white;
+}
+
+.del-btn {
+  background-color: var(--accent-color-2-light);
+  font-size: 1rem;
+  height: 50px;
+  border: none;
+  border-style: none;
+  border-width: 0;
+}
+
+.del-btn:hover {
+  background-color: var(--accent-color-2-darkest);
 }
 
 button {
@@ -279,7 +286,7 @@ button {
 .cart__total p {
     font-size: 14px;
     color: #373737;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 
 .cart__total span {
@@ -289,5 +296,39 @@ button {
     font-family: 'Spartan', sans-serif;
     font-weight: 600;
 }
+
+.styled-table {
+  border-collapse: collapse;
+  margin: auto;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  font-size: 1.5em;
+}
+
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.cart__table tbody tr {
+  border-bottom: 1px solid white;
+}
+
+.cart__table tbody tr:nth-of-type(even) {
+  background-color: white;
+}
+
+table {
+    margin-right: 0;
+    width: 100%;
+}
+
 
 </style>

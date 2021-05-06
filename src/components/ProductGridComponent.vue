@@ -1,3 +1,107 @@
+<template>
+    <div class="grid-view">
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="header__content">
+                            <autocomplete 
+                                :search="search"
+                                placeholder="Buscar un producte"
+                                aria-label="Buscar un producte"
+                                @submit="handleSubmit"
+                                v-if="is_showing_cart === false"
+                            ></autocomplete>
+                            <button href="#" class="header__cart" @click="is_showing_cart = true" v-if="is_showing_cart === false">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                </svg>
+                                <span>Cart</span>
+                            </button>
+                            <div class="num_items_cart" v-if="added_product && is_showing_cart === false">
+                                <span> {{ num_items }} </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <cart-component v-if="is_showing_cart === true" :products="prod_in_cart"></cart-component>
+        <section id="catalog" class="section" v-else>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="section__title">Catàleg</h2>
+                        <div class="section__sort">
+                            <button type="button" :class="categories['tots']" v-on:click="changeCategory('tots')">Tots els productes</button> 
+                            <button type="button" :class="categories['medicaments']" v-on:click="changeCategory('medicaments')">Medicaments</button> 
+                            <button type="button" :class="categories['parafarmacia']" v-on:click="changeCategory('parafarmacia')">Parafarmàcia</button> 
+                            <button type="button" :class="categories['bebes']" v-on:click="changeCategory('bebes')">Bebès</button> 
+                            <button type="button" :class="categories['complements']" v-on:click="changeCategory('complements')">Complements alimentaris</button></div>
+                    </div>
+                </div>
+                <div class="row boto-comanda">
+                    <button type="button" class="comanda" v-bind:style="{display: comanda_activated}" @click="$router.push('/chooseDateTime')" >REALITZAR COMANDA</button>
+                </div>
+                <div class="row row--grid" v-if="active_cat==='search'">
+                    <product-card-component 
+                        v-for="product in prod_search" :key="product.name" 
+                        v-bind:link="product.link" 
+                        v-bind:name="product.name"
+                        v-bind:price="product.price"
+                        v-on:incr-num-items="addItem(product)">
+                    </product-card-component>
+                </div>
+                <div class="row row--grid" v-if="active_cat==='tots'">
+                    <product-card-component 
+                        v-for="product in products" :key="product.name" 
+                        v-bind:link="product.link" 
+                        v-bind:name="product.name"
+                        v-bind:price="product.price"
+                        v-on:incr-num-items="addItem(product)">
+                    </product-card-component>
+                </div>
+                <div class="row row--grid" v-if="active_cat==='medicaments'">
+                    <product-card-component 
+                        v-for="prod_medicament in prod_medicaments" :key="prod_medicament.name" 
+                        v-bind:link="prod_medicament.link" 
+                        v-bind:name="prod_medicament.name"
+                        v-bind:price="prod_medicament.price"
+                        v-on:incr-num-items="addItem(product)">
+                    </product-card-component>
+                </div>
+                <div class="row row--grid" v-if="active_cat==='parafarmacia'">
+                    <product-card-component 
+                        v-for="product in prod_parafarmacia" :key="product.name" 
+                        v-bind:link="product.link" 
+                        v-bind:name="product.name"
+                        v-bind:price="product.price"
+                        v-on:incr-num-items="addItem(product)">
+                    </product-card-component>
+                </div>
+                <div class="row row--grid" v-if="active_cat==='bebes'">
+                    <product-card-component 
+                        v-for="product in prod_bebes" :key="product.name" 
+                        v-bind:link="product.link" 
+                        v-bind:name="product.name"
+                        v-bind:price="product.price"
+                        v-on:incr-num-items="addItem(product)">
+                    </product-card-component>
+                </div>
+                <div class="row row--grid" v-if="active_cat==='complements'">
+                    <product-card-component 
+                        v-for="product in prod_compl" :key="product.name" 
+                        v-bind:link="product.link" 
+                        v-bind:name="product.name"
+                        v-bind:price="product.price"
+                        v-on:incr-num-items="addItem(product)">
+                    </product-card-component>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>
+
 <style scoped>
     .header__cart {
         position: relative;
@@ -173,110 +277,6 @@
     }
 </style>
 
-<template>
-    <div class="grid-view">
-        <header class="header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="header__content">
-                            <autocomplete 
-                                :search="search"
-                                placeholder="Buscar un producte"
-                                aria-label="Buscar un producte"
-                                @submit="handleSubmit"
-                                v-if="is_showing_cart === false"
-                            ></autocomplete>
-                            <button href="#" class="header__cart" @click="is_showing_cart = true" v-if="is_showing_cart === false">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
-                                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                                </svg>
-                                <span>Cart</span>
-                            </button>
-                            <div class="num_items_cart" v-if="added_product && is_showing_cart === false">
-                                <span> {{ num_items }} </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <cart-component v-if="is_showing_cart === true" :products="prod_in_cart"></cart-component>
-        <section id="catalog" class="section" v-else>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="section__title">Catàleg</h2>
-                        <div class="section__sort">
-                            <button type="button" :class="categories['tots']" v-on:click="changeCategory('tots')">Tots els productes</button> 
-                            <button type="button" :class="categories['medicaments']" v-on:click="changeCategory('medicaments')">Medicaments</button> 
-                            <button type="button" :class="categories['parafarmacia']" v-on:click="changeCategory('parafarmacia')">Parafarmàcia</button> 
-                            <button type="button" :class="categories['bebes']" v-on:click="changeCategory('bebes')">Bebès</button> 
-                            <button type="button" :class="categories['complements']" v-on:click="changeCategory('complements')">Complements alimentaris</button></div>
-                    </div>
-                </div>
-                <div class="row boto-comanda">
-                    <button type="button" class="comanda" v-bind:style="{display: comanda_activated}" @click="$router.push('/chooseDateTime')" >REALITZAR COMANDA</button>
-                </div>
-                <div class="row row--grid" v-if="active_cat==='search'">
-                    <product-card-component 
-                        v-for="product in prod_search" :key="product.name" 
-                        v-bind:link="product.link" 
-                        v-bind:name="product.name"
-                        v-bind:price="product.price"
-                        v-on:incr-num-items="addItem(product)">
-                    </product-card-component>
-                </div>
-                <div class="row row--grid" v-if="active_cat==='tots'">
-                    <product-card-component 
-                        v-for="product in products" :key="product.name" 
-                        v-bind:link="product.link" 
-                        v-bind:name="product.name"
-                        v-bind:price="product.price"
-                        v-on:incr-num-items="addItem(product)">
-                    </product-card-component>
-                </div>
-                <div class="row row--grid" v-if="active_cat==='medicaments'">
-                    <product-card-component 
-                        v-for="prod_medicament in prod_medicaments" :key="prod_medicament.name" 
-                        v-bind:link="prod_medicament.link" 
-                        v-bind:name="prod_medicament.name"
-                        v-bind:price="prod_medicament.price"
-                        v-on:incr-num-items="addItem(product)">
-                    </product-card-component>
-                </div>
-                <div class="row row--grid" v-if="active_cat==='parafarmacia'">
-                    <product-card-component 
-                        v-for="product in prod_parafarmacia" :key="product.name" 
-                        v-bind:link="product.link" 
-                        v-bind:name="product.name"
-                        v-bind:price="product.price"
-                        v-on:incr-num-items="addItem(product)">
-                    </product-card-component>
-                </div>
-                <div class="row row--grid" v-if="active_cat==='bebes'">
-                    <product-card-component 
-                        v-for="product in prod_bebes" :key="product.name" 
-                        v-bind:link="product.link" 
-                        v-bind:name="product.name"
-                        v-bind:price="product.price"
-                        v-on:incr-num-items="addItem(product)">
-                    </product-card-component>
-                </div>
-                <div class="row row--grid" v-if="active_cat==='complements'">
-                    <product-card-component 
-                        v-for="product in prod_compl" :key="product.name" 
-                        v-bind:link="product.link" 
-                        v-bind:name="product.name"
-                        v-bind:price="product.price"
-                        v-on:incr-num-items="addItem(product)">
-                    </product-card-component>
-                </div>
-            </div>
-        </section>
-    </div>
-</template>
-
 <script>
 import CartComponent from './CartComponent.vue'
 import ProductCardComponent from './ProductCardComponent.vue'
@@ -287,54 +287,54 @@ export default {
         num_items: 0,
         added_product: false,
         products: [
-            { link: "enantyum.png", name: "Enantyum 25mg", price: "5,99€" },
-            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3,85€" },
-            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4,90€" },
-            { link: "test.jpeg", name: "Kit de test covid", price: "25€" },
-            { link: "vitaminas.png", name: "Vitamines", price: "15€" },
-            { link: "asacol.jpeg", name: "Asacol", price: "20€"},
-            { link: "couldina.jpeg", name: "Couldina", price: "10€"},
-            { link: "aspirina.jpeg", name: "Aspirina", price: "6€"},
-            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5,5€"},
-            { link: "talquistina.jpeg", name: "Talquistina", price: "6€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"},
-            { link: "floradix.jpeg", name: "Floradix", price: "25,55€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12,99€"}
+            { link: "enantyum.png", name: "Enantyum 25mg", price: "5,99" },
+            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3,85" },
+            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4,90" },
+            { link: "test.jpeg", name: "Kit de test covid", price: "25" },
+            { link: "vitaminas.png", name: "Vitamines", price: "15" },
+            { link: "asacol.jpeg", name: "Asacol", price: "20"},
+            { link: "couldina.jpeg", name: "Couldina", price: "10"},
+            { link: "aspirina.jpeg", name: "Aspirina", price: "6"},
+            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5,5"},
+            { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99"},
+            { link: "floradix.jpeg", name: "Floradix", price: "25,55"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12,99"}
         ],
         prod_medicaments: [
-            { link: "enantyum.png", name: "Enantyum 25mg", price: "5,99€" },
-            { link: "asacol.jpeg", name: "Asacol", price: "20€"},
-            { link: "couldina.jpeg", name: "Couldina", price: "10€"},
-            { link: "aspirina.jpeg", name: "Aspirina", price: "6€"},
-            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5,5€"}
+            { link: "enantyum.png", name: "Enantyum 25mg", price: "5,99" },
+            { link: "asacol.jpeg", name: "Asacol", price: "20"},
+            { link: "couldina.jpeg", name: "Couldina", price: "10"},
+            { link: "aspirina.jpeg", name: "Aspirina", price: "6"},
+            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5,5"}
         ],
         prod_parafarmacia: [
-            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3,85€" },
-            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4,90€" },
-            { link: "test.jpeg", name: "Kit de test covid", price: "25€" },
-            { link: "talquistina.jpeg", name: "Talquistina", price: "6€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99€"}
+            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3,85" },
+            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4,90" },
+            { link: "test.jpeg", name: "Kit de test covid", price: "25" },
+            { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99"}
         ],
         prod_bebes: [
-            { link: "talquistina.jpeg", name: "Talquistina", price: "6€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 1", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12,99€"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12,99€"}
+            { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 1", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12,99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12,99"}
         ],
         prod_compl: [
-            { link: "vitaminas.png", name: "Vitamines", price: "15€" },
-            { link: "floradix.jpeg", name: "Floradix", price: "25,55€"}
+            { link: "vitaminas.png", name: "Vitamines", price: "15" },
+            { link: "floradix.jpeg", name: "Floradix", price: "25,55"}
         ],
         prod_search: [],
         prod_in_cart: [],
