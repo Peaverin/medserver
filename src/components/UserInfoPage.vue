@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="menuUserInfo">
 
     <h3>El meu compte</h3>
 
@@ -9,9 +9,9 @@
       <div class="row">
         <div class="col-9">
           <li class="label">Nom</li>
-          <li class="info">Pepet</li>
+          <li class="info">Quim Masset</li>
           <li class="label">Correu</li>
-          <li class="info">ppp@gmail.com</li> 
+          <li class="info">quim.masset@gmail.com</li> 
         </div>
         <div class="col-3" style="text-align:center;">
           <button class="editbutton" @click="changeName">Edita</button>
@@ -111,7 +111,7 @@ li {
   font-weight: 600;
   color: var(--accent-color-1-darkest);
   background-color: var(--accent-color-1-lighter);
-  border-radius: 5px;
+  border-radius: 10px;
   border-color: var(--accent-color-1-lightest);
   padding: 0px 5px 0px 5px;
 }
@@ -124,7 +124,7 @@ li {
   color: var(--accent-color-2-darkest);
   background-color: var(--accent-color-2-lighter);
   border-color: var(--accent-color-2-lightest);
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 5px 5px 5px 5px;
   margin: 5px 50px 5px 50px;
 }

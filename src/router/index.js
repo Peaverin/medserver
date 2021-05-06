@@ -10,7 +10,7 @@ import ChoosePaymentMethod from '@/components/ChoosePaymentMethod'
 import RequestPicsPrescription from '@/components/RequestPicsPrescription'
 import CreditCardPaymentInfo from '@/components/CreditCardPaymentInfo'
 import ProductGridComponent from '@/components/ProductGridComponent'
-import Chat from '@/components/Chat'
+import ChatPage from '@/components/Chat'
 import OrderSummary from '@/components/OrderSummary'
 import OrderFinished from '@/components/OrderFinished'
 
@@ -101,7 +101,7 @@ export default new Router({
     {
       path: '/chat',
       name: 'chat',
-      component: Chat,
+      component: ChatPage,
       meta: {
         header: true
       }
