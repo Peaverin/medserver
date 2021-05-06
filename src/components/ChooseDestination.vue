@@ -1,6 +1,6 @@
 <template>
   <div class="container-sm px-5">
-    <h1 class="pt-5">ON?</h1>
+    <h1>ON?</h1>
     <p class="p-5">Tria on vols que enviem la comanda</p>
     <div class="radio col-sm-10 mb-3">
       <label><input type="radio" name="optradio" checked> Usar direcció del compte</label>
