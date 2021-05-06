@@ -55,6 +55,14 @@
                     </table>
                 </div>
             </div>
+            <div class="botons">
+                <button class="btn cart-btn" v-on:click="deleteProduct(show)">
+                    Tornar
+                </button>
+                <button class="btn cart-btn btn-continuar" v-on:click="deleteProduct(show)">
+                    Continuar
+                </button>
+            </div>
         </div>
     </div>
 </template>
@@ -89,6 +97,12 @@ export default {
     margin-bottom: 0;
 }
 
+.botons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 80px;
+}
+
 h2 {
     display: block;
     font-size: 1.5em;
@@ -113,6 +127,9 @@ h2 {
     width: auto;
 }
 .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: -ms-autohiding-scrollbar;
 }
@@ -132,7 +149,7 @@ h2 {
 }
 
 .cart__table th {
-    font-size: 26px;
+    font-size: 23px;
     font-weight: 600;
     color: rgba(55,55,55,0.7);
     line-height: 100%;
@@ -247,6 +264,10 @@ tr {
   text-align: center;
   color: white;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-continuar {
+    background: #20c997;
 }
 
 .cart-btn:hover {
