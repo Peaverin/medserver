@@ -22,10 +22,10 @@
     </b-row>
     <b-row align-h="center">
       <b-col>
-        <med-button>SEGUIR COMPRANT</med-button>
+        <med-button link='/products'>SEGUIR COMPRANT</med-button>
       </b-col>
       <b-col>
-        <med-button>CONTINUAR</med-button>
+        <med-button link='/chooseDestination'>CONTINUAR</med-button>
       </b-col>
     </b-row>
   </b-container>

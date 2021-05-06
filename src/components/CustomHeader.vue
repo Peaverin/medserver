@@ -68,7 +68,6 @@ header {
 
 </style>
 
-
 <script>
 import UserInfoPage from './UserInfoPage.vue'
 import {globalStore} from '../main.js'
@@ -83,3 +82,4 @@ export default {
   }
 }
 </script>
+

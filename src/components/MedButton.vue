@@ -23,7 +23,7 @@ export default {
     padding: 1em 2em;
     background: #fff;
     border: 2px solid var(--main-color);
-    border-radius: 3px;
+    border-radius: 10px;
     color: var(--main-color-darkest);
     background-color: var(--main-color);
     font-family: "Quicksand", sans-serif;

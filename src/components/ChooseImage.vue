@@ -1,38 +1,39 @@
 <template>
-    <b-container class="container_im">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-      <div class="container_wr">
-        <div v-if=image class="imageCont">
-          <img :src=image @click="onFileChange" alt="">
-        </div>
-        <div class="content">
-          <div class="icon">
-            <i class="fas fa-cloud-upload-alt"></i></div>
-          <div class="text">
-            No file chosen, yet!</div>
-        </div>
-        <div id="cancel-btn" @click="removeImage">
-          <i class="fas fa-times"></i>
-        </div>
-        <div class="file-name">
-          File name here</div>
+  <b-container class="container_im">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <div ref="container_wr" class="container_wr">
+      <div v-if=image class="imageCont">
+        <img v-bind:src=image @click="onFileChange" alt="">
       </div>
-      <!-- your custom button or image or any thing else -->
-      <b-row>
-        <b-col>
-          <button @click="browse" class="custom-btn">Selecciona</button>
-        </b-col>
-        <b-col>
-          <button @click="removeImage" class="custom-btn">Eliminar</button>
-        </b-col>
-      </b-row>
-      <input id="default-btn" type="file" @change="onFileChange" hidden>
-    </b-container>
+      <div class="content">
+        <div class="icon">
+          <i class="fas fa-cloud-upload-alt"></i></div>
+        <div class="text">
+          Encara no s'ha escollit cap fitxer!</div>
+      </div>
+      <div id="cancel-btn" @click="removeImage">
+        <i class="fas fa-times"></i>
+      </div>
+      <div ref=filename class="file-name">
+        File name here</div>
+    </div>
+    <!-- your custom button or image or any thing else -->
+    <b-row>
+      <b-col>
+        <button @click="browse" class="custom-btn">Selecciona</button>
+      </b-col>
+      <b-col>
+        <button @click="removeImage" class="custom-btn">Eliminar</button>
+      </b-col>
+    </b-row>
+    <input id="default-btn" type="file" ref="hiddenBtn" @change="onFileChange" hidden>
+  </b-container>
 </template>
 
 <script>
 let regExp = /[0-9a-zA-Z^&'@{}[\],$=!\-#().%+~_ ]+$/;
 export default {
+  name: "el",
   data() {
     return {
       image: ""
@@ -47,9 +48,9 @@ export default {
       this.createImage(files[0])
       if(this.value){
         let valueStore = this.files[0].value().match(regExp);
-        document.querySelector(".file-name").textContent = valueStore;
+        this.$refs.filename.textContent = valueStore;
       }
-      document.querySelector(".file-name").textContent = e.value();
+      this.$refs.filename.textContent = e.value();
     },
     createImage (file) {
       var reader = new FileReader()
@@ -57,23 +58,23 @@ export default {
       var vm = this
       reader.onload = (e) => {
         vm.image = e.target.result
-        document.querySelector(".container_wr").classList.add("active");
-        document.querySelector(".file-name").textContent = reader.name;
+        this.$refs.container_wr.classList.add("active");
+        this.$refs.filename.textContent = reader.name;
       }
       reader.readAsDataURL(file)
     },
     removeImage: function () {
       this.image = ''
-      document.querySelector(".container_wr").classList.remove("active");
+      this.$refs.container_wr.classList.remove("active");
     },
     browse () {
-      document.querySelector("#default-btn").click()
+      this.$refs.hiddenBtn.click()
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .container_im{
   width: 100%;
   min-width: 430px;
