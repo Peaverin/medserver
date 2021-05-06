@@ -1,9 +1,8 @@
 <template>
 
   <div id="app">
-    <transition name="fade">
-     <custom-header v-if="$route.meta.header === true"></custom-header>
-    </transition>
+     <custom-header v-if="$route.meta.header === true" ref="cheader"></custom-header>
+    <div ref = "header_margin" style = "height: 80px; "></div>
       <router-view/>
     <custom-footer/>
   </div>
@@ -14,8 +13,13 @@ import CustomFooter from './components/CustomFooter.vue'
 import CustomHeader from './components/CustomHeader.vue'
 export default {
   components: { CustomFooter, CustomHeader},
-  name: 'App'
+  name: 'App',
+  mounted() {
+
+  }
 }
+
+
 </script>
 
 <style>
@@ -26,7 +30,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  height: 100vh;
 }
 .fade-enter-active, .fade-leave-active, .routrans-enter-active, .routrans-leave-active {
   transition: opacity .5s;
