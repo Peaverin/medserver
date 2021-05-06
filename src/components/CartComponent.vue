@@ -16,8 +16,8 @@
                                 <th>Total</th>
                             </tr>
                         </thead>
-                        <tbody v-if="products.length > 0">
-                            <tr v-for="product in products" :key="product.name">
+                        <tbody v-if="this.products.length > 0">
+                            <tr v-for="product in this.products" :key="product.name">
                                 <td class="td__img">
                                     <div class="cart__img"><img :src="require('../assets/' + product.link + '')" alt=""></div>
                                 </td>
@@ -48,7 +48,7 @@
                             <tr>
                                 <td class="cart__total">
                                     <p>Total a pagar:</p>
-                                    <span>{{ total }}</span>
+                                    <span>{{ total }}€</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -75,6 +75,11 @@ export default {
             total: 0
         }
     },
+    created () {
+        for (let i = 0; i < this.products.length; i++) {
+            this.total += this.products[i].quantity * this.products[i].price
+        }
+    },
     name: 'CartComponent',
     props: {
         products: {
@@ -90,6 +95,7 @@ export default {
                 }
                 return true
             })
+            this.total += Number(product.price)
             this.$emit('increase-num-prod-in-cart')
         },
         decreaseQuantity: function(product) {
@@ -107,12 +113,18 @@ export default {
         },
         deleteProduct: function (product) {
             this.$emit('decrease-num-prod-in-cart', product.quantity)
+            if (Math.abs(this.total - (product.quantity*product.price)) < 0.001) {
+                this.total = 0
+            } else {
+                this.total -= Number(product.quantity*product.price)
+            }
             this.products = this.products.filter(prod => {
                 if (prod.name === product.name) {
                     return false
                 }
                 return true
             })
+            console.log(this.products.length)
         }
     }
 }
