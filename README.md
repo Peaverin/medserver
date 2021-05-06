@@ -24,7 +24,7 @@
 ```npm install```
 a la mateixa carpeta d'aquest README (on es troben `package.json` i `package-lock.json`).
 
-6. Instalar Datepicker (vuejs-datepicker)
+6. Instalar Datepicker (vue2-datepicker)
 
     ```npm install vue2-datepicker --save```
     
