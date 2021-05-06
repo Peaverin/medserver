@@ -17,18 +17,18 @@
                             </tr>
                         </thead>
                         <tbody v-if="products.length > 0">
-                            <tr v-for="product in products" :key="product">
+                            <tr v-for="product in products" :key="product.name">
                                 <td class="td__img">
                                     <div class="cart__img"><img :src="require('../assets/' + product.link + '')" alt=""></div>
                                 </td>
                                 <td>{{ product.name }}</td>
                                 <td>
                                     <div class="cart__quantity">
-                                        <button type="button">
+                                        <button type="button" v-on:click="decreaseQuantity(product)">
                                             -
                                         </button>
                                         <div class="quantity">{{ product.quantity }}</div>
-                                        <button type="button">
+                                        <button type="button" v-on:click="increaseQuantity(product)">
                                             +
                                         </button>
                                     </div>
@@ -37,7 +37,7 @@
                                     <span class="cart__price">{{ product.price }}€</span>
                                 </td>
                                 <td>
-                                    <span class="cart__price">{{ product.price * product.quantity }}€</span>
+                                    <span class="cart__price">{{ (product.price * product.quantity).toFixed(2) }}€</span>
                                 </td>
                                 <td>
                                     <button class="btn cart-btn del-btn" v-on:click="deleteProduct(show)">
@@ -56,7 +56,7 @@
                 </div>
             </div>
             <div class="botons">
-                <button class="btn cart-btn" v-on:click="deleteProduct(show)">
+                <button class="btn cart-btn" v-on:click="$emit('hide-cart', products)">
                     Tornar
                 </button>
                 <button class="btn cart-btn btn-continuar" v-on:click="deleteProduct(show)">
@@ -80,6 +80,35 @@ export default {
         products: {
             type: Array,
             Required: true
+        }
+    },
+    methods: {
+        increaseQuantity: function(product) {
+            this.products = this.products.filter(prod => {
+                if (prod.name === product.name) {
+                    prod.quantity += 1
+                }
+                return true
+            })
+            this.$emit('increase-num-prod-in-cart')
+        },
+        decreaseQuantity: function(product) {
+            if (product.quantity === 1) {
+                this.products = this.products.filter(prod => {
+                    if (prod.name === product.name) {
+                        return false
+                    }
+                    return true
+                })
+                return
+            }
+            this.products = this.products.filter(prod => {
+                if (prod.name === product.name) {
+                    prod.quantity -= 1
+                }
+                return true
+            })
+            this.$emit('decrease-num-prod-in-cart')
         }
     }
 }

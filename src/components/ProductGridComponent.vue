@@ -26,7 +26,13 @@
                 </div>
             </div>
         </header>
-        <cart-component v-if="is_showing_cart === true" :products="prod_in_cart"></cart-component>
+        <cart-component 
+            v-if="is_showing_cart === true" 
+            :products="prod_in_cart" 
+            v-on:hide-cart="onHideCart"
+            v-on:decrease-num-prod-in-cart="decreaseItems"
+            v-on:increase-num-prod-in-cart="increaseItems">
+        </cart-component>
         <section id="catalog" class="section" v-else>
             <div class="container">
                 <div class="row">
@@ -287,54 +293,54 @@ export default {
         num_items: 0,
         added_product: false,
         products: [
-            { link: "enantyum.png", name: "Enantyum 25mg", price: "5,99" },
-            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3,85" },
-            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4,90" },
+            { link: "enantyum.png", name: "Enantyum 25mg", price: "5.99" },
+            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3.85" },
+            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4.90" },
             { link: "test.jpeg", name: "Kit de test covid", price: "25" },
             { link: "vitaminas.png", name: "Vitamines", price: "15" },
             { link: "asacol.jpeg", name: "Asacol", price: "20"},
             { link: "couldina.jpeg", name: "Couldina", price: "10"},
             { link: "aspirina.jpeg", name: "Aspirina", price: "6"},
-            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5,5"},
+            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5.5"},
             { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99"},
-            { link: "floradix.jpeg", name: "Floradix", price: "25,55"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12,99"}
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12.99"},
+            { link: "floradix.jpeg", name: "Floradix", price: "25.55"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12.99"}
         ],
         prod_medicaments: [
-            { link: "enantyum.png", name: "Enantyum 25mg", price: "5,99" },
+            { link: "enantyum.png", name: "Enantyum 25mg", price: "5.99" },
             { link: "asacol.jpeg", name: "Asacol", price: "20"},
             { link: "couldina.jpeg", name: "Couldina", price: "10"},
             { link: "aspirina.jpeg", name: "Aspirina", price: "6"},
-            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5,5"}
+            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5.5"}
         ],
         prod_parafarmacia: [
-            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3,85" },
-            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4,90" },
+            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3.85" },
+            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4.90" },
             { link: "test.jpeg", name: "Kit de test covid", price: "25" },
             { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12,99"}
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12.99"}
         ],
         prod_bebes: [
             { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 1", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12,99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12,99"}
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 1", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12.99"},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12.99"}
         ],
         prod_compl: [
             { link: "vitaminas.png", name: "Vitamines", price: "15" },
-            { link: "floradix.jpeg", name: "Floradix", price: "25,55"}
+            { link: "floradix.jpeg", name: "Floradix", price: "25.55"}
         ],
         prod_search: [],
         prod_in_cart: [],
@@ -396,8 +402,15 @@ export default {
         this.categories[this.active_cat] = "";
         this.active_cat = "search"
     },
-    onHideCart () {
-        this.is_showing_cart = false;
+    onHideCart: function (products) {
+        this.is_showing_cart = false
+        this.prod_in_cart = products
+    },
+    increaseItems: function () {
+        this.num_items += 1
+    },
+    decreaseItems: function () {
+        this.num_items -= 1
     }
   }
 }
