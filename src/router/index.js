@@ -53,9 +53,7 @@ export default new Router({
       name: 'chooseDateTime',
       component: ChooseDateTime,
       meta: {
-        header: true,
-        wizard: true,
-        wizardStep: 2
+        header: true
       }
     },
     {
@@ -63,9 +61,7 @@ export default new Router({
       name: 'chooseDestination',
       component: ChooseDestination,
       meta: {
-        header: true,
-        wizard: true,
-        wizardStep: 3
+        header: true
       }
     },
     {
@@ -73,9 +69,7 @@ export default new Router({
       name: 'choosePaymentMethod',
       component: ChoosePaymentMethod,
       meta: {
-        header: true,
-        wizard: true,
-        wizardStep: 4
+        header: true
       }
     },
     {
@@ -99,9 +93,7 @@ export default new Router({
       name: 'products',
       component: ProductGridComponent,
       meta: {
-        header: true,
-        wizard: true,
-        wizardStep: 0
+        header: true
       }
     },
     {
