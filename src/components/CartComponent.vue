@@ -18,7 +18,7 @@
                         </thead>
                         <tbody v-if="products.length > 0">
                             <tr v-for="product in products" :key="product">
-                                <td>
+                                <td class="td__img">
                                     <div class="cart__img"><img :src="require('../assets/' + product.link + '')" alt=""></div>
                                 </td>
                                 <td>{{ product.name }}</td>
@@ -45,14 +45,14 @@
                                     </button>
                                 </td>
                             </tr>
+                            <tr>
+                                <td class="cart__total">
+                                    <p>Total a pagar:</p>
+                                    <span>{{ total }}</span>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
-                </div>
-                <div class="cart__info">
-                    <div class="cart__total">
-                        <p>Total a pagar:</p>
-                        <span>{{ total }}</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -136,7 +136,6 @@ h2 {
     font-weight: 600;
     color: rgba(55,55,55,0.7);
     line-height: 100%;
-    padding: 10px 90px 30px 20px;
     display: table-cell;
     vertical-align: inherit;
     font-weight: bold;
@@ -165,7 +164,7 @@ tbody {
 tr {
     display: table-row;
     vertical-align: inherit;
-    padding: 5%;
+    padding: 4%;
 }
 
 .cart__img {
@@ -190,7 +189,13 @@ tr {
     font-size: 16px;
     font-weight: 400;
     color: #373737;
-    padding: 3.5%;
+    padding: 3.3%;
+}
+
+.cart__table td.td__img {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 .cart__quantity {
@@ -276,11 +281,15 @@ button {
     font: 400 13.3333px Arial;
 }
 
-.cart__total {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+.cart__table td.cart__total {
+    padding: 3.5%;
+    padding-left: 60px;
+    padding-top: 30px;
+}
+
+.cart__table td.cart__total p {
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 
 .cart__total p {
@@ -297,37 +306,17 @@ button {
     font-weight: 600;
 }
 
-.styled-table {
-  border-collapse: collapse;
-  margin: auto;
-  font-family: sans-serif;
-  min-width: 400px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  font-size: 1.5em;
-}
-
-.styled-table thead tr {
-  background-color: #009879;
-  color: #ffffff;
-  text-align: left;
-}
-
-.styled-table th,
-.styled-table td {
-  padding: 12px 15px;
-}
-
 .cart__table tbody tr {
   border-bottom: 1px solid white;
 }
 
-.cart__table tbody tr:nth-of-type(even) {
+.cart__table tbody tr:nth-of-type(odd) {
   background-color: white;
 }
 
-table {
-    margin-right: 0;
-    width: 100%;
+.cart__table tbody tr:last-of-type {
+  background-color: var(--main-color-lightest);
+  border-bottom: none;
 }
 
 
