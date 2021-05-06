@@ -24,13 +24,9 @@
 ```npm install```
 a la mateixa carpeta d'aquest README (on es troben `package.json` i `package-lock.json`).
 
-6. Instalar Datepicker (vuejs-datepicker)
+6. Instalar Datepicker (vue2-datepicker)
 
-    ```npm install vuejs-datepicker --save```
-    
-7. Instalar Vue2 Timepicker (vue2-timepicker)
-
-    ```npm install vue2-timepicker --save```
+    ```npm install vue2-datepicker --save```
 
 
 ## Compiles and hot-reloads for development
@@ -44,6 +40,8 @@ npm run build
 ```
 
 ### Vue docs
+https://vuejs.org/v2/guide/
+
 Components: https://vuejs.org/v2/guide/components.html
 ### Vue-router docs
 https://router.vuejs.org/guide/

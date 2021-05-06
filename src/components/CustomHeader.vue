@@ -1,10 +1,30 @@
-<script>
-import UserInfoPage from './UserInfoPage.vue'
-export default {
-  components: { UserInfoPage },
-  name: 'CustomHeader'
-}
-</script>
+<template>
+    <header>
+        <div class="container-fluid p-0">
+            <div class="row" v-if="loggedIn">
+                <span class="title col-sm-4" @click="$router.push('/')">MedServer</span>
+                <div class="options col-sm">
+                    <b-dropdown size="sm"  variant="transparent" toggle-class="text-decoration-none" boundary="scrollParent" no-caret>
+                        <template #button-content>
+                        <span class="option" id="compte">El meu compte</span>
+                        </template>
+                        <user-info-page/>
+                    </b-dropdown>
+                    <span class="option">Les meves comandes</span>
+                </div>
+            </div>
+            <div class="row" v-else>
+                <span class="title col-sm-4" @click="$router.push('/')">MedServer</span>
+                <div class="options col-sm">
+                        <span class="option" id="compte"  @click="$router.push('/login')" > Iniciar Sessió</span>
+
+                    <span class="option" @click="$router.push('/register')">Registrar-se</span>
+                </div>
+            </div>
+        </div>
+    </header>
+</template>
+
 
 <style scoped>
 
@@ -23,6 +43,7 @@ header {
     align-self: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--main-color-darker);
+    cursor: pointer;
 }
 
 .options {
@@ -50,25 +71,18 @@ header {
 }
 </style>
 
-<template>
-    <header>
-        <div class="container-fluid">
-          <b-row>
-            <b-col>
-              <span class="title col-sm-4 px-5" @click="$router.push('/')">MedServer</span>
-          </b-col>
-            <b-col>
-              <div class="options col-sm">
-                <b-dropdown size="sm"  variant="transparent" toggle-class="text-decoration-none" boundary="scrollParent" no-caret>
-                  <template #button-content>
-                    <span class="option" id="compte">El meu compte</span>
-                  </template>
-                  <user-info-page/>
-                </b-dropdown>
-                <span class="option">Les meves comandes</span>
-              </div>
-            </b-col>
-            </b-row>
-        </div>
-    </header>
-</template>
+<script>
+import UserInfoPage from './UserInfoPage.vue'
+import {globalStore} from '../main.js'
+export default {
+  components: { UserInfoPage },
+  name: 'CustomHeader',
+      computed: {
+    loggedIn: function () {
+      // `this` points to the vm instance
+      return globalStore.loggedIn
+    }
+  }
+}
+</script>
+
