@@ -27,10 +27,6 @@ a la mateixa carpeta d'aquest README (on es troben `package.json` i `package-loc
 6. Instalar Datepicker (vue2-datepicker)
 
     ```npm install vue2-datepicker --save```
-    
-7. Instalar Vue2 Timepicker (vue2-timepicker)
-
-    ```npm install vue2-timepicker --save```
 
 
 ## Compiles and hot-reloads for development
