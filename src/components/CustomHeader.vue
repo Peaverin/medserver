@@ -45,23 +45,30 @@ header {
     transform: scale(1.1);
 }
 
+.options span {
+  display: inline-block;
+}
 </style>
 
 <template>
     <header>
-        <div class="container-fluid p-0">
-            <div class="row">
-                <span class="title col-sm-4" @click="$router.push('/')">MedServer</span>
-                <div class="options col-sm">
-                    <b-dropdown size="sm"  variant="transparent" toggle-class="text-decoration-none" boundary="scrollParent" no-caret>
-                        <template #button-content>
-                        <span class="option" id="compte">El meu compte</span>
-                        </template>
-                        <user-info-page/>
-                    </b-dropdown>
-                    <span class="option">Les meves comandes</span>
-                </div>
-            </div>
+        <div class="container-fluid">
+          <b-row>
+            <b-col>
+              <span class="title col-sm-4 px-5" @click="$router.push('/')">MedServer</span>
+          </b-col>
+            <b-col>
+              <div class="options col-sm">
+                <b-dropdown size="sm"  variant="transparent" toggle-class="text-decoration-none" boundary="scrollParent" no-caret>
+                  <template #button-content>
+                    <span class="option" id="compte">El meu compte</span>
+                  </template>
+                  <user-info-page/>
+                </b-dropdown>
+                <span class="option">Les meves comandes</span>
+              </div>
+            </b-col>
+            </b-row>
         </div>
     </header>
 </template>
