@@ -40,7 +40,7 @@
                                     <span class="cart__price">{{ (product.price * product.quantity).toFixed(2) }}€</span>
                                 </td>
                                 <td>
-                                    <button class="btn cart-btn del-btn" v-on:click="deleteProduct(show)">
+                                    <button class="btn cart-btn del-btn" v-on:click="deleteProduct(product)">
                                         Eliminar producte
                                     </button>
                                 </td>
@@ -59,7 +59,7 @@
                 <button class="btn cart-btn" v-on:click="$emit('hide-cart', products)">
                     Tornar
                 </button>
-                <button class="btn cart-btn btn-continuar" v-on:click="deleteProduct(show)">
+                <button class="btn cart-btn btn-continuar">
                     Continuar
                 </button>
             </div>
@@ -94,12 +94,7 @@ export default {
         },
         decreaseQuantity: function(product) {
             if (product.quantity === 1) {
-                this.products = this.products.filter(prod => {
-                    if (prod.name === product.name) {
-                        return false
-                    }
-                    return true
-                })
+                this.deleteProduct(product)
                 return
             }
             this.products = this.products.filter(prod => {
@@ -108,7 +103,16 @@ export default {
                 }
                 return true
             })
-            this.$emit('decrease-num-prod-in-cart')
+            this.$emit('decrease-num-prod-in-cart', 1)
+        },
+        deleteProduct: function (product) {
+            this.$emit('decrease-num-prod-in-cart', product.quantity)
+            this.products = this.products.filter(prod => {
+                if (prod.name === product.name) {
+                    return false
+                }
+                return true
+            })
         }
     }
 }

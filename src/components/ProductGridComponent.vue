@@ -370,6 +370,7 @@ export default {
                 if (prod.name === product.name) {
                     prod.quantity += 1
                 }
+                return true
             })
         }
         this.num_items += 1
@@ -409,8 +410,11 @@ export default {
     increaseItems: function () {
         this.num_items += 1
     },
-    decreaseItems: function () {
-        this.num_items -= 1
+    decreaseItems: function (num) {
+        this.num_items -= num
+        if (this.num_items === 0) {
+            this.added_product = false
+        }
     }
   }
 }
