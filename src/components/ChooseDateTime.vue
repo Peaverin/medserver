@@ -1,6 +1,6 @@
 <template>
   <b-container class="choose-date-time">
-    <h1 class="m-5">QUAN?</h1>
+    <h1 class="mb-5">QUAN?</h1>
     <b-row class="row justify-content-center mb-5">
       <p> Tria quan vols que enviem la comanda</p>
     </b-row>
@@ -14,10 +14,27 @@
     </b-row>
     <b-row class="mb-5" align-h="around">
       <b-col>
-        <datepicker placeholder="Select Date"></datepicker>
+        <div>
+          <date-picker
+              v-model="value1"
+              format="YYYY-MM-DD"
+              type="date"
+              placeholder="Select date"
+          ></date-picker>
+        </div>
       </b-col>
       <b-col>
-        <vue-timepicker :minute-interval="15"></vue-timepicker>
+        <date-picker
+            v-model="value"
+            :time-picker-options="{
+                start: '01:00',
+                step: '00:30',
+                end: '24:30',
+              }"
+            format="hh:mm a"
+            type="time"
+            placeholder="hh:mm a"
+        ></date-picker>
       </b-col>
     </b-row>
     <b-row align-h="center">
@@ -32,17 +49,22 @@
 </template>
 
 <script>
-import Datepicker from 'vuejs-datepicker';
-import VueTimepicker from 'vue2-timepicker/src/vue-timepicker.vue'
-import MedButton from './MedButton.vue'
-export default {
-  name: "ChooseDateTime",
-  components: {
-    Datepicker,
-    VueTimepicker,
-    MedButton
+  import DatePicker from 'vue2-datepicker';
+  import 'vue2-datepicker/index.css';
+  import 'vue2-datepicker/locale/es';
+  import MedButton from './MedButton.vue'
+  export default {
+    name: "ChooseDateTime",
+    components: {
+      DatePicker,
+      MedButton
+    },
+    data() {
+      return {
+        value: null
+      }
+    }
   }
-}
 </script>
 
 <style scoped>
