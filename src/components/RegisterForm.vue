@@ -54,9 +54,7 @@ export default {
     margin-left:70px;
 }
 
-.vertical-center{
-    margin-top:8em;
-}
+
 .navbar-light {
     background-color: #ffffff;
     box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);

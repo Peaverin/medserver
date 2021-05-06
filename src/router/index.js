@@ -3,16 +3,16 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import LoginForm from '@/components/LoginForm'
 import RegisterForm from '@/components/RegisterForm'
-import RecoverForm from '@/components/RecoverForm' 
+import RecoverForm from '@/components/RecoverForm'
 import ChooseDateTime from '@/components/ChooseDateTime'
 import ChooseDestination from '@/components/ChooseDestination'
 import ChoosePaymentMethod from '@/components/ChoosePaymentMethod'
 import RequestPicsPrescription from '@/components/RequestPicsPrescription'
-import CreditCardPaymentInfo from '@/components/CreditCardPaymentInfo'
 import ProductGridComponent from '@/components/ProductGridComponent'
 import ChatPage from '@/components/Chat'
 import OrderSummary from '@/components/OrderSummary'
 import OrderFinished from '@/components/OrderFinished'
+import CartComponent from '@/components/CartComponent'
 
 Vue.use(Router)
 
@@ -83,14 +83,6 @@ export default new Router({
       }
     },
     {
-      path: '/creditCardPaymentInfo',
-      name: 'creditCardPaymentInfo',
-      component: CreditCardPaymentInfo,
-      meta: {
-        header: true
-      }
-    },
-    {
       path: '/products',
       name: 'products',
       component: ProductGridComponent,
@@ -122,5 +114,13 @@ export default new Router({
         header: true
       }
     },
+    {
+      path: '/cart',
+      name: 'Cart',
+      component: CartComponent,
+      meta: {
+        header: true
+      }
+    }
   ]
 })

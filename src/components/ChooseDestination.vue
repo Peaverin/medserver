@@ -1,7 +1,7 @@
 <template>
   <div class="container-sm px-5">
-    <h1 class="m-5">ON?</h1>
-    <p class="m-5">Tria on vols que enviem la comanda</p>
+    <h1>ON?</h1>
+    <p class="p-5">Tria on vols que enviem la comanda</p>
     <div class="radio col-sm-10 mb-3">
       <label><input type="radio" name="optradio" checked> Usar direcció del compte</label>
     </div>
@@ -17,7 +17,7 @@
     <div class="form-group row">
       <label for="pwd" class="col-form-label col-sm-4">Codi postal:</label>
           <div class="col-sm-6">
-        <input type="number" class="form-control" id="pwd">
+        <input type="text" class="form-control" id="pwd">
       </div>
     </div>
     <div class="form-group row">
