@@ -1,24 +1,24 @@
 <template>
     <header>
-        <div class="container-fluid p-0">
-            <div class="row" v-if="loggedIn">
-                <span class="title col-sm-4" @click="$router.push('/')">MedServer</span>
-                <div class="options col-sm">
+        <div class="container-fluid">
+            <b-row v-if="loggedIn">
+                <span class="title col-sm-4 px-5" @click="$router.push('/')">MedServer</span>
+                <div class="options col-sm pl-5">
                     <b-dropdown size="sm"  variant="transparent" toggle-class="text-decoration-none" boundary="scrollParent" no-caret>
                         <template #button-content>
-                        <span class="option" id="compte">El meu compte</span>
+                        <span class="option mr" id="compte">El meu compte</span>
                         </template>
                         <user-info-page/>
                     </b-dropdown>
-                    <span class="option">Les meves comandes</span>
+                    <span class="option ml">Les meves comandes</span>
                 </div>
-            </div>
+            </b-row>
             <div class="row" v-else>
                 <span class="title col-sm-4" @click="$router.push('/')">MedServer</span>
-                <div class="options col-sm">
-                        <span class="option" id="compte"  @click="$router.push('/login')" > Iniciar Sessió</span>
+                <div class="options col-sm pl-5">
+                        <span class="option mr" id="compte"  @click="$router.push('/login')" > Iniciar Sessió</span>
 
-                    <span class="option" @click="$router.push('/register')">Registrar-se</span>
+                    <span class="option ml" @click="$router.push('/register')">Registrar-se</span>
                 </div>
             </div>
         </div>
@@ -43,24 +43,31 @@ header {
     align-self: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--main-color-darker);
-    cursor: pointer;
 }
 
 .options {
     align-self: center;
     margin: 10px;
 }
+
+.mr {
+  margin-right: 1rem;
+}
+
+.ml {
+  margin-left: 1rem;
+}
+
 .option {
-    margin: 5px;
     border-radius: 5px;
     transition: all 0.5s ease;
-    margin: 1rem;
     padding:0.5rem;
     font-size: 0.99rem;
     color: var(--main-color-darker);
     cursor: pointer;
     font-weight: bold;
 }
+
 .option:hover {
     background-color: white;
     transform: scale(1.1);
