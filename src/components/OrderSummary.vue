@@ -1,7 +1,8 @@
 <template>
   <b-container class="order-summary">
     <h1 class="mb-5">Resum de la teva comanda</h1>
-    <div class="col-6">
+    <div class="row">
+    <div class="col-lg-6">
       <div class="cart">
         <div class="table-responsive">
           <table class="cart__table">
@@ -36,19 +37,68 @@
               <td></td>
               <td class="cart__total"><span>{{ totalPrice.toFixed(2) }}€</span></td>
             </tr>
+            <tr class="modify__purchase">
+              <td class="modify__purchase" colspan="4">
+                <med-button link='/products'>Modificar comanda</med-button>
+              </td>
+            </tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
-    <b-row align-h="center">
-      <b-col>
+    <div class="col-lg-6">
+      <div class="details-order">
+        <div class="table-responsive">
+          <table class="details__table">
+            <thead>
+            <tr>
+              <th colspan="3">Detalls de la comanda</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td class="details__title">QUAN?</td>
+              <td>
+                  <div class="details__info">{{ dateTime }}</div>
+              </td>
+              <td>
+                <med-button class="details__button" link='/chooseDateTime'>Canviar</med-button>
+              </td>
+            </tr>
+            <tr>
+              <td class="details__title">ON?</td>
+              <td>
+                <div class="details__info">{{ finalAddress }}</div>
+              </td>
+              <td>
+                <med-button class="details__button" link='/chooseDestination'>Canviar</med-button>
+              </td>
+            </tr>
+            <tr>
+              <td class="details__title">COM?</td>
+              <td>
+                <div class="details__info">{{ paymentMethod }}</div>
+              </td>
+              <td>
+                <med-button class="details__button" link='/choosePaymentMethod'>Canviar</med-button>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row row-buttons">
+      <div class="col-sm-6">
         <med-button link='/choosePaymentMethod'>ENRERE</med-button>
-      </b-col>
-      <b-col>
+      </div>
+      <div class="col-sm-6">
         <med-button link='/orderFinished'>CONFIRMAR COMANDA</med-button>
-      </b-col>
-    </b-row>
+      </div>
+    </div>
   </b-container>
   
 </template>
@@ -99,11 +149,11 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
   border-radius: 15px;
   background-color: var(--main-color-lightest);
   box-shadow: 15px 15px 30px 0px rgba(0,0,0,0.07), -15px -15px 30px 0px rgba(255,255,255,0.8);
   padding: 0px;
+  margin: 10px;
   width: auto;
 }
 
@@ -119,7 +169,6 @@ export default {
   width: 100%;
   min-width: 400px;
   justify-content: center;
-  border-radius: 30px;
 }
 
 .cart__table th {
@@ -145,7 +194,7 @@ thead {
 tbody {
   display: table-row-group;
   vertical-align: middle;
-  padding: 5%;
+  padding: 3%;
 }
 
 .cart__total {
@@ -165,7 +214,7 @@ tr {
   font-size: 16px;
   font-weight: 400;
   color: #373737;
-  padding: 3.3%;
+  padding: 3%;
 }
 
 .cart__name {
@@ -203,7 +252,7 @@ tr {
 .cart__table td.cart__total {
   padding: 3.5%;
   padding-left: 20px;
-  padding-top: 30px;
+  padding-top: 20px;
 }
 
 .cart__table td.cart__total p {
@@ -223,10 +272,8 @@ tr {
   line-height: 100%;
   font-family: 'Spartan', sans-serif;
   font-weight: 600;
-}
-
-.cart__table tbody tr {
-  border-bottom: 1px solid white;
+  text-align: center;
+  padding-right: 10px;
 }
 
 .cart__table tbody tr:nth-of-type(odd) {
@@ -236,6 +283,73 @@ tr {
 .cart__table tbody tr:last-of-type {
   background-color: var(--main-color-lightest);
   border-bottom: none;
+}
+
+.cart__table td.modify__purchase {
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.details-order {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  background-color: var(--main-color-lightest);
+  box-shadow: 15px 15px 30px 0px rgba(0,0,0,0.07), -15px -15px 30px 0px rgba(255,255,255,0.8);
+  padding: 0px;
+  margin: 10px;
+  width: auto;
+}
+
+.details__table {
+  width: 100%;
+  min-width: 400px;
+  justify-content: center;
+}
+
+.details__table tbody tr:nth-of-type(odd) {
+  background-color: white;
+}
+
+.details__table th {
+  font-size: 20px;
+  color: rgba(20,20,20,0.9);
+  line-height: 100%;
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: center;
+  padding: 3.5%;
+}
+
+.details__title {
+  font-size: 16px;
+  color: rgba(20,20,20,0.9);
+  font-weight: bold;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.details__info {
+  font-size: 15px;
+  color: rgba(20,20,20,0.9);
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.details__button {
+  padding-left: 5px;
+  padding-right: 10px;
 }
 
 </style>
