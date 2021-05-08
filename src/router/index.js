@@ -83,7 +83,7 @@ export default new Router({
       }
     },
     {
-      path: '/requestPicsPresctiption',
+      path: '/requestPicsPrescription',
       name: 'requestPicsPresctiption',
       component: RequestPicsPrescription,
       meta: {

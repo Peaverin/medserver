@@ -39,7 +39,7 @@
     </b-row>
     <b-row align-h="center">
       <b-col>
-        <med-button link='/products'>SEGUIR COMPRANT</med-button>
+        <med-button link='/requestPicsPrescription'>ENRERE</med-button>
       </b-col>
       <b-col>
         <med-button link='/chooseDestination' :disabled="isDisable">CONTINUAR</med-button>

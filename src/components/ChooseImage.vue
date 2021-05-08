@@ -20,10 +20,10 @@
     <!-- your custom button or image or any thing else -->
     <b-row>
       <b-col>
-        <button @click="browse" class="custom-btn">Selecciona</button>
+        <button @click="browse" class="ctrbtn">Selecciona</button>
       </b-col>
       <b-col>
-        <button @click="removeImage" class="custom-btn">Eliminar</button>
+        <button @click="removeImage" class="ctrbtn">Eliminar</button>
       </b-col>
     </b-row>
     <input id="default-btn" type="file" ref="hiddenBtn" @change="onFileChange" hidden>
@@ -162,4 +162,5 @@ export default {
   cursor: pointer;
   background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
 }
+
 </style>

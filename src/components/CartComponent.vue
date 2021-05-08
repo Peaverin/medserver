@@ -59,7 +59,7 @@
                 <button class="btn cart-btn" v-on:click="$emit('hide-cart', products)">
                     Tornar
                 </button>
-                <button class="btn cart-btn btn-continuar">
+                <button class="btn cart-btn btn-continuar" @click="$router.push('/requestPicsPrescription')" >
                     Continuar
                 </button>
             </div>

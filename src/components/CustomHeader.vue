@@ -6,19 +6,19 @@
                 <div class="options col-sm pl-5">
                     <b-dropdown size="sm"  variant="transparent" toggle-class="text-decoration-none" boundary="scrollParent" no-caret>
                         <template #button-content>
-                        <span class="option mr" id="compte">El meu compte</span>
+                        <span class="option mr" id="compte">EL MEU COMPTE</span>
                         </template>
                         <user-info-page/>
                     </b-dropdown>
-                    <span class="option ml">Les meves comandes</span>
+                    <span class="option ml">LES MEVES COMANDES</span>
                 </div>
             </b-row>
             <div class="row" v-else>
                 <span class="title col-sm-4" @click="$router.push('/')">MedServer</span>
                 <div class="options col-sm pl-5">
-                        <span class="option mr" id="compte"  @click="$router.push('/login')" > Iniciar Sessió</span>
+                        <span class="option mr" id="compte"  @click="$router.push('/login')" > INICIAR SESSIÓ</span>
 
-                    <span class="option ml" @click="$router.push('/register')">Registrar-se</span>
+                    <span class="option ml" @click="$router.push('/register')">REGISTRAR-SE</span>
                 </div>
             </div>
         </div>
