@@ -57,10 +57,10 @@
             </div>
             <div class="botons">
                 <button class="ctrbtn" v-on:click="$emit('hide-cart', products)">
-                    Tornar
+                    TORNAR
                 </button>
                 <button class="ctrbtn" @click="$router.push('/requestPicsPrescription')" >
-                    Continuar
+                    CONTINUAR
                 </button>
             </div>
         </div>
@@ -133,9 +133,16 @@ export default {
 
 <style scoped>
 
-.cartbtn{
+#plusbtn{
+    width:20px;
+    height:20px;
     border: 1px solid;
-    
+}
+#minusbtn{
+    width:20px;
+    height:20px;
+    border: 1px solid;
+
 }
 
 .botons {
@@ -339,7 +346,6 @@ button {
     text-indent: 0px;
     text-shadow: none;
     text-align: center;
-    font: 400 13.3333px Arial;
 }
 
 .cart__table td.cart__total {
