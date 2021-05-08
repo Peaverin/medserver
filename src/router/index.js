@@ -107,6 +107,14 @@ export default new Router({
       }
     },
     {
+      path: '/orderSummary',
+      name: 'OrderSummary',
+      component: OrderSummary,
+      meta: {
+        header: true
+      }
+    },
+    {
       path: '/orderFinished',
       name: 'OrderFinished',
       component: OrderFinished,

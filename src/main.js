@@ -31,12 +31,13 @@ export const globalStore = new Vue({
     finalAddress: "carrer lalala numero papapa dfjgjkasdh fkjshdjkfh sdjh fskhshjfshsk",
     dateTime: "dimecres a les 8",
     paymentMethod: "targeta",
-    purchasedProducts: [
+    mockPurchasedProducts: [
       { link: "enantyum.png", name: "Enantyum 25mg", price: 5.99, quantity: 1 },
       { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: 3.85, quantity: 2 },
       { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: 4.90, quantity: 3 },
       { link: "floradix.jpeg", name: "Floradix", price: 25.55, quantity: 2},
     ],
+    purchasedProducts: [],
   }
 })
 

@@ -131,7 +131,7 @@ export default {
     }
   },
   created () {
-    this.totalPrice = 0.01;
+    this.totalPrice = 0;
     var i;
     for (i in this.purchasedProducts) {
       this.totalPrice += this.purchasedProducts[i].quantity*this.purchasedProducts[i].price;
