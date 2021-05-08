@@ -8,7 +8,7 @@
           <div class="text-center"><span class="between">dilluns 3 de maig de 2021 a les 19:27</span></div>
 
           <div class="d-flex align-items-center text-right justify-content-end ">
-            <div class="pr-2"> <span class="name">{{nomUsuari}}</span>
+            <div class="pr-2"> <span class="name">{{nameUser}}</span>
               <p class="msg-right text-left">{{missatgeInicial}}</p>
             </div>
             <div class="text-left pr-1"><img src="https://img.icons8.com/color/40/000000/guest-male.png" width="30" class="img1" /></div>
@@ -25,7 +25,7 @@
             </div>
 
           <div class="d-flex align-items-center text-right justify-content-end ">
-            <div class="pr-2"> <span class="name">{{nomUsuari}}</span>
+            <div class="pr-2"> <span class="name">{{nameUser}}</span>
               <p class="msg-right text-left">{{missatgeSecundari}}</p>
             </div>
             <div class="text-left pr-1"><img src="https://img.icons8.com/color/40/000000/guest-male.png" width="30" class="img1" /></div>
@@ -35,7 +35,7 @@
             <div v-if="message.visible" class="text-center"><span class="between">{{message.time.lang('ca').format('LLLL')}}</span></div>
           <div class="d-flex align-items-center text-right justify-content-end ">
 
-            <div class="pr-2"> <span class="name">{{nomUsuari}}</span>
+            <div class="pr-2"> <span class="name">{{nameUser}}</span>
               <p class="msg-right text-left">{{message.message}}</p>
             </div>
             <div class="text-left pr-1"><img src="https://img.icons8.com/color/40/000000/guest-male.png" width="30" class="img1" /></div>
@@ -57,7 +57,7 @@
 </template>
 
 <script>
-
+import {globalStore} from '../main.js'
 import moment from 'moment'
 export default {
   name: 'ChatPage',
@@ -65,7 +65,6 @@ export default {
   },
   data () {
     return {
-      nomUsuari: 'Quim Masset',
       missatgeInicial: "Hola!\nFa unes hores que m'ha sorit un mussol a l'ull, i fa temps en vaig tenir un i vaig " +
           "utilitzar una pomada que em va anar molt bé. Tot i això no en recordo el nom, però sí que sé que la caixa" +
           "era de color blanc i blau. Quina pomada em recomanarieu per a curar el més ràpid possible el mussol?\n\n" +
@@ -77,7 +76,7 @@ export default {
       missatgeSecundari: "D'acord, Moltíssimes gràcies! Ara mateix demano l'esprai pel web!",
       messages: [],
       mess: '',
-  }
+    }
   },
   methods: {
     sendMessage () {
@@ -101,6 +100,11 @@ export default {
   updated() {
     var container = this.$el.querySelector("#scroller");
     container.scrollTop = container.scrollHeight*2;
+  },
+  computed: {
+    nameUser () {
+      return globalStore.nameUser
+    },
   }
 
 };

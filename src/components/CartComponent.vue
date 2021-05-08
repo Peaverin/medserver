@@ -34,7 +34,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="cart__price">{{ product.price }}€</span>
+                                    <span class="cart__price">{{ product.price.toFixed(2) }}€</span>
                                 </td>
                                 <td>
                                     <span class="cart__price">{{ (product.price * product.quantity).toFixed(2) }}€</span>

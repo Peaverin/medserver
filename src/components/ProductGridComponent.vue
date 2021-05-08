@@ -54,7 +54,7 @@
                         v-for="product in prod_search" :key="product.name" 
                         v-bind:link="product.link" 
                         v-bind:name="product.name"
-                        v-bind:price="product.price"
+                        v-bind:price="(product.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -63,7 +63,7 @@
                         v-for="product in products" :key="product.name" 
                         v-bind:link="product.link" 
                         v-bind:name="product.name"
-                        v-bind:price="product.price"
+                        v-bind:price="(product.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -72,7 +72,7 @@
                         v-for="prod_medicament in prod_medicaments" :key="prod_medicament.name" 
                         v-bind:link="prod_medicament.link" 
                         v-bind:name="prod_medicament.name"
-                        v-bind:price="prod_medicament.price"
+                        v-bind:price="(prod_medicament.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -81,7 +81,7 @@
                         v-for="product in prod_parafarmacia" :key="product.name" 
                         v-bind:link="product.link" 
                         v-bind:name="product.name"
-                        v-bind:price="product.price"
+                        v-bind:price="(product.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -90,7 +90,7 @@
                         v-for="product in prod_bebes" :key="product.name" 
                         v-bind:link="product.link" 
                         v-bind:name="product.name"
-                        v-bind:price="product.price"
+                        v-bind:price="(product.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -99,7 +99,7 @@
                         v-for="product in prod_compl" :key="product.name" 
                         v-bind:link="product.link" 
                         v-bind:name="product.name"
-                        v-bind:price="product.price"
+                        v-bind:price="(product.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -293,54 +293,54 @@ export default {
         num_items: 0,
         added_product: false,
         products: [
-            { link: "enantyum.png", name: "Enantyum 25mg", price: "5.99" },
-            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3.85" },
-            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4.90" },
-            { link: "test.jpeg", name: "Kit de test covid", price: "25" },
-            { link: "vitaminas.png", name: "Vitamines", price: "15" },
-            { link: "asacol.jpeg", name: "Asacol", price: "20"},
-            { link: "couldina.jpeg", name: "Couldina", price: "10"},
-            { link: "aspirina.jpeg", name: "Aspirina", price: "6"},
-            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5.5"},
-            { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12.99"},
-            { link: "floradix.jpeg", name: "Floradix", price: "25.55"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12.99"}
+            { link: "enantyum.png", name: "Enantyum 25mg", price: 5.99 },
+            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: 3.85 },
+            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: 4.90 },
+            { link: "test.jpeg", name: "Kit de test covid", price: 25 },
+            { link: "vitaminas.png", name: "Vitamines", price: 15 },
+            { link: "asacol.jpeg", name: "Asacol", price: 20},
+            { link: "couldina.jpeg", name: "Couldina", price: 10},
+            { link: "aspirina.jpeg", name: "Aspirina", price: 6},
+            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: 5.5},
+            { link: "talquistina.jpeg", name: "Talquistina", price: 6},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: 12.99},
+            { link: "floradix.jpeg", name: "Floradix", price: 25.55},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: 12.99}
         ],
         prod_medicaments: [
-            { link: "enantyum.png", name: "Enantyum 25mg", price: "5.99" },
-            { link: "asacol.jpeg", name: "Asacol", price: "20"},
-            { link: "couldina.jpeg", name: "Couldina", price: "10"},
-            { link: "aspirina.jpeg", name: "Aspirina", price: "6"},
-            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5.5"}
+            { link: "enantyum.png", name: "Enantyum 25mg", price: 5.99 },
+            { link: "asacol.jpeg", name: "Asacol", price: 20},
+            { link: "couldina.jpeg", name: "Couldina", price: 10},
+            { link: "aspirina.jpeg", name: "Aspirina", price: 6},
+            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: 5.5}
         ],
         prod_parafarmacia: [
-            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3.85" },
-            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4.90" },
-            { link: "test.jpeg", name: "Kit de test covid", price: "25" },
-            { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12.99"}
+            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: 3.85 },
+            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: 4.90 },
+            { link: "test.jpeg", name: "Kit de test covid", price: 25 },
+            { link: "talquistina.jpeg", name: "Talquistina", price: 6},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: 12.99}
         ],
         prod_bebes: [
-            { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 1", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12.99"}
+            { link: "talquistina.jpeg", name: "Talquistina", price: 6},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 1", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: 12.99}
         ],
         prod_compl: [
-            { link: "vitaminas.png", name: "Vitamines", price: "15" },
-            { link: "floradix.jpeg", name: "Floradix", price: "25.55"}
+            { link: "vitaminas.png", name: "Vitamines", price: 15 },
+            { link: "floradix.jpeg", name: "Floradix", price: 25.55}
         ],
         prod_search: [],
         prod_in_cart: [],

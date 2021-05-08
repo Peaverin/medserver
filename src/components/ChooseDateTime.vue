@@ -16,7 +16,7 @@
       <b-col>
         <div>
           <date-picker
-              v-model="value1"
+              v-model="day"
               format="YYYY-MM-DD"
               type="date"
               placeholder="Select date"
@@ -25,7 +25,7 @@
       </b-col>
       <b-col>
         <date-picker
-            v-model="value"
+            v-model="date"
             :time-picker-options="{
                 start: '01:00',
                 step: '00:30',
@@ -61,7 +61,8 @@
     },
     data() {
       return {
-        value: null
+        day: null,
+        date: null
       }
     }
   }

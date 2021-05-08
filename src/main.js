@@ -28,8 +28,14 @@ export const globalStore = new Vue({
     nameUser: "Quim Masset",
     emailUser: "quim.masset@gmail.com",
     defaultAddress: "C/ Abat Bassa 132, 2n 3a, 08017, Barcelona",
-    finalAddress: this.defaultAddress,
-    purchasedProducts: [],
+    finalAddress: "carrer lalala numero papapa",
+    dateTime: "dimecres a les 8",
+    paymentMethod: "targeta",
+    purchasedProducts: [
+      { link: "enantyum.png", name: "Enantyum 25mg", price: 5.99, quantity: 1 },
+      { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: 3.85, quantity: 2 },
+      { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: 4.90, quantity: 3 },
+    ],
   }
 })
 
