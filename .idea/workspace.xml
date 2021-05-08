@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="651be139-18d5-4764-998f-a4b392d30b2b" name="Default Changelist" comment="Install fortawesome">
+    <list default="true" id="651be139-18d5-4764-998f-a4b392d30b2b" name="Default Changelist" comment="Margin header options fixed">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartComponent.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +78,8 @@
       <workItem from="1620384112269" duration="34000" />
       <workItem from="1620462867705" duration="2073000" />
       <workItem from="1620484382242" duration="503000" />
+      <workItem from="1620484904075" duration="1408000" />
+      <workItem from="1620515278684" duration="1819000" />
     </task>
     <task id="LOCAL-00001" summary="ChoosePaymentMethod + Info Paypal, Crèdit card o Contra reemborsament&#10;&#10;- ChooseDestination.vue padding afegit per evitar que el header ho tapi. Quan arreglem el header segurament s'haurà de treure el padding class=&quot;pt-5&quot;.&#10;- ChoosePaymentMethod.vue modificat (accordion) per poder seleccionar el mètode de pagament (Paypal, Crèdit card o Contra reemborsament) i posar la informació en la mateixa pàgina.&#10;- Traduïdes totes les etiquetes a català.">
       <created>1620162204163</created>
@@ -112,7 +116,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620484486795</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary=".idea folder merge">
+      <created>1620485141948</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620485141948</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Margin header options fixed">
+      <created>1620486161744</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620486161744</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +154,8 @@
     <MESSAGE value="Header Fix Error Span" />
     <MESSAGE value="Header Fix Error Span after merge" />
     <MESSAGE value="Install fortawesome" />
-    <option name="LAST_COMMIT_MESSAGE" value="Install fortawesome" />
+    <MESSAGE value=".idea folder merge" />
+    <MESSAGE value="Margin header options fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Margin header options fixed" />
   </component>
 </project>

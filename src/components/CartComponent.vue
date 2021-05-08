@@ -135,7 +135,7 @@ export default {
 
 .cartbtn{
     border: 1px solid;
-    
+
 }
 
 .botons {
