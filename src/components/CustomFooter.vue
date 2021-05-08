@@ -1,11 +1,16 @@
 <style scoped>
 .footer {
-  height: auto;
-  line-height: 60px;
+  height: 55px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
   background-color: var(--main-color);
   color: var(--main-color-darkest);
-  display: block;
-  text-align: center;
+}
+p{
+  margin-top:10px;
 }
 
 /* Small devices (landscape phones, 544px and up) */
@@ -28,10 +33,9 @@
 </style>
 
 <template>
-    <footer class ="navbar fixed-bottom footer">
-        <div>
+    <footer class ="footer">
+
           <p>Preguntes freqüents | Contacte | Qui Som? | Termes i condicions</p>
-        </div>
         
     </footer>
 </template>

@@ -1,5 +1,11 @@
 /*
 Per donar espai al footer
 */
-body {  }
-
+html {
+    min-height: 100%;
+    position: relative;
+  }
+  body {
+    margin: 0;
+    margin-bottom: 75px;
+  }
