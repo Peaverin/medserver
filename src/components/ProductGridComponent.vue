@@ -238,7 +238,7 @@
         transition: 0.6s;
     }
     .grid-view {
-        margin-top: 160px;
+
         margin-bottom: 200px;
         padding-block-end: 200px;
     }
@@ -274,6 +274,7 @@
         transform: scale(1);
         background-color: var(--accent-color-1-darkest);
         color: white;
+        border-color:var(--accent-color-1-darkest);
     }
     .boto-comanda {
         justify-content: center;

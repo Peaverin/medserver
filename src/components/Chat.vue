@@ -135,7 +135,7 @@ body {
 }
 
 .wrapper {
-    height: 100vh;
+  margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;

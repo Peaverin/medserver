@@ -12,7 +12,7 @@
 
             <div class="form-group">
                 <label>Contrasenya</label>
-                <input type="password" class="form-control form-control-lg" />
+                <input type="password" class="form-control form-control-lg " />
                 <router-link to="/recover">Has oblidat la contrasenya?</router-link>
             </div>
 

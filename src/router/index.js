@@ -19,6 +19,14 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'home',
+      component: Home,
+      meta: {
+        header: true
+      }
+    },
+    {
       path: '/home',
       name: 'home',
       component: Home,
@@ -94,14 +102,6 @@ export default new Router({
       path: '/chat',
       name: 'chat',
       component: ChatPage,
-      meta: {
-        header: true
-      }
-    },
-    {
-      path: '/',
-      name: 'OrderSummary',
-      component: OrderSummary,
       meta: {
         header: true
       }

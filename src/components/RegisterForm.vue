@@ -7,13 +7,13 @@
 
             <div class="form-group">
                 <label>Correu electrònic</label>
-                <input type="email" class="form-control form-control-lg" placeholder="Introduïu el correu electrònic"/>
+                <input type="email" class="form-control form-control-lg" placeholder="exemple@gmail.com"/>
                 <small id="emailHelp" class="form-text text-muted">Mai compartirem el vostre correu electrònic amb ningú.</small>
             </div>
 
             <div class="form-group">
                 <label>Contrasenya</label>
-                <input type="password" class="form-control form-control-lg" placeholder="Contrasenya"/>
+                <input type="password" class="form-control form-control-lg"/>
             </div>
 
             <div class="form-group">
