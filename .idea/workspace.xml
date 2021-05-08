@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="651be139-18d5-4764-998f-a4b392d30b2b" name="Default Changelist" comment="Install fortawesome">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1s4RWJZTzBjqQbcLj9XqkmZ0P55" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/fhic-p-4-f05-Edu/fhic-p-4-f05-Edu" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="npm.run serve">
+    <configuration name="run build" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="run serve" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.run build" />
+      <item itemvalue="npm.run serve" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="651be139-18d5-4764-998f-a4b392d30b2b" name="Default Changelist" comment="" />
+      <created>1620129908077</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620129908077</updated>
+      <workItem from="1620129916336" duration="374000" />
+      <workItem from="1620130297735" duration="21182000" />
+      <workItem from="1620202615737" duration="26000" />
+      <workItem from="1620316642129" duration="10898000" />
+      <workItem from="1620344371772" duration="2380000" />
+      <workItem from="1620375057047" duration="602000" />
+      <workItem from="1620384112269" duration="34000" />
+      <workItem from="1620462867705" duration="2073000" />
+      <workItem from="1620484382242" duration="503000" />
+    </task>
+    <task id="LOCAL-00001" summary="ChoosePaymentMethod + Info Paypal, Crèdit card o Contra reemborsament&#10;&#10;- ChooseDestination.vue padding afegit per evitar que el header ho tapi. Quan arreglem el header segurament s'haurà de treure el padding class=&quot;pt-5&quot;.&#10;- ChoosePaymentMethod.vue modificat (accordion) per poder seleccionar el mètode de pagament (Paypal, Crèdit card o Contra reemborsament) i posar la informació en la mateixa pàgina.&#10;- Traduïdes totes les etiquetes a català.">
+      <created>1620162204163</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620162204163</updated>
+    </task>
+    <task id="LOCAL-00002" summary="ChooseDateTime millorat&#10;&#10;- Scroll error arreglat&#10;- ChooseDateTime millorat (un sol import per data i time picker)&#10;- Paddings de diverses classes trets per header.">
+      <created>1620322666980</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620322666980</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Header Fix Error Span">
+      <created>1620344625389</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620344625389</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Header Fix Error Span after merge">
+      <created>1620346655084</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620346655084</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Install fortawesome">
+      <created>1620484486795</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620484486795</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ChoosePaymentMethod + Info Paypal, Crèdit card o Contra reemborsament&#10;&#10;- ChooseDestination.vue padding afegit per evitar que el header ho tapi. Quan arreglem el header segurament s'haurà de treure el padding class=&quot;pt-5&quot;.&#10;- ChoosePaymentMethod.vue modificat (accordion) per poder seleccionar el mètode de pagament (Paypal, Crèdit card o Contra reemborsament) i posar la informació en la mateixa pàgina.&#10;- Traduïdes totes les etiquetes a català." />
+    <MESSAGE value="ChooseDateTime millorat&#10;&#10;- Scroll error arreglat&#10;- ChooseDateTime millorat (un sol import per data i time picker)&#10;- Paddings de diverses classes trets per header." />
+    <MESSAGE value="Header Fix Error Span" />
+    <MESSAGE value="Header Fix Error Span after merge" />
+    <MESSAGE value="Install fortawesome" />
+    <option name="LAST_COMMIT_MESSAGE" value="Install fortawesome" />
+  </component>
+</project>
