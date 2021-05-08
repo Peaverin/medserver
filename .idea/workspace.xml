@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="931d5c97-cdbb-4a7a-bc5f-d0278a4454d9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChooseDateTime.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChooseDateTime.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MedButton.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MedButton.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChooseDestination.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChooseDestination.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,7 @@
       <workItem from="1620460543128" duration="152000" />
       <workItem from="1620460701438" duration="36000" />
       <workItem from="1620460764008" duration="2259000" />
-      <workItem from="1620463896179" duration="9650000" />
+      <workItem from="1620463896179" duration="11041000" />
     </task>
     <servers />
   </component>
