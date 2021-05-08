@@ -28,7 +28,7 @@ export const globalStore = new Vue({
     nameUser: "Quim Masset",
     emailUser: "quim.masset@gmail.com",
     defaultAddress: "C/ Abat Bassa 132, 2n 3a, 08017, Barcelona",
-    finalAddress: "carrer lalala numero papapa dfjgjkasdh fkjshdjkfh sdjh fskhshjfshsk",
+    finalAddress: "carrer lalala numero papapa",
     dateTime: "dimecres a les 8",
     paymentMethod: "targeta",
     mockPurchasedProducts: [
