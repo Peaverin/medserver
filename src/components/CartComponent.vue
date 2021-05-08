@@ -24,11 +24,11 @@
                                 <td>{{ product.name }}</td>
                                 <td>
                                     <div class="cart__quantity">
-                                        <button id="minusbtn" type="button" v-on:click="decreaseQuantity(product)">
+                                        <button type="button" v-on:click="decreaseQuantity(product)">
                                             -
                                         </button>
                                         <div class="quantity">{{ product.quantity }}</div>
-                                        <button id="plusbtn" type="button" v-on:click="increaseQuantity(product)">
+                                        <button  type="button" v-on:click="increaseQuantity(product)">
                                             +
                                         </button>
                                     </div>
@@ -132,18 +132,6 @@ export default {
 
 
 <style scoped>
-
-#plusbtn{
-    width:20px;
-    height:20px;
-    border: 1px solid;
-}
-#minusbtn{
-    width:20px;
-    height:20px;
-    border: 1px solid;
-
-}
 
 .botons {
     display: flex;
