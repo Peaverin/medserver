@@ -12,7 +12,6 @@ import ProductGridComponent from '@/components/ProductGridComponent'
 import ChatPage from '@/components/Chat'
 import OrderSummary from '@/components/OrderSummary'
 import OrderFinished from '@/components/OrderFinished'
-import CartComponent from '@/components/CartComponent'
 
 Vue.use(Router)
 
@@ -63,7 +62,8 @@ export default new Router({
       name: 'chooseDateTime',
       component: ChooseDateTime,
       meta: {
-        header: true
+        header: true,
+        wizard: true
       }
     },
     {
@@ -71,7 +71,8 @@ export default new Router({
       name: 'chooseDestination',
       component: ChooseDestination,
       meta: {
-        header: true
+        header: true,
+        wizard: true
       }
     },
     {
@@ -79,7 +80,8 @@ export default new Router({
       name: 'choosePaymentMethod',
       component: ChoosePaymentMethod,
       meta: {
-        header: true
+        header: true,
+        wizard: true
       }
     },
     {
@@ -87,7 +89,8 @@ export default new Router({
       name: 'requestPicsPresctiption',
       component: RequestPicsPrescription,
       meta: {
-        header: true
+        header: true,
+        wizard: true
       }
     },
     {
@@ -95,7 +98,8 @@ export default new Router({
       name: 'products',
       component: ProductGridComponent,
       meta: {
-        header: true
+        header: true,
+        wizard: true
       }
     },
     {
@@ -111,7 +115,8 @@ export default new Router({
       name: 'OrderSummary',
       component: OrderSummary,
       meta: {
-        header: true
+        header: true,
+        wizard: true
       }
     },
     {
@@ -119,15 +124,8 @@ export default new Router({
       name: 'OrderFinished',
       component: OrderFinished,
       meta: {
-        header: true
-      }
-    },
-    {
-      path: '/cart',
-      name: 'Cart',
-      component: CartComponent,
-      meta: {
-        header: true
+        header: true,
+        wizard: true
       }
     }
   ]

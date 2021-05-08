@@ -15,11 +15,7 @@
             </b-row>
             <div class="row" v-else>
                 <span class="title col-sm-4" @click="$router.push('/')">MedServer</span>
-                <div class="options col-sm pl-5">
-                        <span class="option mr" id="compte"  @click="$router.push('/login')" > INICIAR SESSIÓ</span>
 
-                    <span class="option ml" @click="$router.push('/register')">REGISTRAR-SE</span>
-                </div>
             </div>
         </div>
     </header>
@@ -29,6 +25,7 @@
 <style scoped>
 
 header {
+
   position: fixed;
   top: 0;
   width: 100%;
@@ -38,10 +35,10 @@ header {
 }
 
 .title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 3rem;
     margin-top: 0.5rem;
     align-self: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: var(--main-color-darker);
     cursor: pointer;
 }
@@ -50,8 +47,8 @@ header {
     align-self: center;
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-right: 8px;
-    margin-left: 8px;
+    margin-right: 7px;
+    margin-left: 7px;
 }
 
 .mr {

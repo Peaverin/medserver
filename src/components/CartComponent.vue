@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="col-12">
-            <h2 class="section__title">La teva cistella</h2>
+            <h1 class="section__title">La teva cistella</h1>
         </div>
         <div class="col-12">
             <div class="cart">
@@ -24,11 +24,11 @@
                                 <td>{{ product.name }}</td>
                                 <td>
                                     <div class="cart__quantity">
-                                        <button type="button" v-on:click="decreaseQuantity(product)">
+                                        <button id="minusbtn" type="button" v-on:click="decreaseQuantity(product)">
                                             -
                                         </button>
                                         <div class="quantity">{{ product.quantity }}</div>
-                                        <button type="button" v-on:click="increaseQuantity(product)">
+                                        <button id="plusbtn" type="button" v-on:click="increaseQuantity(product)">
                                             +
                                         </button>
                                     </div>
@@ -56,10 +56,10 @@
                 </div>
             </div>
             <div class="botons">
-                <button class="btn cart-btn" v-on:click="$emit('hide-cart', products)">
+                <button class="ctrbtn" v-on:click="$emit('hide-cart', products)">
                     Tornar
                 </button>
-                <button class="btn cart-btn btn-continuar" @click="$router.push('/requestPicsPrescription')" >
+                <button class="ctrbtn" @click="$router.push('/requestPicsPrescription')" >
                     Continuar
                 </button>
             </div>
@@ -133,13 +133,9 @@ export default {
 
 <style scoped>
 
-.section__title {
-    font-family: 'Spartan', sans-serif;
-    font-weight: 600;
-    color: #373737;
-    font-size: 32px;
-    line-height: 100%;
-    margin-bottom: 0;
+.cartbtn{
+    border: 1px solid;
+    
 }
 
 .botons {
@@ -295,7 +291,6 @@ tr {
 }
 
 .cart__price {
-    font-family: 'Spartan', sans-serif;
     font-weight: 500;
     font-size: 14px;
 }
@@ -368,7 +363,6 @@ button {
     font-size: 24px;
     color: #373737;
     line-height: 100%;
-    font-family: 'Spartan', sans-serif;
     font-weight: 600;
 }
 

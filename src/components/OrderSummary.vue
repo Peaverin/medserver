@@ -1,6 +1,6 @@
 <template>
   <b-container class="order-summary">
-    <h1 class="mb-5">Resum de la teva comanda</h1>
+    <h1 class="mb-5 section__title">Resum de la teva comanda</h1>
     <div class="row">
     <div class="col-lg-6">
       <div class="cart">
@@ -58,7 +58,7 @@
             </thead>
             <tbody>
             <tr>
-              <td class="details__title">QUAN?</td>
+              <td class="details__title">Quan?</td>
               <td>
                   <div class="details__info">{{ dateTime }}</div>
               </td>
@@ -67,7 +67,7 @@
               </td>
             </tr>
             <tr>
-              <td class="details__title">ON?</td>
+              <td class="details__title">On?</td>
               <td>
                 <div class="details__info">{{ finalAddress }}</div>
               </td>
@@ -76,7 +76,7 @@
               </td>
             </tr>
             <tr>
-              <td class="details__title">COM?</td>
+              <td class="details__title">Com?</td>
               <td>
                 <div class="details__info">{{ paymentMethod }}</div>
               </td>
@@ -244,7 +244,6 @@ tr {
 }
 
 .cart__price {
-  font-family: 'Spartan', sans-serif;
   font-weight: 500;
   font-size: 14px;
 }
@@ -270,7 +269,6 @@ tr {
   font-size: 24px;
   color: #373737;
   line-height: 100%;
-  font-family: 'Spartan', sans-serif;
   font-weight: 600;
   text-align: center;
   padding-right: 10px;

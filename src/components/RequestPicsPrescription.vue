@@ -1,6 +1,6 @@
 <template>
   <div class="container-xl">
-    <h1 class="p-5">Penja les següents fotografies:</h1>
+    <h1 class="p-5 section__title">Penja les següents fotografies:</h1>
     <div class="form-group row">
       <div class="col-sm pb-5" id="components-demo">
         <p>Puja una fotografa de la recepta mèdica</p>

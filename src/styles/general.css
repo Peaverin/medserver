@@ -4,13 +4,23 @@ Per donar espai al footer
 html {
     min-height: 100%;
     position: relative;
-  }
-  body {
-    margin: 0;
-    margin-bottom: 75px;
-  }
+    font-family: Arial, sans-serif;
 
-  .ctrbtn {
+}
+body {
+margin: 0;
+margin-bottom: 75px;
+}
+
+h1, .section__title {
+    font-weight: 600;
+    color: #373737;
+    font-size: 32px;
+    line-height: 100%;
+    margin-bottom: 0;
+}
+
+.ctrbtn {
     display: inline-block;
     margin: 0.5em 0;
     padding: 1em 2em;
@@ -19,7 +29,6 @@ html {
     border-radius: 10px;
     color: var(--main-color-darkest);
     background-color: var(--main-color);
-    font-family: "Quicksand", sans-serif;
     font-weight: 700;
     letter-spacing: 0.02em;
     line-height: 1;
@@ -27,15 +36,15 @@ html {
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
-
-  }
-    .ctrbtn:hover {
+    font-size: 16px;
+}
+.ctrbtn:hover {
     border:2px solid var(--main-color-dark);
     background-color: var(--main-color-dark);
     color: #fff;
-  }
+}
 
-  .ctrbtn:disabled {
+.ctrbtn:disabled {
     display: inline-block;
     margin: 0.5em 0;
     padding: 1em 2em;
@@ -44,7 +53,6 @@ html {
     border-radius: 10px;
     color: var(--main-color-darkest);
     background-color: gray;
-    font-family: "Quicksand", sans-serif;
     font-weight: 700;
     letter-spacing: 0.02em;
     line-height: 1;
@@ -54,4 +62,5 @@ html {
     transition: 0.3s;
     pointer-events: none;
 
-  }
+}
+

@@ -2,17 +2,21 @@
 
   <div id="app">
      <custom-header v-if="$route.meta.header === true" ref="cheader"></custom-header>
+
     <div ref = "header_margin" style = "height: 80px; "></div>
+        <wizard v-if="$route.meta.wizard === true"></wizard>
       <router-view/>
     <custom-footer/>
+
   </div>
 </template>
 
 <script>
 import CustomFooter from './components/CustomFooter.vue'
 import CustomHeader from './components/CustomHeader.vue'
+import Wizard from './components/Wizard.vue'
 export default {
-  components: { CustomFooter, CustomHeader},
+  components: {Wizard, CustomFooter, CustomHeader},
   name: 'App',
   mounted() {
 
@@ -24,7 +28,6 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

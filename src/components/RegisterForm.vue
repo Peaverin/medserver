@@ -3,7 +3,7 @@
         <div class="inner-block">
           <div class="vue-tempalte">
         <form>
-            <h3>Registre</h3>
+            <h3 class="section__title">Registre</h3>
 
             <div class="form-group">
                 <label>Correu electrònic</label>

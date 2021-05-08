@@ -34,7 +34,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="section__title">Catàleg</h2>
+                        <h1 class="section__title">Catàleg</h1>
                         <div class="section__sort">
                             <button type="button" :class="categories['tots']" v-on:click="changeCategory('tots')">Tots els productes</button> 
                             <button type="button" :class="categories['medicaments']" v-on:click="changeCategory('medicaments')">Medicaments</button> 
@@ -156,16 +156,13 @@
         margin-left: 10px;
     }
     .section_title {
-        font-family: 'Spartan', sans-serif;
         font-weight: 600;
         color: #373737;
         font-size: 26px;
         line-height: 100%;
         margin-bottom: 0;
     }
-    .section__title {
-        font-size: 32px;
-    }
+
     ::selection {
         background: #fff;
         color: #373737;

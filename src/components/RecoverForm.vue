@@ -3,7 +3,7 @@
         <div class="inner-block">
     <div class="vue-tempalte">
         <form>
-            <h3>Has oblidat la contrassenya?</h3>
+            <h3 class="section__title">Has oblidat la contrassenya?</h3>
             <p>
                 No pateixis, escriu el teu correu electrònic i rebràs instruccions per recuperar-la.
             </p>
@@ -46,7 +46,6 @@ export default {
 }
 .navbar-light {
     background-color: #ffffff;
-    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
   }
   
 .vertical-center {
@@ -60,7 +59,6 @@ export default {
     width: 450px;
     margin: auto;
     background: #ffffff;
-    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
     padding: 40px 55px 45px 55px;
     border-radius: 15px;
     transition: all .3s;

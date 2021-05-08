@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <h1 class="">COM?</h1>
+    <h1 class="section__title">Com?</h1>
     <p class="m-5">Tria com vols pagar la comanda</p>
     <div class="accordion" role="tablist">
       <div class="card">
@@ -135,7 +135,6 @@ export default {
 
 body {
   background-color: #f5eee7;
-  font-family: "Poppins", sans-serif;
   font-weight: 300
 }
 

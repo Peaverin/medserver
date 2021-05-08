@@ -3,7 +3,7 @@
 <div class="wrapper">
 
     <div class="main">
-      <h2 class="section-title">Xat amb un farmacèutic/a</h2>
+      <h2 class="section__title">Xat amb un farmacèutic/a</h2>
         <div class="px-2 scroll" id="scroller">
           <div class="text-center"><span class="between">dilluns 3 de maig de 2021 a les 19:27</span></div>
 

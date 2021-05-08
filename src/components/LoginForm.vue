@@ -3,7 +3,7 @@
         <div class="inner-block">
           <div class="vue-template">
         <form>
-            <h3>Iniciar Sessió</h3>
+            <h1 class="section__title">Iniciar Sessió</h1>
 
             <div class="form-group">
                 <label>Correu electrònic</label>
