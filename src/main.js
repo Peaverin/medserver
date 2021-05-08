@@ -17,7 +17,12 @@ import './styles/colors.css'
 import './styles/sizes.css'
 export const globalStore = new Vue({
   data: {
-    loggedIn: false
+    loggedIn: false,
+    nameUser: "Quim Masset",
+    emailUser: "quim.masset@gmail.com",
+    defaultAddress: "C/ Abat Bassa 132, 2n 3a, 08017, Barcelona",
+    finalAddress: this.defaultAddress,
+    purchasedProducts: [],
   }
 })
 
