@@ -238,9 +238,7 @@
         transition: 0.6s;
     }
     .grid-view {
-
-        margin-bottom: 200px;
-        padding-block-end: 200px;
+        padding-block-end: 50px;
     }
     .fade-enter-active, .fade-leave-active {
         transition: opacity .5s;
