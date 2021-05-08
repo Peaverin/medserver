@@ -57,7 +57,7 @@
             </div>
             <div class="botons">
                 <button class="ctrbtn" v-on:click="$emit('hide-cart', products)">
-                    TORNAR
+                    ENRERE
                 </button>
                 <button class="ctrbtn" @click="$router.push('/requestPicsPrescription')" >
                     CONTINUAR
