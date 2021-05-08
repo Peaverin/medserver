@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="section__title">OrderFinished</h1>    
+    <h1 class="section__title">Order Finished</h1>    
   </div>
   
 </template>

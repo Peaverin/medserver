@@ -24,11 +24,11 @@
                                 <td>{{ product.name }}</td>
                                 <td>
                                     <div class="cart__quantity">
-                                        <button id="minusbtn" type="button" v-on:click="decreaseQuantity(product)">
+                                        <button type="button" v-on:click="decreaseQuantity(product)">
                                             -
                                         </button>
                                         <div class="quantity">{{ product.quantity }}</div>
-                                        <button id="plusbtn" type="button" v-on:click="increaseQuantity(product)">
+                                        <button  type="button" v-on:click="increaseQuantity(product)">
                                             +
                                         </button>
                                     </div>
@@ -57,10 +57,10 @@
             </div>
             <div class="botons">
                 <button class="ctrbtn" v-on:click="$emit('hide-cart', products)">
-                    Tornar
+                    ENRERE
                 </button>
                 <button class="ctrbtn" @click="$router.push('/requestPicsPrescription')" >
-                    Continuar
+                    CONTINUAR
                 </button>
             </div>
         </div>
@@ -132,11 +132,6 @@ export default {
 
 
 <style scoped>
-
-.cartbtn{
-    border: 1px solid;
-
-}
 
 .botons {
     display: flex;
@@ -339,7 +334,6 @@ button {
     text-indent: 0px;
     text-shadow: none;
     text-align: center;
-    font: 400 13.3333px Arial;
 }
 
 .cart__table td.cart__total {
