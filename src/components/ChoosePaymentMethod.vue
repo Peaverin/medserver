@@ -5,21 +5,26 @@
     <p class="m-5">Tria com vols pagar la comanda</p>
     <div class="accordion" role="tablist">
       <div class="card">
-        <b-card no-body class="mb-1">
+        <b-card no-body class="mb-1" @click="select(1)">
           <b-card-header header-tag="header" class="p-1 card-header" role="tab">
-            <b-button block v-b-toggle.accordion-1 variant="info" class="btn-light"><div class="d-flex align-items-center justify-content-between"> <span>Paypal</span> <img src="https://i.imgur.com/7kQEsHU.png" width="30">
-            </div></b-button>
+            <b-button block v-b-toggle.accordion-1 variant="info" class="btn-light">
+              <div class="d-flex align-items-center justify-content-between">
+                <span>Paypal</span> <img src="https://i.imgur.com/7kQEsHU.png" width="30">
+              </div>
+            </b-button>
           </b-card-header>
-          <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel">
+          <b-collapse id="accordion-1" accordion="my-accordion" role="tabpanel" @click="select(1)">
             <b-card-body>
-              <input type="text" class="form-control" placeholder="Paypal email">
+              <input type="text" class="form-control" placeholder="Paypal email" v-model="email">
             </b-card-body>
           </b-collapse>
         </b-card>
 
-        <b-card no-body class="mb-1">
+        <b-card no-body class="mb-1" @click="select(2)">
           <b-card-header header-tag="header" class="p-1 card-header" role="tab">
-            <b-button block v-b-toggle.accordion-2 variant="info" class="btn-light"><div class="d-flex align-items-center justify-content-between"> <span>Targeta de crèdit</span>
+            <b-button block v-b-toggle.accordion-2 variant="info" class="btn-light">
+              <div class="d-flex align-items-center justify-content-between">
+                <span>Targeta de crèdit</span>
               <div class="icons"> <img src="https://i.imgur.com/2ISgYja.png" width="30"> <img src="https://i.imgur.com/W1vtnOV.png" width="30"> <img src="https://i.imgur.com/35tC99g.png" width="30"> <img src="https://i.imgur.com/2ISgYja.png" width="30"> </div>
             </div></b-button>
           </b-card-header>
@@ -30,7 +35,7 @@
                 <b-input-group-prepend>
                   <span class="input-group-text"><i class="fa fa-credit-card"></i></span>
                 </b-input-group-prepend>
-                <b-form-input type="text" class="LoginInput form-control" size="lg" placeholder="0000 0000 0000 0000">
+                <b-form-input type="text" class="LoginInput form-control" size="lg" placeholder="0000 0000 0000 0000" v-model="numTarja">
                 </b-form-input>
               </b-input-group>
               <div class="row mt-3 mb-3">
@@ -39,7 +44,7 @@
                     <b-input-group-prepend>
                       <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                     </b-input-group-prepend>
-                    <b-form-input type="text" class="LoginInput form-control" size="lg" placeholder="MM/AA">
+                    <b-form-input type="text" class="LoginInput form-control" size="lg" placeholder="MM/AA" v-model="data">
                     </b-form-input>
                   </b-input-group>
                 </div>
@@ -48,7 +53,7 @@
                     <b-input-group-prepend>
                       <span class="input-group-text"><i class="fa fa-lock"></i></span>
                     </b-input-group-prepend>
-                    <b-form-input type="text" class="LoginInput form-control" size="lg" placeholder="000">
+                    <b-form-input type="text" class="LoginInput form-control" size="lg" placeholder="000" v-model="codi">
                     </b-form-input>
                   </b-input-group>
                 </div>
@@ -57,7 +62,7 @@
           </b-collapse>
         </b-card>
 
-        <b-card no-body class="text-left mb-1">
+        <b-card no-body class="text-left mb-1" @click="select(3)">
           <b-card-header header-tag="header" class="p-1 card-header" role="tab">
             <b-button block v-b-toggle.accordion-3 variant="info" class="btn-light"><div class="d-flex align-items-center justify-content-between"> <span>Contra reemborsament</span><img src="https://bedzzle.tips/wp-content/uploads/2017/04/Metodo-di-conferma-prenotazione-Pagamento-in-loco-Hotel.png" width="30"></div></b-button>
           </b-card-header>
@@ -75,24 +80,58 @@
         <med-button link='/chooseDestination'>ENRERE</med-button>
       </div>
       <div class="col-4">
-        <med-button link='/orderSummary'>REALITZAR PAGAMENT</med-button>
+        <med-button link='/orderSummary' :disabled="isDisable">REALITZAR PAGAMENT</med-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import {globalStore} from '../main.js'
 import MedButton from './MedButton.vue'
 export default {
   name: "ChoosePaymentMethod",
   components: {
     MedButton
+  },
+  data () {
+    return {
+      selected: 0,
+      email: "",
+      numTarja: "",
+      data: "",
+      codi: ""
+    }
+  },
+  updated () {
+    console.log(this.selected)
+  },
+  methods: {
+    select (id) {
+      this.selected = id;
+      console.log(this.selected)
+      console.log(globalStore.paymentMethod)
+    }
+  },
+  computed: {
+    isDisable () {
+      if (this.selected === 3) {
+        globalStore.paymentMethod = "Contra reemborsament";
+        return false;
+      } else if ((this.selected === 1) && (this.email.length > 0)) {
+        globalStore.paymentMethod = "Paypal: " + this.email;
+        return false;
+      } else if ((this.selected === 2) && (this.numTarja.length > 0) && (this.data.length > 0) && (this.codi.length > 0)) {
+        globalStore.paymentMethod = "Targeta de crèdit acabada en " + this.numTarja.slice(Math.max(this.numTarja.length - 4, 0));
+        return false;
+      }
+      return true;
+    },
   }
 }
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
 
 body {
   background-color: #f5eee7;

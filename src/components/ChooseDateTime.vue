@@ -16,24 +16,24 @@
       <b-col>
         <div>
           <date-picker
-              v-model="value1"
+              v-model="day"
               format="YYYY-MM-DD"
               type="date"
-              placeholder="Select date"
+              placeholder="Tria un dia"
           ></date-picker>
         </div>
       </b-col>
       <b-col>
         <date-picker
-            v-model="value"
+            v-model="time"
             :time-picker-options="{
-                start: '01:00',
+                start: '07:00',
                 step: '00:30',
-                end: '24:30',
+                end: '23:30',
               }"
-            format="hh:mm a"
+            format="HH:mm"
             type="time"
-            placeholder="hh:mm a"
+            placeholder="Tria una hora"
         ></date-picker>
       </b-col>
     </b-row>
@@ -42,13 +42,15 @@
         <med-button link='/products'>SEGUIR COMPRANT</med-button>
       </b-col>
       <b-col>
-        <med-button link='/chooseDestination'>CONTINUAR</med-button>
+        <med-button link='/chooseDestination' :disabled="isDisable">CONTINUAR</med-button>
       </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
+import {globalStore} from '../main.js'
+import moment from 'moment'
   import DatePicker from 'vue2-datepicker';
   import 'vue2-datepicker/index.css';
   import 'vue2-datepicker/locale/es';
@@ -61,7 +63,18 @@
     },
     data() {
       return {
-        value: null
+        day: null,
+        time: null
+      }
+    },
+    updated() {
+      var dateTime = moment(this.day).lang('ca').format('LL')+ ' a les ' + moment(this.time).lang('ca').format('LT');
+      console.log(dateTime)
+      globalStore.dateTime = dateTime
+    },
+    computed: {
+      isDisable () {
+        return (this.day === null) || (this.time === null)
       }
     }
   }
