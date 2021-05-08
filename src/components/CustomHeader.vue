@@ -48,7 +48,10 @@ header {
 
 .options {
     align-self: center;
-    margin: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 8px;
+    margin-left: 8px;
 }
 
 .mr {
