@@ -34,7 +34,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <span class="cart__price">{{ product.price }}€</span>
+                                    <span class="cart__price">{{ product.price.toFixed(2) }}€</span>
                                 </td>
                                 <td>
                                     <span class="cart__price">{{ (product.price * product.quantity).toFixed(2) }}€</span>
@@ -48,7 +48,7 @@
                             <tr>
                                 <td class="cart__total">
                                     <p>Total a pagar:</p>
-                                    <span>{{ total }}€</span>
+                                    <span>{{ total.toFixed(2) }}€</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -69,24 +69,21 @@
 
 
 <script>
+import {globalStore} from '../main.js'
 export default {
     data () {
         return {
-            total: 0
+            total: 0,
+            products: []
         }
     },
     created () {
+        this.products = globalStore.purchasedProducts;
         for (let i = 0; i < this.products.length; i++) {
             this.total += this.products[i].quantity * this.products[i].price
         }
     },
     name: 'CartComponent',
-    props: {
-        products: {
-            type: Array,
-            Required: true
-        }
-    },
     methods: {
         increaseQuantity: function(product) {
             this.products = this.products.filter(prod => {
@@ -96,7 +93,7 @@ export default {
                 return true
             })
             this.total += Number(product.price)
-            this.$emit('increase-num-prod-in-cart')
+            globalStore.purchasedProducts = this.products;
         },
         decreaseQuantity: function(product) {
             if (product.quantity === 1) {
@@ -109,10 +106,9 @@ export default {
                 }
                 return true
             })
-            this.$emit('decrease-num-prod-in-cart', 1)
+            globalStore.purchasedProducts = this.products;
         },
         deleteProduct: function (product) {
-            this.$emit('decrease-num-prod-in-cart', product.quantity)
             if (Math.abs(this.total - (product.quantity*product.price)) < 0.001) {
                 this.total = 0
             } else {
@@ -125,6 +121,10 @@ export default {
                 return true
             })
             console.log(this.products.length)
+            globalStore.purchasedProducts = this.products;
+            if (this.products == 0){
+                this.$emit('hide-cart', this.products);
+            }
         }
     }
 }

@@ -18,7 +18,7 @@
                                 </svg>
                                 <span>Cart</span>
                             </button>
-                            <div class="num_items_cart" v-if="added_product && is_showing_cart === false">
+                            <div class="num_items_cart" v-if="num_items > 0 && is_showing_cart === false">
                                 <span> {{ num_items }} </span>
                             </div>
                         </div>
@@ -28,10 +28,7 @@
         </header>
         <cart-component 
             v-if="is_showing_cart === true" 
-            :products="prod_in_cart" 
-            v-on:hide-cart="onHideCart"
-            v-on:decrease-num-prod-in-cart="decreaseItems"
-            v-on:increase-num-prod-in-cart="increaseItems">
+            v-on:hide-cart="onHideCart">
         </cart-component>
         <section id="catalog" class="section" v-else>
             <div class="container">
@@ -46,15 +43,15 @@
                             <button type="button" :class="categories['complements']" v-on:click="changeCategory('complements')">Complements alimentaris</button></div>
                     </div>
                 </div>
-                <div class="row boto-comanda">
-                    <button type="button" class="comanda" v-bind:style="{display: comanda_activated}" @click="$router.push('/chooseDateTime')" >REALITZAR COMANDA</button>
+                <div class="row boto-comanda" v-if="this.num_items > 0">
+                    <button type="button" class="comanda" v-bind:style="{display: 'block'}" @click="$router.push('/chooseDateTime')" >REALITZAR COMANDA</button>
                 </div>
                 <div class="row row--grid" v-if="active_cat==='search'">
                     <product-card-component 
                         v-for="product in prod_search" :key="product.name" 
                         v-bind:link="product.link" 
                         v-bind:name="product.name"
-                        v-bind:price="product.price"
+                        v-bind:price="(product.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -63,7 +60,7 @@
                         v-for="product in products" :key="product.name" 
                         v-bind:link="product.link" 
                         v-bind:name="product.name"
-                        v-bind:price="product.price"
+                        v-bind:price="(product.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -72,7 +69,7 @@
                         v-for="prod_medicament in prod_medicaments" :key="prod_medicament.name" 
                         v-bind:link="prod_medicament.link" 
                         v-bind:name="prod_medicament.name"
-                        v-bind:price="prod_medicament.price"
+                        v-bind:price="(prod_medicament.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -81,7 +78,7 @@
                         v-for="product in prod_parafarmacia" :key="product.name" 
                         v-bind:link="product.link" 
                         v-bind:name="product.name"
-                        v-bind:price="product.price"
+                        v-bind:price="(product.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -90,7 +87,7 @@
                         v-for="product in prod_bebes" :key="product.name" 
                         v-bind:link="product.link" 
                         v-bind:name="product.name"
-                        v-bind:price="product.price"
+                        v-bind:price="(product.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -99,7 +96,7 @@
                         v-for="product in prod_compl" :key="product.name" 
                         v-bind:link="product.link" 
                         v-bind:name="product.name"
-                        v-bind:price="product.price"
+                        v-bind:price="(product.price.toFixed(2)).toString()"
                         v-on:incr-num-items="addItem(product)">
                     </product-card-component>
                 </div>
@@ -284,66 +281,71 @@
 </style>
 
 <script>
+import {globalStore} from '../main.js'
 import CartComponent from './CartComponent.vue'
 import ProductCardComponent from './ProductCardComponent.vue'
 export default {
   components: { ProductCardComponent, CartComponent },
+  mounted() {
+    globalStore;
+  },
+  created () {
+      this.updateNumberItems();
+  },
   data () {
     return {
         num_items: 0,
-        added_product: false,
         products: [
-            { link: "enantyum.png", name: "Enantyum 25mg", price: "5.99" },
-            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3.85" },
-            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4.90" },
-            { link: "test.jpeg", name: "Kit de test covid", price: "25" },
-            { link: "vitaminas.png", name: "Vitamines", price: "15" },
-            { link: "asacol.jpeg", name: "Asacol", price: "20"},
-            { link: "couldina.jpeg", name: "Couldina", price: "10"},
-            { link: "aspirina.jpeg", name: "Aspirina", price: "6"},
-            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5.5"},
-            { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12.99"},
-            { link: "floradix.jpeg", name: "Floradix", price: "25.55"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12.99"}
+            { link: "enantyum.png", name: "Enantyum 25mg", price: 5.99 },
+            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: 3.85 },
+            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: 4.90 },
+            { link: "test.jpeg", name: "Kit de test covid", price: 25 },
+            { link: "vitaminas.png", name: "Vitamines", price: 15 },
+            { link: "asacol.jpeg", name: "Asacol", price: 20},
+            { link: "couldina.jpeg", name: "Couldina", price: 10},
+            { link: "aspirina.jpeg", name: "Aspirina", price: 6},
+            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: 5.5},
+            { link: "talquistina.jpeg", name: "Talquistina", price: 6},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: 12.99},
+            { link: "floradix.jpeg", name: "Floradix", price: 25.55},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: 12.99}
         ],
         prod_medicaments: [
-            { link: "enantyum.png", name: "Enantyum 25mg", price: "5.99" },
-            { link: "asacol.jpeg", name: "Asacol", price: "20"},
-            { link: "couldina.jpeg", name: "Couldina", price: "10"},
-            { link: "aspirina.jpeg", name: "Aspirina", price: "6"},
-            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: "5.5"}
+            { link: "enantyum.png", name: "Enantyum 25mg", price: 5.99 },
+            { link: "asacol.jpeg", name: "Asacol", price: 20},
+            { link: "couldina.jpeg", name: "Couldina", price: 10},
+            { link: "aspirina.jpeg", name: "Aspirina", price: 6},
+            { link: "gelocatil.jpeg", name: "Gelocatil 1g", price: 5.5}
         ],
         prod_parafarmacia: [
-            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: "3.85" },
-            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: "4.90" },
-            { link: "test.jpeg", name: "Kit de test covid", price: "25" },
-            { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: "12.99"}
+            { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: 3.85 },
+            { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: 4.90 },
+            { link: "test.jpeg", name: "Kit de test covid", price: 25 },
+            { link: "talquistina.jpeg", name: "Talquistina", price: 6},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes", price: 12.99}
         ],
         prod_bebes: [
-            { link: "talquistina.jpeg", name: "Talquistina", price: "6"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 1", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: "12.99"},
-            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: "12.99"}
+            { link: "talquistina.jpeg", name: "Talquistina", price: 6},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 1", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 2", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 3", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 4", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 5", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 6", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 7", price: 12.99},
+            { link: "isdin.jpeg", name: "Champu Isdin bebes 8", price: 12.99}
         ],
         prod_compl: [
-            { link: "vitaminas.png", name: "Vitamines", price: "15" },
-            { link: "floradix.jpeg", name: "Floradix", price: "25.55"}
+            { link: "vitaminas.png", name: "Vitamines", price: 15 },
+            { link: "floradix.jpeg", name: "Floradix", price: 25.55}
         ],
         prod_search: [],
-        prod_in_cart: [],
         categories: {
             "tots": "active",
             "medicaments": "",
@@ -352,34 +354,28 @@ export default {
             "complements": ""
         },
         active_cat: "tots",
-        comanda_activated: "",
         is_showing_cart: false
     }
   },
   methods: {
     addItem: function (product) {
-        if (this.num_items == 0) {
-            this.added_product = true
-            this.comanda_activated = "block"
+        var found = false;
+        for(var i = 0; i < globalStore.purchasedProducts.length; i++) {
+            if (globalStore.purchasedProducts[i].name == product.name) {
+                globalStore.purchasedProducts[i].quantity += 1;
+                found = true;
+                break;
+            }
         }
-        if (!this.prod_in_cart.includes(product)) {
+        if (!found) {
             product.quantity = 1
-            this.prod_in_cart.push(product)
-        } else {
-            this.prod_in_cart = this.prod_in_cart.filter(function (prod) {
-                if (prod.name === product.name) {
-                    prod.quantity += 1
-                }
-                return true
-            })
+            globalStore.purchasedProducts.push(product)
         }
         this.num_items += 1
     },
     onUpdateProdInCart: function (products) {
-        this.prod_in_cart = products
-    },
-    onIncrNumItems: function () {
-        this.addItem()
+        globalStore.purchasedProducts = products
+        this.updateNumberItems()
     },
     changeCategory: function (cat) {
         this.categories[this.active_cat] = "";
@@ -405,15 +401,13 @@ export default {
     },
     onHideCart: function (products) {
         this.is_showing_cart = false
-        this.prod_in_cart = products
+        globalStore.purchasedProducts = products
+        this.updateNumberItems()
     },
-    increaseItems: function () {
-        this.num_items += 1
-    },
-    decreaseItems: function (num) {
-        this.num_items -= num
-        if (this.num_items === 0) {
-            this.added_product = false
+    updateNumberItems () {
+        this.num_items = 0;
+        for (let i = 0; i < globalStore.purchasedProducts.length; i++) {
+            this.num_items += globalStore.purchasedProducts[i].quantity
         }
     }
   }

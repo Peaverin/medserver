@@ -9,9 +9,9 @@
       <div class="row">
         <div class="col-9">
           <li class="label">Nom</li>
-          <li class="info">Quim Masset</li>
+          <li class="info">{{nameUser}}</li>
           <li class="label">Correu</li>
-          <li class="info">quim.masset@gmail.com</li> 
+          <li class="info">{{emailUser}}</li> 
         </div>
         <div class="col-3" style="text-align:center;">
           <button class="editbutton" @click="changeName">Edita</button>
@@ -39,7 +39,7 @@
       <div class="row">
         <div class="col-9">
           <li class="label">Adreça</li>
-          <li class="info">C/ Abat Bassa 132, 2n 3a, 08017, Barcelona</li>
+          <li class="info">{{defaultAddress}}</li>
         </div>
         <div class="col-3" style="text-align:center;">
           <button class="editbutton" @click="changeAdress">Edita</button>
@@ -55,6 +55,7 @@
 </template>
 
 <script>
+import {globalStore} from '../main.js'
 export default {
   name: 'UserInfoPage',
   components: {
@@ -72,6 +73,17 @@ export default {
     logout () {
       alert("Dialog emulating logging out");
     },    
+  },
+  computed: {
+    nameUser () {
+      return globalStore.nameUser
+    },
+    emailUser () {
+      return globalStore.emailUser
+    },
+    defaultAddress () {
+      return globalStore.defaultAddress
+    }
   }
 }
 </script>
