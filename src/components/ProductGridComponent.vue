@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="row boto-comanda" v-if="this.num_items > 0">
-                    <button type="button" class="comanda" v-bind:style="{display: 'block'}" @click="$router.push('/chooseDateTime')" >REALITZAR COMANDA</button>
+                    <button type="button" class="comanda" v-bind:style="{display: 'block'}" @click="is_showing_cart=true" >REALITZAR COMANDA</button>
                 </div>
                 <div class="row row--grid" v-if="active_cat==='search'">
                     <product-card-component 
