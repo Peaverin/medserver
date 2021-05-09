@@ -224,7 +224,7 @@ export default {
   border-radius: calc(var(--wizard_btn_size)/2);
   background-color: white;
   font-size: calc(var(--wizard_btn_size)/3);
-  z-index: 2;
+
 
 }
 
@@ -250,7 +250,6 @@ export default {
     border-bottom: 2px solid lightgray;
     position: absolute;
     content: "";
-    z-index:0;
 }
 .col.true::after {
     border-bottom: 2px solid var(--accent-color-1-darker);

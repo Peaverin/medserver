@@ -1,64 +1,44 @@
 <template>
-    <header>
-        <div class="container-fluid">
-            <b-row v-if="loggedIn">
-                <span class="title col-sm-4 px-5" @click="$router.push('/')">MedServer</span>
-                <div class="options col-sm pl-5">
-                    <b-dropdown size="sm"  variant="transparent" toggle-class="text-decoration-none" boundary="scrollParent" no-caret>
-                        <template #button-content>
-                        <span class="option mr" id="compte">EL MEU COMPTE</span>
-                        </template>
-                        <user-info-page/>
-                    </b-dropdown>
-                    <span class="option ml">LES MEVES COMANDES</span>
-                </div>
-            </b-row>
-            <div class="row" v-else>
-                <span class="title col-sm-4" @click="$router.push('/')">MedServer</span>
+   <b-navbar toggleable="lg" class="sticky-top" style="background-color:var(--main-color)">
+        <b-navbar-brand @click="$router.push('/')" class = "section__title title" >
+      <img src="./../assets/logo.jpeg" style="width:80px; margin-bottom:-10px; margin-top:-10px;" class="d-inline-block" alt="MedServer">
+      MedServer
+      </b-navbar-brand>
 
-            </div>
-        </div>
-    </header>
+      <b-navbar-toggle target="navbar-toggle-collapse" v-if="loggedIn">
+        <template #default="{ expanded }">
+          <b-icon v-if="expanded" icon="chevron-bar-up"></b-icon>
+          <b-icon v-else icon="chevron-bar-down"></b-icon>
+        </template>
+      </b-navbar-toggle>
+
+      <b-collapse id="navbar-toggle-collapse" is-nav v-if="loggedIn">
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item-dropdown right>
+            <template #button-content>
+              <span class="option mr" id="compte">EL MEU COMPTE</span>
+            </template>
+            <user-info-page/>
+          </b-nav-item-dropdown>
+          <b-nav-item href="#">
+            <span class="option ml">LES MEVES COMANDES</span>
+          </b-nav-item>
+          <b-nav-item href="#">
+            <span class="option ml" @click="$router.push('/chat')">CONSULTA AMB UN FARMACEUTIC</span>
+          </b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+
+  </b-navbar>
 </template>
-
 
 <style scoped>
 
-header {
-
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: auto; /* Set the fixed height of the footer here */
-  background-color: var(--main-color);
-  z-index: 5;
-}
-
 .title {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 3rem;
-    margin-top: 0.5rem;
-    align-self: center;
     color: var(--main-color-darker);
     cursor: pointer;
 }
-
-.options {
-    align-self: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-right: 7px;
-    margin-left: 7px;
-}
-
-.mr {
-  margin-right: 1rem;
-}
-
-.ml {
-  margin-left: 1rem;
-}
-
 .option {
     border-radius: 5px;
     transition: all 0.5s ease;
@@ -68,12 +48,10 @@ header {
     cursor: pointer;
     font-weight: bold;
 }
-
 .option:hover {
     background-color: white;
     transform: scale(1.1);
 }
-
 .options span {
   display: inline-block;
 }
@@ -83,7 +61,7 @@ header {
 import UserInfoPage from './UserInfoPage.vue'
 import {globalStore} from '../main.js'
 export default {
-  components: { UserInfoPage },
+  components: {UserInfoPage},
   name: 'CustomHeader',
       computed: {
     loggedIn: function () {

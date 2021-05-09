@@ -2,9 +2,10 @@
 
   <div id="app">
      <custom-header v-if="$route.meta.header === true" ref="cheader"></custom-header>
-
+    <!--
     <div ref = "header_margin" style = "height: 80px; "></div>
-        <wizard v-if="$route.meta.wizard === true"></wizard>
+    -->
+      <wizard v-if="$route.meta.wizard === true"></wizard>
       <router-view/>
     <custom-footer/>
 
@@ -32,7 +33,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 70px;
 }
 .fade-enter-active, .fade-leave-active, .routrans-enter-active, .routrans-leave-active {
   transition: opacity .5s;
@@ -40,7 +40,5 @@ export default {
 .fade-enter, .fade-leave-to, .routrans-enter, .routrans-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-
-
 
 </style>
