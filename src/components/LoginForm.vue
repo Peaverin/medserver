@@ -87,7 +87,7 @@ export default {
     box-shadow: none;
   }
 
-  .vertical-center h3 {
+  .vertical-center h1 {
     text-align: center;
     margin: 0;
     line-height: 1;

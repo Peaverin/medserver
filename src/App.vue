@@ -1,12 +1,16 @@
 <template>
 
-  <div id="app">
-     <custom-header v-if="$route.meta.header === true" ref="cheader"></custom-header>
+  <div id="app" content="user-scalable=0;">
+    <div class = "sticky-top" style="background-color: white">
+      <custom-header v-if="$route.meta.header === true" ref="cheader"></custom-header>
+      <wizard v-if="$route.meta.wizard === true" transition name="fade"></wizard>
+    </div>
+     
     <!--
     <div ref = "header_margin" style = "height: 80px; "></div>
     -->
-      <wizard v-if="$route.meta.wizard === true"></wizard>
-      <router-view/>
+    <router-view/>
+    
     <custom-footer/>
 
   </div>

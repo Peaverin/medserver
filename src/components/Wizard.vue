@@ -1,7 +1,8 @@
 <template>
+<div class="wizard">
   <table class="center">
-    <tr>
-      <td v-for="step in steps" v-bind:key="step.id" :class = "step.completed">
+    <tr class>
+      <td v-for="step in steps" v-bind:key="step.id" :class = "'' + step.completed">
         <div v-if="step.active === true" class ="wizard_step">
           <button class="wizard_btn wizard_active" disabled><i :class="step.icon"></i></button>
           <p class = "wizard_txt wizard_active"> {{step.name}} </p>
@@ -21,6 +22,7 @@
       </td>
     </tr>
   </table>
+  </div>
 </template>
 
 <script>
@@ -91,9 +93,6 @@ export default {
       return 0
     }
   },
-  mounted:function(){
-    console.log('a')
-  },
   watch:{
     $route (to, from){
         var fromStep;
@@ -109,6 +108,16 @@ export default {
               toStep = this.steps[i];
               toStepIndex = i;
             }
+        }
+        if(fromStepIndex === -1){
+          for (i = 0; i < this.steps.length; i++){
+            this.steps[i].active = false;
+            this.steps[i].completed = false;
+            this.steps[i].unlocked = false;
+          }
+          this.steps[0].active = true;
+          this.steps[0].unlocked = true;
+          return
         }
         if(toStepIndex === - 1){
           return
@@ -129,95 +138,102 @@ export default {
 <!-- Add "s
     CenteredButtoncoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-@media (min-width: 10px) {  
-  .container{
-  display:none;
+@media (min-width: 0px) {  
+.wizard_btn{
+  --wizard_btn_size:45px;
 }
-    p {font-size:13px;
-    display:none} /*1rem = 16px*/
+    p {font-size:11px;
+    display:none;
+     margin-bottom:25px;} /*1rem = 16px*/
+td::after{
+    border-bottom: 10px solid lightgray;
+    position: relative;
+    content: "";
+    top:3.7%;
+    content: "";
+    display: block;
+    z-index: -1;
+    height: 1px;
+    width: 100%;
+    top: -27px;
 }
-/* Small devices (landscape phones, 544px and up) */
-@media (min-width: 363px) {  
-    .container{
-  display:block;
+table{
+  margin-bottom:10px;
 }
-  .wizard_btn{
-  --wizard_btn_size:60px;
 }
-    p {font-size:13px;
-    display:none} /*1rem = 16px*/
-    .col::after{
-      width:66%;
-      right:-33%;
-      top:45%;
-    }
+@media (min-width: 345px) {  
+.wizard_btn{
+  --wizard_btn_size:45px;
+}
+    p {font-size:11px;
+    display:initial;
+     margin-bottom:25px;} /*1rem = 16px*/
+td::after{
+    border-bottom: 10px solid lightgray;
+    position: relative;
+    content: "";
+    top:3.7%;
+    content: "";
+    display: block;
+    z-index: -1;
+    height: 1px;
+    width: 100%;
+    top: -54px;
 }
 
-@media (min-width: 525px) {  
-      .container{
-  display:block;
 }
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 420px) {  
+
+  .wizard_btn{
+  --wizard_btn_size:55px;
+}
+    p {font-size:13px;
+    display:initial;}
+
+td::after{
+    border-bottom: 10px solid lightgray;
+    position: relative;
+    content: "";
+    top:3.7%;
+    content: "";
+    display: block;
+    z-index: -1;
+    height: 1px;
+    width: 100%;
+    top: -57px;
+}
+
+}
+
+@media (min-width: 462px) {  
   .wizard_btn{
   --wizard_btn_size:60px;
 }
     p {font-size:14px;
     display:block} /*1rem = 16px*/
-             .col::after{
-    width:61%;
-    right:-36%;
-    top:25%;
-    }
+td::after{
+    border-bottom: 10px solid lightgray;
+    position: relative;
+    content: "";
+    top:3.7%;
+    content: "";
+    display: block;
+    z-index: -1;
+    height: 1px;
+    width: 100%;
+    top: -70px;
 }
 
-/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {  
-      .container{
-  display:block;
-}
-.wizard_btn{
-  --wizard_btn_size:60px;
-}
-    p {font-size:16px;
-    display:block} /*1rem = 16px*/
-         .col::after{
-    width:60%;
-    right:-35%;
-    top:25%;
-    }
 }
 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-      .container{
-  display:block;
+.wizard{
+      box-shadow:  0px 3px 5px rgba(136, 136, 136, 0.568);
+      padding-top:10px;
+      margin-bottom:20px;
 }
- .wizard_btn{
-  --wizard_btn_size:60px;
-}
- p {font-size:18px;
- display:block} /*1rem = 16px*/
-     .col::after{
-    width:67%;
-    right:-35%;
-    top:25%;
-    }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 1200px) { 
-      .container{
-  display:block;
-}
-  .wizard_btn{
-  --wizard_btn_size:60px;
-}
-    p {font-size:18px;
-    display:block} /*1rem = 16px*/
-    .col::after{
-    width:70%;
-    right:-35%;
-    top:25%;
-    }
+p {
+  margin-bottom:15px;
 }
 .center {
   margin-left: auto;
@@ -225,36 +241,37 @@ export default {
 }
 table{
     table-layout: fixed;
-    width: 60%;
+    width:100%;
+    max-width:1000px;
 }
 td{
-  display: table-cell;
+        display: table-cell;
         position: relative;
         float: none;
-        padding: 0;
-        width: 1%;
-
-        &:after {
-  
-        }
+        
 
         &:after {
             left: 50%;
         }
-
-        &:last-child {
-            &:after {
-                display: none;
-            }
-        }
 }
+
+td.true::after {
+    border-bottom: 10px solid var(--accent-color-1-darker);
+
+}
+
+td:last-child::after {
+width:0%;
+}
+
 .wizard_btn{
   width: var(--wizard_btn_size);
   height: var(--wizard_btn_size);
+  border: 2px solid;
   border-radius: calc(var(--wizard_btn_size)/2);
   background-color: white;
   font-size: calc(var(--wizard_btn_size)/3);
-
+  z-index: 2;
 
 }
 
@@ -276,22 +293,4 @@ td{
 }
 
 
-td::after{
-    border-bottom: 2px solid lightgray;
-    position: relative;
-    content: "";
-    right:25%;
-    top:3.7%;
-    content: "";
-    display: block;
-    height: 1px;
-    width: 100%;
-    top: -75px;
-}
-td.true::after {
-    border-bottom: 2px solid var(--accent-color-1-darker);
-}
-td:last-child::after {
-display:none;
-}
 </style>

@@ -3,7 +3,7 @@
         <div class="inner-block">
           <div class="vue-tempalte">
         <form>
-            <h3 class="section__title">Registre</h3>
+            <h1 class="section__title">Registre</h1>
 
             <div class="form-group">
                 <label>Correu electrònic</label>
@@ -82,7 +82,7 @@ export default {
     box-shadow: none;
   }
 
-  .vertical-center h3 {
+  .vertical-center h1 {
     text-align: center;
     margin: 0;
     line-height: 1;
