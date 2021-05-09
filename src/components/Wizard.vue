@@ -257,7 +257,7 @@ td{
 
 td.true::after {
     border-bottom: 10px solid var(--accent-color-1-darker);
-
+    transition: 0.5s;
 }
 
 td:last-child::after {
@@ -272,12 +272,24 @@ width:0%;
   background-color: white;
   font-size: calc(var(--wizard_btn_size)/3);
   z-index: 2;
-
+  transition: 0.5s
 }
 
 .wizard_active{
   border-color: var(--main-color);
   color: black;
+}
+
+.wizard_btn.wizard_active{
+  background-color:var(--main-color-light);
+}
+
+.wizard_btn.wizard_unlocked:hover{
+  background-color:var(--main-color-lightest);
+}
+
+.wizard_btn.wizard_completed:hover{
+  background-color:var(--accent-color-1-lightest);
 }
 
 .wizard_disabled{
