@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <h1 class="section__title">Com?</h1>
-    <p class="m-5">Tria com vols pagar la comanda</p>
+    <h1 class="p-4 section__title">Com?</h1>
+    <p class="p-3">Tria com vols pagar la comanda</p>
     <div class="accordion" role="tablist">
       <div class="card">
         <b-card no-body class="mb-1" @click="select(1)">

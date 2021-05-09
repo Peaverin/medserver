@@ -1,11 +1,7 @@
 <template>
   <div class="menuUserInfo">
 
-    <h3>El meu compte</h3>
-
-    <div class="dropdown-divider"></div>
-
-    <div class="container">
+    <div class="container" id="first-container">
       <div class="row">
         <div class="col-9">
           <li class="label">Nom</li>
@@ -91,6 +87,10 @@ export default {
 </script>
 
 <style scoped>
+
+#first-container {
+  margin-top: 10px;
+}
 
 .menuUserInfo {
   border-radius: 20px;

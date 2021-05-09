@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="931d5c97-cdbb-4a7a-bc5f-d0278a4454d9" name="Default Changelist" comment="commit for merge. Working in responsive errors">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chat.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chat.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChooseDateTime.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChooseDateTime.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChooseDestination.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChooseDestination.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChoosePaymentMethod.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChoosePaymentMethod.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ModifyOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModifyOrder.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/OrderHistory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderHistory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrderSummary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderSummary.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RequestPicsPrescription.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RequestPicsPrescription.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SeeOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SeeOrder.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/UserInfoPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserInfoPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

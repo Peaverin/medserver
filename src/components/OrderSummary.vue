@@ -1,6 +1,6 @@
 <template>
   <b-container class="order-summary">
-    <h1 class="mb-5 section__title">Resum de la teva comanda</h1>
+    <h1 class="p-4 section__title">Resum de la teva comanda</h1>
     <div class="row">
     <div class="col-lg-6">
       <div class="cart">

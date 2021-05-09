@@ -36,6 +36,15 @@ export default {
 
 <style scoped>
 
+.home {
+  margin-top: 70px;
+  vertical-align: center;
+}
+
+h2 {
+  margin-bottom: 40px;
+}
+
 
   
 </style>

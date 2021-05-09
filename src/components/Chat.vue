@@ -1,6 +1,6 @@
 <template>
   <div class="col-12">
-    <h2 class="section-title">Xat amb un farmacèutic/a</h2>
+    <h1 class="p-4 section-title">Xat amb un farmacèutic/a</h1>
 <div class="wrapper">
 
 
@@ -142,7 +142,7 @@ body {
 }
 
 .wrapper {
-  margin-top: 30px;
+  margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,7 +160,7 @@ body {
 
 .section-title {
   font-size: 32px;
-  margin-top: 60px;
+  margin-top: 45px;
   display: flex;
   justify-content: center;
   align-items: center;

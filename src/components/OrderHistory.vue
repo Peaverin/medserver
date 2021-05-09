@@ -1,7 +1,7 @@
 <template>
   <b-container class="order-history">
-    <h1 v-if="oldOrdersBoolean" class="mb-5 section__title">Historial de comandes antigues</h1>
-    <h1 v-else class="mb-5 section__title">Historial de comandes actuals</h1>
+    <h1 v-if="oldOrdersBoolean" class="p-4 section__title">Historial de comandes antigues</h1>
+    <h1 v-else class="p-4 section__title">Historial de comandes actuals</h1>
     <div class="row">
       <div class="col-md-8 canvi-comandes">
         <button v-if="oldOrdersBoolean" @click="seeCurrentOrders" class="ctrbtn">Veure comandes actuals</button>
