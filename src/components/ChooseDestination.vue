@@ -31,7 +31,7 @@
         <med-button link='/chooseDateTime'>ENRERE</med-button>
       </div>
       <div class="col-4">
-        <med-button link='/choosePaymentMethod' :disabled="isDisable">CONTINUAR</med-button>
+        <med-button-call link='/choosePaymentMethod' :disabled="isDisable">CONTINUAR</med-button-call>
       </div>
     </div>
   </div>
@@ -40,10 +40,12 @@
 <script>
 import {globalStore} from '../main.js'
 import MedButton from './MedButton.vue'
+import MedButtonCall from './MedButtonCall.vue'
 export default {
   name: "ChooseDestination",
   components: {
-    MedButton
+    MedButton,
+    MedButtonCall
   },
   data () {
     return {

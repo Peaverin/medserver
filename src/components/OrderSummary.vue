@@ -96,7 +96,7 @@
         <med-button link='/choosePaymentMethod'>ENRERE</med-button>
       </div>
       <div class="col-sm-6">
-        <med-button link='/orderFinished'>CONFIRMAR COMANDA</med-button>
+        <med-button-call link='/orderFinished'>CONFIRMAR COMANDA</med-button-call>
       </div>
     </div>
   </b-container>
@@ -106,10 +106,12 @@
 <script>
 import {globalStore} from '../main.js'
 import MedButton from './MedButton.vue'
+import MedButtonCall from './MedButtonCall.vue'
 export default {
   name: 'OrderSummary',
   components: {
     MedButton,
+    MedButtonCall
   },
   data () {
     return {

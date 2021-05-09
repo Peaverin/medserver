@@ -37,14 +37,37 @@ h1, .section__title {
     cursor: pointer;
     transition: 0.3s;
     font-size: 16px;
+    color: black;
+}
+
+#calltoaction {
+    color: var(--accent-color-1-darkest);
+    background-color: var(--accent-color-1);
+    border: 2px solid var(--accent-color-1);
+    color: black;
+}
+#calltodelete {
+    color: var(--accent-color-2-darkest);
+    background-color: var(--accent-color-2);
+    border: 2px solid var(--accent-color-2);
+    color: black;
 }
 .ctrbtn:hover {
     border:2px solid var(--main-color-dark);
     background-color: var(--main-color-dark);
     color: #fff;
 }
-
-.ctrbtn:disabled {
+#calltoaction:hover {
+    border:2px solid var(--accent-color-1-dark);
+    background-color: var(--accent-color-1-dark);
+    color: #fff;
+}
+#calltodelete:hover {
+    border:2px solid var(--accent-color-2-darker);
+    background-color: var(--accent-color-2-darker);
+    color: #fff;
+}
+.ctrbtn:disabled, #calltoaction:disabled {
     display: inline-block;
     margin: 0.5em 0;
     padding: 1em 2em;

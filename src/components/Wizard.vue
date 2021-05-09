@@ -1,27 +1,26 @@
 <template>
-  <div class="container">
-    <div class = "row">
-
-    <div v-for="step in steps" v-bind:key="step.id" :class = "'col ' + step.completed">
-      <div v-if="step.active === true" class ="wizard_step">
-        <button class="wizard_btn wizard_active" disabled><i :class="step.icon"></i></button>
-        <p class = "wizard_txt wizard_active"> {{step.name}} </p>
-      </div>
-      <div v-else-if="step.completed === true">
-        <button class="wizard_btn wizard_completed" @click="$router.push(step.path)"><i :class="step.icon"></i></button>
-        <p class = "wizard_txt wizard_completed"> {{step.name}} </p>
-      </div>
-       <div v-else-if="step.unlocked === true">
-        <button class="wizard_btn wizard_unlocked" @click="$router.push(step.path)"><i :class="step.icon"></i></button>
-        <p class = "wizard_txt wizard_unlocked"> {{step.name}} </p>
-      </div>
-      <div v-else>
-        <button class="wizard_btn wizard_disabled" disabled><i :class="step.icon"></i></button>
-        <p class = "wizard_txt wizard_disabled"> {{step.name}} </p>
-      </div> 
-    </div>
-    </div>
-  </div>
+  <table class="center">
+    <tr>
+      <td v-for="step in steps" v-bind:key="step.id" :class = "step.completed">
+        <div v-if="step.active === true" class ="wizard_step">
+          <button class="wizard_btn wizard_active" disabled><i :class="step.icon"></i></button>
+          <p class = "wizard_txt wizard_active"> {{step.name}} </p>
+        </div>
+        <div v-else-if="step.completed === true">
+          <button class="wizard_btn wizard_completed" @click="$router.push(step.path)"><i :class="step.icon"></i></button>
+          <p class = "wizard_txt wizard_completed"> {{step.name}} </p>
+        </div>
+        <div v-else-if="step.unlocked === true">
+          <button class="wizard_btn wizard_unlocked" @click="$router.push(step.path)"><i :class="step.icon"></i></button>
+          <p class = "wizard_txt wizard_unlocked"> {{step.name}} </p>
+        </div>
+        <div v-else>
+          <button class="wizard_btn wizard_disabled" disabled><i :class="step.icon"></i></button>
+          <p class = "wizard_txt wizard_disabled"> {{step.name}} </p>
+        </div> 
+      </td>
+    </tr>
+  </table>
 </template>
 
 <script>
@@ -72,7 +71,7 @@ export default {
           unlocked: false
         },
         {
-          name: 'Resum comanda',
+          name: 'Resum',
           path: '/orderSummary',
           icon: 'fas fa-clipboard-list',
           active: false,
@@ -98,9 +97,9 @@ export default {
   watch:{
     $route (to, from){
         var fromStep;
-        var fromStepIndex;
+        var fromStepIndex = -1;
         var toStep;
-        var toStepIndex;
+        var toStepIndex = -1;
         for (var i = 0; i<this.steps.length; i++){
             if(this.steps[i].path === from.path){
               fromStep = this.steps[i];
@@ -110,6 +109,9 @@ export default {
               toStep = this.steps[i];
               toStepIndex = i;
             }
+        }
+        if(toStepIndex === - 1){
+          return
         }
         //Si adelantamos un paso quiere decir que completamos el anterior:
         if(toStepIndex > fromStepIndex){
@@ -140,7 +142,7 @@ export default {
   display:block;
 }
   .wizard_btn{
-  --wizard_btn_size:30px;
+  --wizard_btn_size:60px;
 }
     p {font-size:13px;
     display:none} /*1rem = 16px*/
@@ -156,7 +158,7 @@ export default {
   display:block;
 }
   .wizard_btn{
-  --wizard_btn_size:50px;
+  --wizard_btn_size:60px;
 }
     p {font-size:14px;
     display:block} /*1rem = 16px*/
@@ -217,7 +219,35 @@ export default {
     top:25%;
     }
 }
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+table{
+    table-layout: fixed;
+    width: 60%;
+}
+td{
+  display: table-cell;
+        position: relative;
+        float: none;
+        padding: 0;
+        width: 1%;
 
+        &:after {
+  
+        }
+
+        &:after {
+            left: 50%;
+        }
+
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+}
 .wizard_btn{
   width: var(--wizard_btn_size);
   height: var(--wizard_btn_size);
@@ -246,15 +276,22 @@ export default {
 }
 
 
-.col::after{
+td::after{
     border-bottom: 2px solid lightgray;
-    position: absolute;
+    position: relative;
     content: "";
+    right:25%;
+    top:3.7%;
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    top: -75px;
 }
-.col.true::after {
+td.true::after {
     border-bottom: 2px solid var(--accent-color-1-darker);
 }
-.col:last-child::after {
+td:last-child::after {
 display:none;
 }
 </style>

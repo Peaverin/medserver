@@ -16,7 +16,7 @@
         <med-button link="/products">ENRERE</med-button>
       </div>
       <div class="col-4">
-        <med-button link="/chooseDateTime">CONTINUAR</med-button>
+        <med-button-call link="/chooseDateTime">CONTINUAR</med-button-call>
       </div>
     </div>
   </div>
@@ -25,11 +25,13 @@
 <script>
 import ChooseImage from './ChooseImage.vue'
 import MedButton from "./MedButton";
+import MedButtonCall from "./MedButtonCall";
 export default {
   name: "RequestPicsPrescription",
   components: {
     ChooseImage,
-    MedButton
+    MedButton,
+    MedButtonCall
   }
 }
 </script>
