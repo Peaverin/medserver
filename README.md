@@ -1,6 +1,8 @@
-# medserver-prototip
+# Prototip MedServer: Pràctica 4 grup AF 1
+Aquest és el codi font del prototip de la pràctica 4 de fhic del grup. Aquest repositori s'ha fet públic el diumenge 9 de maig a les 23:50.
+La informació que es veu a continuació en aquest Readme és irrelevant per als correctors de la pràctica.
 
-## Project setup
+# Project setup
 
 1. Instalar npm
 
