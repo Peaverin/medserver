@@ -1,5 +1,6 @@
 <template>
     <div class="grid-view">
+        <transition name="fade" mode="out-in" appear>
         <header class="header">
             <div class="container">
                 <div class="row">
@@ -26,6 +27,8 @@
                 </div>
             </div>
         </header>
+        </transition>
+        <transition name="fade" mode="out-in" appear>
         <cart-component 
             v-if="is_showing_cart === true" 
             v-on:hide-cart="onHideCart">
@@ -102,6 +105,7 @@
                 </div>
             </div>
         </section>
+    </transition>
     </div>
 </template>
 

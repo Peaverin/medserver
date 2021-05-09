@@ -1,9 +1,9 @@
 <template>
   <div class="container-sm px-5">
     <h1 class="section__title">On?</h1>
-    <p class="p-5">Tria on vols que enviem la comanda</p>
+    <p class="p-3">Tria on vols que enviem la comanda</p>
     <div class="radio col-sm-10 mb-3">
-      <label><input v-model="changeAdress" type="radio" name="optradio" v-bind:value="0" checked> Usar direcció del compte</label>
+      <label><input v-model="changeAdress" type="radio" name="optradio" v-bind:value="0" checked> Usar direcció del compte: C/ Abat Bassa 132, 2n 3a, 08017, Barcelona</label>
     </div>
     <div class="radio col-sm-10 mb-4">
       <label><input v-model="changeAdress" type="radio" name="optradio" v-bind:value="1"> Usar direcció següent:</label>
