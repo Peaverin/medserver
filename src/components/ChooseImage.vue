@@ -14,7 +14,7 @@
         File name here</div>
     </div>
     <!-- your custom button or image or any thing else -->
-    <b-row>
+    <b-row class="row-buttons">
       <b-col>
         <button @click="browse" class="ctrbtn">Selecciona</button>
       </b-col>
@@ -142,6 +142,10 @@ export default {
   text-transform: uppercase;
   cursor: pointer;
   background: linear-gradient(135deg,#3a8ffe 0%,#9658fe 100%);
+}
+
+.row-buttons {
+  margin-top: 15px;
 }
 
 </style>

@@ -77,11 +77,9 @@
 
 <script>
 import {globalStore} from '../main.js'
-import MedButton from './MedButton.vue'
 export default {
   name: 'CartComponent',
   components: {
-    MedButton
   },
     data () {
         return {

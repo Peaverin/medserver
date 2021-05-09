@@ -96,7 +96,7 @@
         <med-button link='/choosePaymentMethod'>ENRERE</med-button>
       </div>
       <div class="col-sm-6">
-        <med-button-call link='/orderFinished'>CONFIRMAR COMANDA</med-button-call>
+        <button class="ctrbtn" id="calltoaction" @click="orderFinished">CONFIRMAR COMANDA</button>
       </div>
     </div>
   </b-container>
@@ -106,12 +106,10 @@
 <script>
 import {globalStore} from '../main.js'
 import MedButton from './MedButton.vue'
-import MedButtonCall from './MedButtonCall.vue'
 export default {
   name: 'OrderSummary',
   components: {
     MedButton,
-    MedButtonCall
   },
   data () {
     return {
@@ -137,6 +135,16 @@ export default {
     var i;
     for (i in this.purchasedProducts) {
       this.totalPrice += this.purchasedProducts[i].quantity*this.purchasedProducts[i].price;
+    }
+  },
+  methods: {
+    orderFinished () {
+      alert("Order successful!");
+      globalStore.purchasedProducts = []
+      globalStore.dateTime = ""
+      globalStore.finalAddress = ""
+      globalStore.paymentMethod = ""
+      this.$router.push('/');
     }
   }
 
