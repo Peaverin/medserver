@@ -39,7 +39,7 @@ p{
 <template>
     <footer class ="footer">
 
-          <p>Preguntes freqüents | Contacte | Qui Som? | Termes i condicions</p>
+          <p>Preguntes freqüents | Contacte | Qui som? | Termes i condicions</p>
         
     </footer>
 </template>
