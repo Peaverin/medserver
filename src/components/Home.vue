@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="home">
     <img src='./../assets/logo1.png' style="width:15%; min-width:100px"/>
     <h1 style="font-size: 60px">MedServer</h1>
     <h2>Medicaments a domicili</h2>
@@ -33,5 +33,11 @@ export default {
 }
 </script>
 
-<!-- Add "s
-    CenteredButtoncoped" attribute to limit CSS to this component only -->
+
+<style scoped>
+
+.home {
+  margin-top: 50px;
+}
+  
+</style>

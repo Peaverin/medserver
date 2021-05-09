@@ -14,7 +14,7 @@
 
       <b-collapse id="navbar-toggle-collapse" is-nav v-if="loggedIn">
         <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown right>
+          <b-nav-item-dropdown right no-caret>
             <template #button-content>
               <span class="option mr" id="compte">EL MEU COMPTE</span>
             </template>
