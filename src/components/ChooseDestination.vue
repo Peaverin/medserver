@@ -26,13 +26,10 @@
         <input type="text" class="form-control" id="mun" :disabled="disableFields" v-model="city">
       </div>
     </div>
-    <div class="row justify-content-center" id="end_buttons">
-      <div class="col-4">
-        <med-button link='/chooseDateTime'>ENRERE</med-button>
-      </div>
-      <div class="col-4">
-        <med-button-call link='/choosePaymentMethod' :disabled="isDisable">CONTINUAR</med-button-call>
-      </div>
+
+    <div class="row justify-content-center botons" id="end_buttons">
+      <med-button link='/chooseDateTime'>ENRERE</med-button>
+      <med-button-call link='/choosePaymentMethod' :disabled="isDisable">CONTINUAR</med-button-call>
     </div>
   </div>
 </template>
@@ -88,5 +85,10 @@ export default {
 }
 #end_buttons{
   margin-top: 70px;
+}
+.botons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80px;
 }
 </style>

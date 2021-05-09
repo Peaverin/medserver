@@ -11,13 +11,9 @@
         <ChooseImage></ChooseImage>
       </div>
     </div>
-    <div class="row justify-content-center" id="end_buttons">
-      <div class="col-4">
-        <med-button link="/products">ENRERE</med-button>
-      </div>
-      <div class="col-4">
-        <med-button-call link="/chooseDateTime">CONTINUAR</med-button-call>
-      </div>
+    <div class="botons">
+      <med-button link="/products">ENRERE</med-button>
+      <med-button-call link="/chooseDateTime">CONTINUAR</med-button-call>
     </div>
   </div>
 </template>
@@ -37,5 +33,9 @@ export default {
 </script>
 
 <style scoped>
-
+.botons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 80px;
+}
 </style>

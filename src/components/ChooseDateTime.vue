@@ -4,38 +4,44 @@
     <b-row class="row justify-content-center mb-5">
       <p> Tria quan vols que enviem la comanda</p>
     </b-row>
-    <b-row class="mb-5" align-h="around">
-      <b-col>
-        <label>Dia de l'enviament</label>
-      </b-col>
-      <b-col>
-        <label>Hora de l'enviament</label>
-      </b-col>
-    </b-row>
-    <b-row class="mb-5" align-h="around">
-      <b-col>
-        <div>
-          <date-picker
-              v-model="day"
-              format="YYYY-MM-DD"
-              type="date"
-              placeholder="Tria un dia"
-          ></date-picker>
-        </div>
-      </b-col>
-      <b-col>
-        <date-picker
-            v-model="time"
-            :time-picker-options="{
+
+    <b-row align-h="around">
+      <b-row align-h="around">
+        <b-col>
+          <label class="mb-5" >Dia de l'enviament</label>
+          <div>
+            <date-picker class="mb-5"
+                v-model="day"
+                format="YYYY-MM-DD"
+                type="date"
+                placeholder="Tria un dia"
+            ></date-picker>
+          </div>
+        </b-col>
+
+      </b-row>
+      <b-row align-h="around">
+
+        <b-col>
+          <label class="mb-5" >Hora de l'enviament</label>
+          <div>
+            <date-picker class="mb-5"
+                v-model="time"
+                :time-picker-options="{
                 start: '07:00',
                 step: '00:30',
                 end: '23:30',
               }"
-            format="HH:mm"
-            type="time"
-            placeholder="Tria una hora"
-        ></date-picker>
-      </b-col>
+                format="HH:mm"
+                type="time"
+                placeholder="Tria una hora"
+            ></date-picker>
+          </div>
+
+        </b-col>
+      </b-row>
+
+
     </b-row>
     <b-row align-h="center">
       <b-col>
