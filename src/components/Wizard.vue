@@ -65,7 +65,7 @@ export default {
           unlocked: false
         },
         {
-          name: 'Pagament',
+          name: 'Com?',
           path: '/choosePaymentMethod',
           icon: 'fas fa-coins',
           active: false,
