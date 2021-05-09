@@ -14,14 +14,14 @@
         File name here</div>
     </div>
     <!-- your custom button or image or any thing else -->
-    <b-row class="row-buttons">
-      <b-col>
+    <div class="row row-buttons">
+      <div class="col-sm-6">
         <button @click="browse" class="ctrbtn">Selecciona</button>
-      </b-col>
-      <b-col>
-        <button @click="removeImage" class="ctrbtn"> Eliminar</button>
-      </b-col>
-    </b-row>
+      </div>
+      <div class="col-sm-6">
+        <button @click="removeImage" class="ctrbtn" id="calltodelete">Eliminar</button>
+      </div>
+    </div>
     <input id="default-btn" type="file" ref="hiddenBtn" @change="onFileChange" hidden>
   </b-container>
 </template>
@@ -73,7 +73,7 @@ export default {
 <style scoped>
 .container_im{
   width: 100%;
-  min-width: 430px;
+
   padding-left: 15px;
   padding-right: 15px;
 }
