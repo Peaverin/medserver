@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="931d5c97-cdbb-4a7a-bc5f-d0278a4454d9" name="Default Changelist" comment="commit for merge. Working in responsive errors">
+    <list default="true" id="651be139-18d5-4764-998f-a4b392d30b2b" name="Default Changelist" comment="Payment Method Container size fixed for accordion">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Chat.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chat.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChooseDateTime.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChooseDateTime.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChooseDestination.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChooseDestination.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChoosePaymentMethod.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChoosePaymentMethod.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModifyOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModifyOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrderHistory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderHistory.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OrderSummary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderSummary.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RequestPicsPrescription.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RequestPicsPrescription.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SeeOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SeeOrder.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserInfoPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserInfoPage.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +91,7 @@
       <workItem from="1620484904075" duration="1408000" />
       <workItem from="1620515278684" duration="2346000" />
       <workItem from="1620549970284" duration="2848000" />
-      <workItem from="1620560785140" duration="7487000" />
+      <workItem from="1620560785140" duration="9313000" />
     </task>
     <task id="LOCAL-00001" summary="ChoosePaymentMethod + Info Paypal, Crèdit card o Contra reemborsament&#10;&#10;- ChooseDestination.vue padding afegit per evitar que el header ho tapi. Quan arreglem el header segurament s'haurà de treure el padding class=&quot;pt-5&quot;.&#10;- ChoosePaymentMethod.vue modificat (accordion) per poder seleccionar el mètode de pagament (Paypal, Crèdit card o Contra reemborsament) i posar la informació en la mateixa pàgina.&#10;- Traduïdes totes les etiquetes a català.">
       <created>1620162204163</created>
@@ -181,7 +170,28 @@
       <option name="project" value="LOCAL" />
       <updated>1620571078833</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Responsive buttons and ChooseImage done">
+      <created>1620572306576</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1620572306576</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Responsive buttons CartComponent.vue done">
+      <created>1620573708322</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1620573708322</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Payment Method Container size fixed for accordion">
+      <created>1620574034343</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1620574034343</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,6 +221,9 @@
     <MESSAGE value="Component ChooseImage cancel-btn eliminat&#10;&#10;- Eliminat el boto cancel-btn i els seus estils a style&#10;- Degut a que utilitzava un link ref a fontawesome, i al instalar i importar una nova versió de fontawesome en el projecte provocava errors.&#10;- D'aquesta forma és més intuïtiu el fet d'eliminar la imatge només amb el boto &quot;Eliminar&quot; de la part inferior de la imatge." />
     <MESSAGE value="commit for merge" />
     <MESSAGE value="commit for merge. Working in responsive errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit for merge. Working in responsive errors" />
+    <MESSAGE value="Responsive buttons and ChooseImage done" />
+    <MESSAGE value="Responsive buttons CartComponent.vue done" />
+    <MESSAGE value="Payment Method Container size fixed for accordion" />
+    <option name="LAST_COMMIT_MESSAGE" value="Payment Method Container size fixed for accordion" />
   </component>
 </project>
