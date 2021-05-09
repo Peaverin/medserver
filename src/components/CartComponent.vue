@@ -62,14 +62,18 @@
             <div class="cart" v-else>
               <h2 class="section__title">La teva cistella està buida</h2>
             </div>
-            <div class="botons">
+            <b-row class="botons" align-h="center">
+              <b-col>
                 <button class="ctrbtn" v-on:click="$emit('hide-cart', products)">
-                    ENRERE
+                  ENRERE
                 </button>
+              </b-col>
+              <b-col>
                 <button class="ctrbtn" id="calltoaction" @click="$router.push('/requestPicsPrescription')" :disabled="isDisable">
-                    CONTINUAR
+                  CONTINUAR
                 </button>
-            </div>
+              </b-col>
+            </b-row>
         </div>
     </div>
 </template>
@@ -150,7 +154,7 @@ export default {
 .botons {
     display: flex;
     justify-content: space-around;
-    margin-top: 80px;
+    margin-top: 15px;
 }
 
 h2 {

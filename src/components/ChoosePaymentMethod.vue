@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <h1 class="section__title">Com?</h1>
     <p class="m-5">Tria com vols pagar la comanda</p>
     <div class="accordion" role="tablist">
@@ -75,14 +74,14 @@
         </b-card>
       </div>
     </div>
-    <div class="row justify-content-center pt-5" id="end_buttons">
-      <div class="col-4">
+    <b-row class="row-buttons" align-h="center">
+      <b-col>
         <med-button link='/chooseDestination'>ENRERE</med-button>
-      </div>
-      <div class="col-4">
+      </b-col>
+      <b-col>
         <med-button-call link='/orderSummary' :disabled="isDisable">REALITZAR PAGAMENT</med-button-call>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -135,6 +134,10 @@ export default {
 
 <style scoped>
 
+.row-buttons {
+  margin-top: 15px;
+}
+
 body {
   background-color: #f5eee7;
   font-weight: 300
@@ -149,10 +152,6 @@ body {
 .mb-1 [class^="fa-"], [class*=" fa-"] {
   display: inline-block;
   width: 100%;
-}
-
-.container {
-  height: 100vh
 }
 
 .card {
