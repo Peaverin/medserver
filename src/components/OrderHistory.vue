@@ -88,7 +88,7 @@ export default {
         { code: "Qm8a6fQizPjFfoCY", dateTimePurchase: "08/05/2021 14:14", dateTimeDelivery: "10/05/2021 09:00", state: "En curs" },
         { code: "9YlB1Qs0t7VVo8Yp", dateTimePurchase: "09/05/2021 23:28", dateTimeDelivery: "10/05/2021 09:00", state: "En curs" },
       ],
-      oldOrdersBoolean: true
+      oldOrdersBoolean: false
     }
   },
   created () {},
