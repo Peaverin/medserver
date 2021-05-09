@@ -251,7 +251,7 @@
         animation-name: button-appear;
         animation-duration: 1s;
         position: fixed;
-        bottom: 110px;
+        bottom: 90px;
         background-color: var(--accent-color-1-dark);
         border-color: var(--accent-color-1-lighter);
         border-radius: 20px;

@@ -19,7 +19,7 @@
         <button @click="browse" class="ctrbtn">Selecciona</button>
       </b-col>
       <b-col>
-        <button @click="removeImage" class="ctrbtn" id="calltodelete">Eliminar</button>
+        <button @click="removeImage" class="ctrbtn"> Eliminar</button>
       </b-col>
     </b-row>
     <input id="default-btn" type="file" ref="hiddenBtn" @change="onFileChange" hidden>
