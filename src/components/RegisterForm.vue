@@ -68,7 +68,8 @@ export default {
   }
 
 .inner-block {
-    width: 450px;
+       width:100%;
+    max-width: 450px;
     margin: auto;
     background: #ffffff;
 

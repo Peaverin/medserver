@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img src='./../assets/logo1.png' style="width:15%; min-width:100px"/>
+    <img src='./../assets/logo1.png' style="height:15vh; max-height:200px"/>
     <h1 style="font-size: 60px">MedServer</h1>
     <h2>Medicaments a domicili</h2>
     <centered-button-call link="products">Nova Comanda</centered-button-call>
@@ -36,8 +36,6 @@ export default {
 
 <style scoped>
 
-.home {
-  margin-top: 50px;
-}
+
   
 </style>

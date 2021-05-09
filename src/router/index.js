@@ -127,5 +127,8 @@ export default new Router({
         header: true
       }
     }
-  ]
+  ],
+  scrollBehavior () {
+    return { x: 0, y: 0 }
+  }
 })
