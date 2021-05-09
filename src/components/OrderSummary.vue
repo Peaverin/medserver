@@ -39,7 +39,7 @@
             </tr>
             <tr class="modify__purchase">
               <td class="modify__purchase" colspan="4">
-                <med-button link='/products'>Modificar comanda</med-button>
+                <med-button link='/products'>CANVIAR PRODUCTES</med-button>
               </td>
             </tr>
             </tbody>
