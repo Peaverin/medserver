@@ -41,7 +41,7 @@ export default {
           unlocked: true
         },
         {
-          name: 'Documents',
+          name: 'Fotos',
           path: '/requestPicsPrescription',
           icon: 'fas fa-file-medical',
           active: false,
