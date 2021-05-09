@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img src='./../assets/logo.jpeg' style="width:15%; min-width:100px"/>
+    <img src='./../assets/logo1.png' style="width:15%; min-width:100px"/>
     <h1 style="font-size: 60px">MedServer</h1>
     <h2>Medicaments a domicili</h2>
     <centered-button-call link="products">Nova Comanda</centered-button-call>

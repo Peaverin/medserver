@@ -1,7 +1,7 @@
 <template>
    <b-navbar toggleable="lg" class="sticky-top" style="background-color:var(--main-color)">
         <b-navbar-brand @click="$router.push('/')" class = "section__title title" >
-      <img src="./../assets/logo.jpeg" style="width:80px; margin-bottom:-10px; margin-top:-10px;" class="d-inline-block" alt="MedServer">
+      <img src="./../assets/logo1.png" style="width:80px; margin-bottom:-10px; margin-top:-10px;" class="d-inline-block" alt="MedServer">
       MedServer
       </b-navbar-brand>
 
