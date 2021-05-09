@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="931d5c97-cdbb-4a7a-bc5f-d0278a4454d9" name="Default Changelist" comment="commit for merge. Working in responsive errors">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ModifyOrder.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ModifyOrder.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrderHistory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderHistory.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
