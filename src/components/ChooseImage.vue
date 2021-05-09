@@ -73,7 +73,7 @@ export default {
 <style scoped>
 .container_im{
   width: 100%;
-
+  min-width: 340px;
   padding-left: 15px;
   padding-right: 15px;
 }
