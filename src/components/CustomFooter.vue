@@ -13,8 +13,12 @@ p{
   margin-top:10px;
 }
 
+@media (min-width: 100px) {  
+    p {font-size:10px;} /*1rem = 16px*/
+}
+
 /* Small devices (landscape phones, 544px and up) */
-@media (min-width: 300px) {  
+@media (min-width: 423px) {  
     p {font-size:13px;} /*1rem = 16px*/
 }
 
