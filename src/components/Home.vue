@@ -3,7 +3,7 @@
     <img src='./../assets/logo.jpeg' style="width:15%; min-width:100px"/>
     <h1 style="font-size: 60px">MedServer</h1>
     <h2>Medicaments a domicili</h2>
-    <centered-button link="products">Nova Comanda</centered-button>
+    <centered-button-call link="products">Nova Comanda</centered-button-call>
     <centered-button link="chat">Consulta amb un farmacèutic</centered-button>
     <div v-if="!loggedIn">
       <centered-button link="login">Iniciar Sessió</centered-button>
@@ -16,11 +16,13 @@
 
 <script>
 import CenteredButton from './CenteredButton.vue'
+import CenteredButtonCall from './CenteredButtonCall.vue'
 import {globalStore} from '../main.js'
 export default {
   name: 'Home',
   components: {
-    CenteredButton
+    CenteredButton,
+    CenteredButtonCall
   },
     computed: {
     loggedIn: function () {

@@ -124,8 +124,7 @@ export default new Router({
       name: 'OrderFinished',
       component: OrderFinished,
       meta: {
-        header: true,
-        wizard: true
+        header: true
       }
     }
   ]

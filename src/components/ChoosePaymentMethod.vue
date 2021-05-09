@@ -80,7 +80,7 @@
         <med-button link='/chooseDestination'>ENRERE</med-button>
       </div>
       <div class="col-4">
-        <med-button link='/orderSummary' :disabled="isDisable">REALITZAR PAGAMENT</med-button>
+        <med-button-call link='/orderSummary' :disabled="isDisable">REALITZAR PAGAMENT</med-button-call>
       </div>
     </div>
   </div>
@@ -89,10 +89,12 @@
 <script>
 import {globalStore} from '../main.js'
 import MedButton from './MedButton.vue'
+import MedButtonCall from './MedButtonCall.vue'
 export default {
   name: "ChoosePaymentMethod",
   components: {
-    MedButton
+    MedButton,
+    MedButtonCall
   },
   data () {
     return {

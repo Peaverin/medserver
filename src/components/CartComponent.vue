@@ -59,7 +59,7 @@
                 <button class="ctrbtn" v-on:click="$emit('hide-cart', products)">
                     ENRERE
                 </button>
-                <button class="ctrbtn" @click="$router.push('/requestPicsPrescription')" >
+                <button class="ctrbtn" id="calltoaction" @click="$router.push('/requestPicsPrescription')" >
                     CONTINUAR
                 </button>
             </div>
@@ -301,9 +301,7 @@ tr {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.btn-continuar {
-    background: #20c997;
-}
+
 
 .cart-btn:hover {
   transform: scale(1.1);
@@ -313,7 +311,7 @@ tr {
 }
 
 .del-btn {
-  background-color: var(--accent-color-2-light);
+  background-color: var(--accent-color-2);
   font-size: 1rem;
   height: 50px;
   border: none;

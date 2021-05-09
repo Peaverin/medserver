@@ -1,6 +1,6 @@
 <template>
   <b-container class="choose-date-time">
-    <h1 class="mb-5 section__title">QUAN?</h1>
+    <h1 class="mb-5 section__title">Quan?</h1>
     <b-row class="row justify-content-center mb-5">
       <p> Tria quan vols que enviem la comanda</p>
     </b-row>
@@ -42,7 +42,7 @@
         <med-button link='/requestPicsPrescription'>ENRERE</med-button>
       </b-col>
       <b-col>
-        <med-button link='/chooseDestination' :disabled="isDisable">CONTINUAR</med-button>
+        <med-button-call link='/chooseDestination' :disabled="isDisable">CONTINUAR</med-button-call>
       </b-col>
     </b-row>
   </b-container>
@@ -55,11 +55,13 @@ import moment from 'moment'
   import 'vue2-datepicker/index.css';
   import 'vue2-datepicker/locale/es';
   import MedButton from './MedButton.vue'
+    import MedButtonCall from './MedButtonCall.vue'
   export default {
     name: "ChooseDateTime",
     components: {
       DatePicker,
-      MedButton
+      MedButton,
+      MedButtonCall
     },
     data() {
       return {
