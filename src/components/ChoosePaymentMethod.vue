@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <h1 class="section__title">Com?</h1>
     <p class="m-5">Tria com vols pagar la comanda</p>
     <div class="accordion" role="tablist">
@@ -153,10 +152,6 @@ body {
 .mb-1 [class^="fa-"], [class*=" fa-"] {
   display: inline-block;
   width: 100%;
-}
-
-.container {
-  height: 100vh
 }
 
 .card {
