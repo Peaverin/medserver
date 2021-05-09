@@ -139,5 +139,9 @@ li {
   padding: 5px 5px 5px 5px;
   margin: 5px 50px 5px 50px;
 }
+
+.col-9 {
+  width: 230px;
+}
   
 </style>

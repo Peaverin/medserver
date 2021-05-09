@@ -4,7 +4,7 @@
             <h1 class="section__title">La teva cistella</h1>
         </div>
         <div class="col-12">
-            <div class="cart">
+            <div class="cart" v-if="this.products.length > 0">
                 <div class="table-responsive">
                     <table class="cart__table">
                         <thead>
@@ -14,6 +14,7 @@
                                 <th>Quantitat</th>
                                 <th>Preu</th>
                                 <th>Total</th>
+                              <th></th>
                             </tr>
                         </thead>
                         <tbody v-if="this.products.length > 0">
@@ -46,22 +47,26 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="cart__total">
-                                    <p>Total a pagar:</p>
-                                    <span>{{ total.toFixed(2) }}€</span>
-                                </td>
+                              <td class="cart__total">
+                                <p>Total a pagar:</p>
+                              </td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td class="cart__total"><span>{{ total.toFixed(2) }}€</span></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+            <div class="cart" v-else>
+              <h2 class="section__title">La teva cistella està buida</h2>
+            </div>
             <div class="botons">
                 <button class="ctrbtn" v-on:click="$emit('hide-cart', products)">
                     ENRERE
                 </button>
-                <button class="ctrbtn" @click="$router.push('/requestPicsPrescription')" >
-                    CONTINUAR
-                </button>
+              <med-button link='/requestPicsPrescription' :disabled="isDisable">CONTINUAR</med-button>
             </div>
         </div>
     </div>
@@ -70,7 +75,12 @@
 
 <script>
 import {globalStore} from '../main.js'
+import MedButton from './MedButton.vue'
 export default {
+  name: 'CartComponent',
+  components: {
+    MedButton
+  },
     data () {
         return {
             total: 0,
@@ -83,7 +93,6 @@ export default {
             this.total += this.products[i].quantity * this.products[i].price
         }
     },
-    name: 'CartComponent',
     methods: {
         increaseQuantity: function(product) {
             this.products = this.products.filter(prod => {
@@ -126,7 +135,12 @@ export default {
                 this.$emit('hide-cart', this.products);
             }
         }
-    }
+    },
+  computed: {
+      isDisable () {
+        return this.products.length === 0
+      }
+  }
 }
 </script>
 
@@ -159,11 +173,11 @@ h2 {
     background-color: var(--main-color-lightest);
     box-shadow: 15px 15px 30px 0px rgba(0,0,0,0.07), -15px -15px 30px 0px rgba(255,255,255,0.8);
     padding: 0px;
-    min-height: 404px;
     width: auto;
 }
 .table-responsive {
     display: block;
+  border-radius: 30px;
     width: 100%;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -185,15 +199,14 @@ h2 {
 }
 
 .cart__table th {
-    font-size: 23px;
-    font-weight: 600;
-    color: rgba(55,55,55,0.7);
-    line-height: 100%;
-    display: table-cell;
-    vertical-align: inherit;
-    font-weight: bold;
-    text-align: -internal-center;
-    padding: 3.5%;
+  font-size: 23px;
+  color: rgba(20,20,20,0.9);
+  line-height: 100%;
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: -internal-center;
+  padding: 3.5%;
 }
 
 thead {
@@ -344,24 +357,27 @@ button {
 
 .cart__table td.cart__total p {
     font-size: 20px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .cart__total p {
     font-size: 14px;
     color: #373737;
     margin-bottom: 0px;
+  text-align: left;
 }
 
 .cart__total span {
-    font-size: 24px;
-    color: #373737;
-    line-height: 100%;
-    font-weight: 600;
+  font-size: 24px;
+  color: #373737;
+  line-height: 100%;
+  font-weight: 600;
+  text-align: center;
+  padding-right: 10px;
 }
 
 .cart__table tbody tr {
-  border-bottom: 1px solid white;
+  border-bottom: 0px solid white;
 }
 
 .cart__table tbody tr:nth-of-type(odd) {

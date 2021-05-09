@@ -1,9 +1,11 @@
 <template>
   <div class="col-12">
+    <h2 class="section-title">Xat amb un farmacèutic/a</h2>
 <div class="wrapper">
 
+
     <div class="main">
-      <h2 class="section__title">Xat amb un farmacèutic/a</h2>
+
         <div class="px-2 scroll" id="scroller">
           <div class="text-center"><span class="between">dilluns 3 de maig de 2021 a les 19:27</span></div>
 
@@ -52,6 +54,9 @@
     </div>
 
 </div>
+    <div class="row">
+        <med-button link='/products'>NOVA COMANDA</med-button>
+    </div>
   </div>
 
 </template>
@@ -59,9 +64,11 @@
 <script>
 import {globalStore} from '../main.js'
 import moment from 'moment'
+import MedButton from './MedButton.vue'
 export default {
   name: 'ChatPage',
   components: {
+    MedButton
   },
   data () {
     return {
@@ -153,6 +160,10 @@ body {
 
 .section-title {
   font-size: 32px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .scroll {
@@ -169,11 +180,13 @@ body {
 .name {
     font-size: 12px;
   color: #888888;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .msg-left {
   background-color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   padding: 10px;
   margin-right: 40px;
   border-radius: 10px;
@@ -184,7 +197,7 @@ body {
 
 .msg-right {
   background-color: #fff;
-  font-size: 13px;
+  font-size: 14px;
   padding: 10px;
   margin-left: 40px;
   border-radius: 10px;
@@ -207,7 +220,7 @@ body {
 }
 
 .form-control {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 400;
     width: 70%;
     height: 30px;
@@ -248,5 +261,12 @@ form-control:focus {
     padding: 2px;
     position: relative;
     bottom: 1px
+}
+
+.row {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
