@@ -2,21 +2,21 @@
   <div class="container">
     <div class = "row">
 
-    <div v-for="(step, index) in steps" v-bind:key="step.id" :class = "'col ' + step.completed">
+    <div v-for="step in steps" v-bind:key="step.id" :class = "'col ' + step.completed">
       <div v-if="step.active === true" class ="wizard_step">
-        <button class="wizard_btn wizard_active" disabled>{{index + 1}}</button>
+        <button class="wizard_btn wizard_active" disabled><i :class="step.icon"></i></button>
         <p class = "wizard_txt wizard_active"> {{step.name}} </p>
       </div>
       <div v-else-if="step.completed === true">
-        <button class="wizard_btn wizard_completed" @click="$router.push(step.path)">{{index + 1}}</button>
+        <button class="wizard_btn wizard_completed" @click="$router.push(step.path)"><i :class="step.icon"></i></button>
         <p class = "wizard_txt wizard_completed"> {{step.name}} </p>
       </div>
        <div v-else-if="step.unlocked === true">
-        <button class="wizard_btn wizard_unlocked" @click="$router.push(step.path)">{{index + 1}}</button>
+        <button class="wizard_btn wizard_unlocked" @click="$router.push(step.path)"><i :class="step.icon"></i></button>
         <p class = "wizard_txt wizard_unlocked"> {{step.name}} </p>
       </div>
       <div v-else>
-        <button class="wizard_btn wizard_disabled" disabled>{{index + 1}}</button>
+        <button class="wizard_btn wizard_disabled" disabled><i :class="step.icon"></i></button>
         <p class = "wizard_txt wizard_disabled"> {{step.name}} </p>
       </div> 
     </div>
@@ -34,6 +34,7 @@ export default {
         {
           name: 'Catàleg',
           path: '/products',
+          icon: 'fas fa-pills',
           active: true,
           completed: false,
           unlocked: true
@@ -41,6 +42,7 @@ export default {
         {
           name: 'Documents',
           path: '/requestPicsPrescription',
+          icon: 'fas fa-file-medical',
           active: false,
           completed: false,
           unlocked: false
@@ -48,6 +50,7 @@ export default {
         {
           name: 'Quan?',
           path: '/chooseDateTime',
+          icon: 'far fa-clock',
           active: false,
           completed: false,
           unlocked: false
@@ -55,6 +58,7 @@ export default {
         {
           name: 'On?',
           path: '/chooseDestination',
+          icon: 'fas fa-home',
           active: false,
           completed: false,
           unlocked: false
@@ -62,6 +66,7 @@ export default {
         {
           name: 'Pagament',
           path: '/choosePaymentMethod',
+          icon: 'fas fa-coins',
           active: false,
           completed: false,
           unlocked: false
@@ -69,6 +74,7 @@ export default {
         {
           name: 'Resum comanda',
           path: '/orderSummary',
+          icon: 'fas fa-clipboard-list',
           active: false,
           completed: false,
           unlocked: false
@@ -121,10 +127,97 @@ export default {
 <!-- Add "s
     CenteredButtoncoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@media (min-width: 10px) {  
+  .container{
+  display:none;
+}
+    p {font-size:13px;
+    display:none} /*1rem = 16px*/
+}
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 363px) {  
+    .container{
+  display:block;
+}
+  .wizard_btn{
+  --wizard_btn_size:30px;
+}
+    p {font-size:13px;
+    display:none} /*1rem = 16px*/
+    .col::after{
+      width:66%;
+      right:-33%;
+      top:45%;
+    }
+}
 
+@media (min-width: 525px) {  
+      .container{
+  display:block;
+}
+  .wizard_btn{
+  --wizard_btn_size:50px;
+}
+    p {font-size:14px;
+    display:block} /*1rem = 16px*/
+             .col::after{
+    width:61%;
+    right:-36%;
+    top:25%;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media (min-width: 768px) {  
+      .container{
+  display:block;
+}
 .wizard_btn{
   --wizard_btn_size:60px;
 }
+    p {font-size:16px;
+    display:block} /*1rem = 16px*/
+         .col::after{
+    width:60%;
+    right:-35%;
+    top:25%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+      .container{
+  display:block;
+}
+ .wizard_btn{
+  --wizard_btn_size:60px;
+}
+ p {font-size:18px;
+ display:block} /*1rem = 16px*/
+     .col::after{
+    width:67%;
+    right:-35%;
+    top:25%;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 1200px) { 
+      .container{
+  display:block;
+}
+  .wizard_btn{
+  --wizard_btn_size:60px;
+}
+    p {font-size:18px;
+    display:block} /*1rem = 16px*/
+    .col::after{
+    width:70%;
+    right:-35%;
+    top:25%;
+    }
+}
+
 .wizard_btn{
   width: var(--wizard_btn_size);
   height: var(--wizard_btn_size);
@@ -155,11 +248,8 @@ export default {
 
 .col::after{
     border-bottom: 2px solid lightgray;
-    width:70%;
     position: absolute;
     content: "";
-    right:-55%;
-    top:25%;
     z-index:0;
 }
 .col.true::after {

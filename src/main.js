@@ -10,7 +10,9 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faPaperPlane, faPaperclip, faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 import VueFormWizard from 'vue-form-wizard'
-
+//npm install --save-dev @fortawesome/fontawesome-free
+import '@fortawesome/fontawesome-free/css/all.css'
+import '@fortawesome/fontawesome-free/js/all.js'
 Vue.use(Autocomplete)
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
