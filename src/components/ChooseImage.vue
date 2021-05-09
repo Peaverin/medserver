@@ -1,6 +1,5 @@
 <template>
   <b-container class="container_im">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <div ref="container_wr" class="container_wr">
       <div v-if=image class="imageCont">
         <img v-bind:src=image @click="onFileChange" alt="">
@@ -10,9 +9,6 @@
           <i class="fas fa-cloud-upload-alt"></i></div>
         <div class="text">
           Encara no s'ha escollit cap fitxer!</div>
-      </div>
-      <div id="cancel-btn" @click="removeImage">
-        <i class="fas fa-times"></i>
       </div>
       <div ref=filename class="file-name">
         File name here</div>
@@ -117,21 +113,6 @@ export default {
   font-size: 20px;
   font-weight: 500;
   color: #5B5B7B;
-}
-.container_wr #cancel-btn i{
-  position: absolute;
-  font-size: 20px;
-  right: 15px;
-  top: 15px;
-  color: #9658fe;
-  cursor: pointer;
-  display: none;
-}
-.container_wr.active:hover #cancel-btn i{
-  display: block;
-}
-.container_wr #cancel-btn i:hover{
-  color: #e74c3c;
 }
 .container_wr .file-name{
   position: absolute;
