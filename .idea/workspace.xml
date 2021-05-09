@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="931d5c97-cdbb-4a7a-bc5f-d0278a4454d9" name="Default Changelist" comment="commit for merge. Working in responsive errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CustomHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CustomHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrderHistory.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderHistory.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrderSummary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderSummary.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,11 +37,16 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/fhic-p-4-f05-Edu/fhic-p-4-f05-Edu" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Marti\Desktop\UB\Informatica\FHiC\fhic-p-4-f05\src\components" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.run serve">
     <configuration name="run build" type="js.build_tools.npm">

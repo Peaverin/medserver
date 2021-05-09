@@ -72,6 +72,8 @@ export default {
     },
     logout () {
       alert("Dialog emulating logging out");
+      globalStore.loggedIn = false;
+      this.$router.push('/');
     },    
   },
   computed: {

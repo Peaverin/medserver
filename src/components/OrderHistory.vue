@@ -9,6 +9,7 @@
       </div>
       <div class="col-md-4 search">
         <autocomplete
+            :search="search"
             placeholder="Buscar una comanda"
             aria-label="Buscar un producte"
         ></autocomplete>
@@ -41,7 +42,7 @@
                 <td class="order__date">{{ order.dateTimePurchase }}</td>
                 <td class="order__date">{{ order.dateTimeDelivery }}</td>
                 <td class="order__state">{{ order.state }}</td>
-                <td class="order__details">Veure</td>
+                <td class="order__details"><med-button link='/seeOrder'>VEURE</med-button></td>
               </tr>
               </tbody>
               <tbody v-else>
@@ -50,7 +51,7 @@
                 <td class="order__date">{{ order.dateTimePurchase }}</td>
                 <td class="order__date">{{ order.dateTimeDelivery }}</td>
                 <td class="order__state">{{ order.state }}</td>
-                <td class="order__details">Veure</td>
+                <td class="order__details"><med-button link='/modifyOrder'>VEURE</med-button></td>
               </tr>
               </tbody>
             </table>
@@ -97,6 +98,9 @@ export default {
     },
     seeOldOrders () {
       this.oldOrdersBoolean = true;
+    },
+    search () {
+
     }
   }
 
@@ -208,7 +212,7 @@ tr {
   font-size: 16px;
   font-weight: 400;
   color: #373737;
-  padding: 2%;
+  padding: 1%;
 }
 
 .order__code {
