@@ -75,14 +75,14 @@
         </b-card>
       </div>
     </div>
-    <div class="row justify-content-center pt-5" id="end_buttons">
-      <div class="col-4">
+    <b-row class="row-buttons" align-h="center">
+      <b-col>
         <med-button link='/chooseDestination'>ENRERE</med-button>
-      </div>
-      <div class="col-4">
+      </b-col>
+      <b-col>
         <med-button-call link='/orderSummary' :disabled="isDisable">REALITZAR PAGAMENT</med-button-call>
-      </div>
-    </div>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -134,6 +134,10 @@ export default {
 </script>
 
 <style scoped>
+
+.row-buttons {
+  margin-top: 15px;
+}
 
 body {
   background-color: #f5eee7;

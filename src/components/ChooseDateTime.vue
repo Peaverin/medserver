@@ -43,7 +43,7 @@
 
 
     </b-row>
-    <b-row align-h="center">
+    <b-row class="row-buttons" align-h="center">
       <b-col>
         <med-button link='/requestPicsPrescription'>ENRERE</med-button>
       </b-col>
@@ -89,5 +89,7 @@ import moment from 'moment'
 </script>
 
 <style scoped>
-
+.row-buttons {
+  margin-top: 15px;
+}
 </style>

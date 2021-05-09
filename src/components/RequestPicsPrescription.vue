@@ -11,10 +11,14 @@
         <ChooseImage></ChooseImage>
       </div>
     </div>
-    <div class="botons">
-      <med-button link="/products">ENRERE</med-button>
-      <med-button-call link="/chooseDateTime">CONTINUAR</med-button-call>
-    </div>
+    <b-row class="row-buttons" align-h="center">
+      <b-col>
+        <med-button link="/products">ENRERE</med-button>
+      </b-col>
+      <b-col>
+        <med-button-call link="/chooseDateTime">CONTINUAR</med-button-call>
+      </b-col>
+    </b-row>
   </div>
 </template>
 
@@ -33,9 +37,7 @@ export default {
 </script>
 
 <style scoped>
-.botons {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 80px;
+.row-buttons {
+  margin-top: 15px;
 }
 </style>
