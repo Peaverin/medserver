@@ -74,6 +74,9 @@ export default {
     console.log(globalStore.finalAddress)
 
   },
+  created() {
+    globalStore.finalAddress = globalStore.defaultAddress;
+  }
 }
 </script>
 
