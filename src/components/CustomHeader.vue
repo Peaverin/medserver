@@ -21,7 +21,7 @@
             <user-info-page/>
           </b-nav-item-dropdown>
           <b-nav-item href="#">
-            <span class="option ml">LES MEVES COMANDES</span>
+            <span class="option ml" @click="$router.push('/orderHistory')">LES MEVES COMANDES</span>
           </b-nav-item>
           <b-nav-item href="#">
             <span class="option ml" @click="$router.push('/chat')">CONSULTA AMB UN FARMACEUTIC</span>

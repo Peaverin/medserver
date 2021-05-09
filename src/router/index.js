@@ -12,21 +12,17 @@ import ProductGridComponent from '@/components/ProductGridComponent'
 import ChatPage from '@/components/Chat'
 import OrderSummary from '@/components/OrderSummary'
 import OrderFinished from '@/components/OrderFinished'
+import OrderHistory from '@/components/OrderHistory'
+import ModifyOrder from '@/components/ModifyOrder'
+import SeeOrder from '@/components/SeeOrder'
 
 Vue.use(Router)
 
 export default new Router({
+  
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
-      meta: {
-        header: true
-      }
-    },
-    {
-      path: '/home',
       name: 'home',
       component: Home,
       meta: {
@@ -123,6 +119,30 @@ export default new Router({
       path: '/orderFinished',
       name: 'OrderFinished',
       component: OrderFinished,
+      meta: {
+        header: true
+      }
+    },
+    {
+      path: '/orderHistory',
+      name: 'OrderHistory',
+      component: OrderHistory,
+      meta: {
+        header: true
+      }
+    },
+    {
+      path: '/modifyOrder',
+      name: 'ModifyOrder',
+      component: ModifyOrder,
+      meta: {
+        header: true
+      }
+    },
+    {
+      path: '/seeOrder',
+      name: 'SeeOrder',
+      component: SeeOrder,
       meta: {
         header: true
       }

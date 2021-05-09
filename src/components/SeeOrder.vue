@@ -1,134 +1,113 @@
 <template>
   <b-container class="order-summary">
-    <h1 class="p-4 section__title">Resum de la teva comanda</h1>
+    <h1 class="p-4 section__title">Resum de la teva comanda amb codi 9Rp4BJjPsoRLov3w</h1>
     <div class="row">
-    <div class="col-lg-6">
-      <div class="cart">
-        <div class="table-responsive">
-          <table class="cart__table">
-            <thead>
-            <tr>
-              <th class="cart__name">Nom</th>
-              <th>Quantitat</th>
-              <th>Preu</th>
-              <th>Total</th>
-            </tr>
-            </thead>
-            <tbody v-if="purchasedProducts.length > 0">
-            <tr v-for="product in purchasedProducts" :key="product.name">
-              <td class="cart__name">{{ product.name }}</td>
-              <td>
-                <div class="cart__quantity">
-                  <div class="quantity">{{ product.quantity }}</div>
-                </div>
-              </td>
-              <td>
-                <span class="cart__price">{{ product.price.toFixed(2) }}€</span>
-              </td>
-              <td>
-                <span class="cart__price">{{ (product.price * product.quantity).toFixed(2) }}€</span>
-              </td>
-            </tr>
-            <tr>
-              <td class="cart__total">
-                <p>Total a pagar:</p>
-              </td>
-              <td></td>
-              <td></td>
-              <td class="cart__total"><span>{{ totalPrice.toFixed(2) }}€</span></td>
-            </tr>
-            <tr class="modify__purchase">
-              <td class="modify__purchase" colspan="4">
-                <med-button link='/products'>Modificar comanda</med-button>
-              </td>
-            </tr>
-            </tbody>
-          </table>
+      <div class="col-lg-6">
+        <div class="cart">
+          <div class="table-responsive">
+            <table class="cart__table">
+              <thead>
+              <tr>
+                <th class="cart__name">Nom</th>
+                <th>Quantitat</th>
+                <th>Preu</th>
+                <th>Total</th>
+              </tr>
+              </thead>
+              <tbody v-if="purchasedProducts.length > 0">
+              <tr v-for="product in purchasedProducts" :key="product.name">
+                <td class="cart__name">{{ product.name }}</td>
+                <td>
+                  <div class="cart__quantity">
+                    <div class="quantity">{{ product.quantity }}</div>
+                  </div>
+                </td>
+                <td>
+                  <span class="cart__price">{{ product.price.toFixed(2) }}€</span>
+                </td>
+                <td>
+                  <span class="cart__price">{{ (product.price * product.quantity).toFixed(2) }}€</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="cart__total">
+                  <p>Total a pagar:</p>
+                </td>
+                <td></td>
+                <td></td>
+                <td class="cart__total"><span>{{ totalPrice.toFixed(2) }}€</span></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="col-lg-6">
-      <div class="details-order">
-        <div class="table-responsive">
-          <table class="details__table">
-            <thead>
-            <tr>
-              <th colspan="3">Detalls de la comanda</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td class="details__title">Quan?</td>
-              <td>
+      <div class="col-lg-6">
+        <div class="details-order">
+          <div class="table-responsive">
+            <table class="details__table">
+              <thead>
+              <tr>
+                <th colspan="2">Detalls de la comanda</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td class="details__title">Quan?</td>
+                <td>
                   <div class="details__info">{{ dateTime }}</div>
-              </td>
-              <td>
-                <med-button class="details__button" link='/chooseDateTime'>Canviar</med-button>
-              </td>
-            </tr>
-            <tr>
-              <td class="details__title">On?</td>
-              <td>
-                <div class="details__info">{{ finalAddress }}</div>
-              </td>
-              <td>
-                <med-button class="details__button" link='/chooseDestination'>Canviar</med-button>
-              </td>
-            </tr>
-            <tr>
-              <td class="details__title">Com?</td>
-              <td>
-                <div class="details__info">{{ paymentMethod }}</div>
-              </td>
-              <td>
-                <med-button class="details__button" link='/choosePaymentMethod'>Canviar</med-button>
-              </td>
-            </tr>
+                </td>
+              </tr>
+              <tr>
+                <td class="details__title">On?</td>
+                <td>
+                  <div class="details__info">{{ finalAddress }}</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="details__title">Com?</td>
+                <td>
+                  <div class="details__info">{{ paymentMethod }}</div>
+                </td>
+              </tr>
 
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
     </div>
     <div class="row row-buttons">
-      <div class="col-sm-6">
-        <med-button link='/choosePaymentMethod'>ENRERE</med-button>
-      </div>
-      <div class="col-sm-6">
-        <button class="ctrbtn" id="calltoaction" @click="orderFinished">CONFIRMAR COMANDA</button>
+      <div class="col-sm-12">
+        <med-button link='/orderHistory'>ENRERE</med-button>
       </div>
     </div>
   </b-container>
-  
+
 </template>
 
 <script>
-import {globalStore} from '../main.js'
 import MedButton from './MedButton.vue'
 export default {
-  name: 'OrderSummary',
+  name: 'SeeOrder',
   components: {
     MedButton,
   },
   data () {
     return {
-      totalPrice: 0
+      totalPrice: 0,
+      finalAddress: "C/ Abat Bassa 132, 2n 3a, 08017, Barcelona",
+      dateTime: "Dimecres 12 de maig a les 08:30",
+      paymentMethod: "Targeta de crèdit acabada en 1234",
+      purchasedProducts: [
+        { link: "enantyum.png", name: "Enantyum 25mg", price: 5.99, quantity: 1 },
+        { link: "gel.jpeg", name: "Gel Hidroalcohòlic", price: 3.85, quantity: 2 },
+        { link: "mascaras.jpeg", name: "Pack de 10 Mascaretes", price: 4.90, quantity: 3 },
+        { link: "floradix.jpeg", name: "Floradix", price: 25.55, quantity: 2},
+      ],
     }
   },
   computed: {
-    finalAddress() {
-      return globalStore.finalAddress
-    },
-    dateTime() {
-      return globalStore.dateTime
-    },
-    paymentMethod() {
-      return globalStore.paymentMethod
-    },
-    purchasedProducts() {
-      return globalStore.purchasedProducts
-    }
   },
   created () {
     this.totalPrice = 0;
@@ -138,13 +117,13 @@ export default {
     }
   },
   methods: {
-    orderFinished () {
-      alert("Comanda realitzada correctament!");
-      globalStore.purchasedProducts = []
-      globalStore.dateTime = ""
-      globalStore.finalAddress = ""
-      globalStore.paymentMethod = ""
-      this.$router.push('/');
+    modifyOrder () {
+      alert("Comanda modificada correctament!");
+      this.$router.push('/orderHistory');
+    },
+    deleteOrder () {
+      alert("Comanda anulada correctament!");
+      this.$router.push('/orderHistory');
     }
   }
 
@@ -351,12 +330,13 @@ tr {
   text-align: left;
   padding-left: 5px;
   padding-right: 5px;
-  max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  padding-bottom: 15px;
+  padding-top: 15px;
 }
 
 .details__button {

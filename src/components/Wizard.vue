@@ -26,6 +26,7 @@
 </template>
 
 <script>
+import { globalStore } from '../main'
 
 export default {
   name: 'Wizard',
@@ -65,7 +66,7 @@ export default {
           unlocked: false
         },
         {
-          name: 'Pagament',
+          name: 'Com?',
           path: '/choosePaymentMethod',
           icon: 'fas fa-coins',
           active: false,
@@ -95,6 +96,7 @@ export default {
   },
   watch:{
     $route (to, from){
+      console.log('route')
         var fromStep;
         var fromStepIndex = -1;
         var toStep;
@@ -130,7 +132,24 @@ export default {
         toStep.active = true;
         toStep.unlocked = true;
     }
-} 
+},beforeMount(){
+    console.log('beforeMount')
+    console.log(globalStore.modifyOrder)
+    if (!globalStore.modifyOrder) return;
+    var path = '/'+ this.$route.name
+    var toStep;
+    var i;
+    for (i = 0; i < this.steps.length; i++){
+      this.steps[i].completed = true;
+      this.steps[i].unlocked = true;
+      if(this.steps[i].path === path){
+        toStep = this.steps[i];
+      }
+    }
+    this.steps[0].active = false;
+    toStep.active = true;
+    globalStore.modifyOrder = false
+}
 }
 
 </script>

@@ -1,10 +1,7 @@
 <template>
   <b-container class="choose-date-time">
-    <h1 class="mb-5 section__title">Quan?</h1>
-    <b-row class="row justify-content-center mb-5">
-      <p> Tria quan vols que enviem la comanda</p>
-    </b-row>
-
+    <h1 class="p-4 section__title">Quan?</h1>
+    <p class="p-3">Tria quan vols que enviem la comanda</p>
     <b-row align-h="around">
       <b-row align-h="around">
         <b-col>
