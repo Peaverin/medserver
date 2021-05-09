@@ -107,6 +107,7 @@
 </template>
 
 <script>
+import {globalStore} from '../main.js'
 import MedButton from './MedButton.vue'
 export default {
   name: 'ModifyOrder',
@@ -135,6 +136,10 @@ export default {
     for (i in this.purchasedProducts) {
       this.totalPrice += this.purchasedProducts[i].quantity*this.purchasedProducts[i].price;
     }
+    globalStore.purchasedProducts = this.purchasedProducts
+    globalStore.dateTime = this.dateTime
+    globalStore.finalAddress = this.finalAddress
+    globalStore.paymentMethod = this.paymentMethod
   },
   methods: {
     modifyOrder () {
