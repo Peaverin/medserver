@@ -96,7 +96,7 @@
         <med-button link='/orderHistory'>ENRERE</med-button>
       </div>
       <div class="col-sm-4">
-        <button class="ctrbtn" id="calltoaction" @click="modifyOrder">MODIFICAR COMANDA</button>
+        <button class="ctrbtn" id="calltoaction" @click="modifyOrder">CANVIAR PRODUCTES</button>
       </div>
       <div class="col-sm-4">
         <button class="ctrbtn" id="calltodelete" @click="deleteOrder">ANULAR COMANDA</button>
