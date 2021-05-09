@@ -90,6 +90,10 @@ export default {
 
 <style scoped>
 
+.menuUserInfo {
+  border-radius: 20px;
+}
+
 .container{
   width: 300px;
 }
@@ -118,30 +122,34 @@ li {
 }
 
 .editbutton {
-  font-size:14px;
+  justify-content: center;
+  vertical-align: center;
+  font-size: 14px;
   font-weight: 600;
   color: var(--accent-color-1-darkest);
   background-color: var(--accent-color-1-lighter);
   border-radius: 10px;
-  border-color: var(--accent-color-1-lightest);
-  padding: 0px 5px 0px 5px;
+  border: 0px solid white;
+  padding: 2px 12px 2px 12px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 0px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .logout {
   justify-content: center;
   text-align: center;
-  font-size:14px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--accent-color-2-darkest);
   background-color: var(--accent-color-2-lighter);
-  border-color: var(--accent-color-2-lightest);
+  border: 0px solid white;
   border-radius: 10px;
-  padding: 5px 5px 5px 5px;
+  padding: 5px 15px 5px 15px;
   margin: 5px 50px 5px 50px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 0px 5px 0 rgba(0, 0, 0, 0.19);
 }
 
 .col-9 {
-  width: 230px;
+  width: 200px;
 }
   
 </style>

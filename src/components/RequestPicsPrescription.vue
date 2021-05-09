@@ -38,4 +38,12 @@ export default {
 
 <style scoped>
 
+#components-demo, #components-demo2 {
+  margin: 5px;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: var(--main-color-lightest);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 </style>
