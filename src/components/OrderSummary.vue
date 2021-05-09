@@ -139,7 +139,7 @@ export default {
   },
   methods: {
     orderFinished () {
-      alert("Order successful!");
+      alert("Comanda realitzada correctament!");
       globalStore.purchasedProducts = []
       globalStore.dateTime = ""
       globalStore.finalAddress = ""
