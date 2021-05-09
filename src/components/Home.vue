@@ -29,6 +29,9 @@ export default {
       // `this` points to the vm instance
       return globalStore.loggedIn
     }
+  },
+  mounted(){
+        globalStore.modifyOrder = false
   }
 }
 </script>
