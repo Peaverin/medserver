@@ -411,6 +411,9 @@ export default {
             this.num_items += globalStore.purchasedProducts[i].quantity
         }
     }
-  }
+  },
+    beforeMount(){
+        globalStore.loggedIn = true;
+    }
 }
 </script>
