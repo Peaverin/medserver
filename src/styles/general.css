@@ -58,8 +58,8 @@ h1, .section__title {
     color: #fff;
 }
 #calltoaction:hover {
-    border:2px solid var(--accent-color-1-dark);
-    background-color: var(--accent-color-1-dark);
+    border:2px solid var(--accent-color-1-darker);
+    background-color: var(--accent-color-1-darker);
     color: #fff;
 }
 #calltodelete:hover {

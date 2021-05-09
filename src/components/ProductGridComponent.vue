@@ -254,22 +254,23 @@
         bottom: 90px;
         background-color: var(--accent-color-1-dark);
         border-color: var(--accent-color-1-lighter);
-        border-radius: 20px;
+        border-radius: 10px;
         width: 220px;
         height: 60px;
         z-index: 6;
         font-size: 1rem;
         display: none;
         border-style: solid;
-        border-width: 1px;
         color: black;
-        font-weight: 600;
+        font-weight: 700;
+      background-color: var(--accent-color-1);
+      border: 2px solid var(--accent-color-1);
     }
     .comanda:hover {
-        transform: scale(1);
-        background-color: var(--accent-color-1-darkest);
+        transform: scale(1.05);
+        background-color: var(--accent-color-1-darker);
         color: white;
-        border-color:var(--accent-color-1-darkest);
+      border: 2px solid var(--accent-color-1-darker);
     }
     .boto-comanda {
         justify-content: center;

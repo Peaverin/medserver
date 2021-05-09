@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="651be139-18d5-4764-998f-a4b392d30b2b" name="Default Changelist" comment="Merge tornar -&gt; enrere">
+    <list default="true" id="931d5c97-cdbb-4a7a-bc5f-d0278a4454d9" name="Default Changelist" comment="Merge tornar -&gt; enrere">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CartComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CartComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ChooseImage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChooseImage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OrderSummary.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/OrderSummary.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ProductGridComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ProductGridComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RequestPicsPrescription.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RequestPicsPrescription.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/general.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/general.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

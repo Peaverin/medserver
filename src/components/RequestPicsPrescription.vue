@@ -2,11 +2,11 @@
   <div class="container-xl">
     <h1 class="p-5 section__title">Penja les següents fotografies:</h1>
     <div class="form-group row">
-      <div class="col-sm pb-5" id="components-demo">
+      <div class="col-sm" id="components-demo">
         <p>Puja una fotografa de la recepta mèdica</p>
         <ChooseImage></ChooseImage>
       </div>
-      <div class="col-sm pb-5" id="components-demo2">
+      <div class="col-sm" id="components-demo2">
         <p>Puja una fotografa de la targeta sanitària</p>
         <ChooseImage></ChooseImage>
       </div>
