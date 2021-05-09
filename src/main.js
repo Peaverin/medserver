@@ -40,6 +40,7 @@ export const globalStore = new Vue({
       { link: "floradix.jpeg", name: "Floradix", price: 25.55, quantity: 2},
     ],
     purchasedProducts: [],
+    modifyOrder: false
   }
 })
 

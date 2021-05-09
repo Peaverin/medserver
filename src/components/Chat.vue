@@ -112,6 +112,8 @@ export default {
     nameUser () {
       return globalStore.nameUser
     },
+  },mounted(){
+        globalStore.modifyOrder = false
   }
 
 };

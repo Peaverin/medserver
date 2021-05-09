@@ -140,6 +140,7 @@ export default {
     globalStore.dateTime = this.dateTime
     globalStore.finalAddress = this.finalAddress
     globalStore.paymentMethod = this.paymentMethod
+    globalStore.modifyOrder  = true
   },
   methods: {
     modifyOrder () {
