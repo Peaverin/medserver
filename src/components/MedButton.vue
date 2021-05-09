@@ -1,6 +1,8 @@
 <template>
     <div>
+    <transition name="fade" mode="out-in" appear>
        <button class='ctrbtn' @click="$router.push(link)" :disabled="disabled"> <slot/> </button>
+    </transition>
     </div>
 </template>
 

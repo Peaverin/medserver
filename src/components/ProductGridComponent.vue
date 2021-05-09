@@ -1,5 +1,6 @@
 <template>
     <div class="grid-view">
+        <transition name="fade" mode="out-in" appear>
         <header class="header">
             <div class="container">
                 <div class="row">
@@ -26,6 +27,8 @@
                 </div>
             </div>
         </header>
+        </transition>
+        <transition name="fade" mode="out-in" appear>
         <cart-component 
             v-if="is_showing_cart === true" 
             v-on:hide-cart="onHideCart">
@@ -44,7 +47,7 @@
                     </div>
                 </div>
                 <div class="row boto-comanda" v-if="this.num_items > 0">
-                    <button type="button" class="comanda" v-bind:style="{display: 'block'}" @click="is_showing_cart=true" >REALITZAR COMANDA</button>
+                    <button type="button" class="comanda" v-bind:style="{display: 'block'}" @click="is_showing_cart=true;" >REALITZAR COMANDA</button>
                 </div>
                 <div class="row row--grid" v-if="active_cat==='search'">
                     <product-card-component 
@@ -102,6 +105,7 @@
                 </div>
             </div>
         </section>
+    </transition>
     </div>
 </template>
 
@@ -407,6 +411,9 @@ export default {
             this.num_items += globalStore.purchasedProducts[i].quantity
         }
     }
-  }
+  },
+    beforeMount(){
+        globalStore.loggedIn = true;
+    }
 }
 </script>
