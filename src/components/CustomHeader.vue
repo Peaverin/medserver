@@ -33,9 +33,7 @@
 </template>
 
 <style scoped>
-.header{
 
-}
 .title {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: var(--main-color-darker);
