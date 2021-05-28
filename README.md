@@ -1,4 +1,4 @@
-MedServer
+# MedServer
 
 The website is live at https://peaverin.github.io/medserver/index.html#/
 
